@@ -207,7 +207,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link d-flex align-items-center gap-2 rounded position-relative"
-								href="./resubmit-docs-list.html">
+								href="./report.html">
 								<svg class="bi">
 									<use xlink:href="#graph-up" />
 								</svg>
@@ -646,7 +646,6 @@
 	</script>
 	<script>
 		$(document).ready(function () {
-			// Sample data (you can replace this with an AJAX call to fetch data dynamically)
 			var data = [
 				{ code: "A001", borrower: "John Doe" },
 				{ code: "A002", borrower: "Jane Smith" },
@@ -654,8 +653,6 @@
 				{ code: "B004", borrower: "Bob Williams" },
 				{ code: "C005", borrower: "Carol Taylor" },
 			];
-
-			// Listen for input change
 			$("#search-input").on("input", function () {
 				let query = $(this).val().toLowerCase();
 				let filteredResults = data.filter(
@@ -663,8 +660,6 @@
 						item.code.toLowerCase().includes(query) ||
 						item.borrower.toLowerCase().includes(query)
 				);
-
-				// Display the results
 				let resultHTML = "";
 				if (query.length > 0 && filteredResults.length > 0) {
 					filteredResults.forEach((item) => {
@@ -677,15 +672,11 @@
 
 				$("#search-results").html(resultHTML).show();
 			});
-
-			// Prevent search results from disappearing immediately on blur
 			$("#search-input, #search-results").on("blur", function () {
 				setTimeout(function () {
 					$("#search-results").hide();
 				}, 200);
 			});
-
-			// Keep search results visible when clicking on a result
 			$("#search-results").on("mousedown", "a", function () {
 				window.location.href = $(this).attr("href");
 			});
@@ -710,7 +701,7 @@
 							'Image', 'ImageCaption', 'ImageStyle', 'ImageToolbar',
 							'ImageUpload', 'MediaEmbed', 'BlockQuote'
 						],
-						toolbar: []  // Hide the toolbar
+						toolbar: []
 					})
 					.then(editor => {
 						$(this).data('ckeditorInstance', editor);
