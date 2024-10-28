@@ -1,0 +1,325 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ARCIL | Account Plan</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.svg" rel="icon">
+    
+
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="data-listing.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.svg" alt="">
+                <!-- <span class="d-none d-lg-block">Account Plan</span> -->
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Borrower's Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="trust-index.html">
+                    <i class="bi bi-menu-button-wide"></i>
+                    <span>Trusts Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="account-plan.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Account Plan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="mis-reports.html">
+                    <i class="bi bi-grid"></i>
+                    <span>MIS Reports</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="main-wrapper">
+            <div class="pagetitle">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Search Borrower</li>
+                    </ol>
+                </nav>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="m-0"> Account Plan</h4>
+
+                </div>
+            </div><!-- End Page Title -->
+            <div class="common-card">    
+                        <form>
+                            <!-- <div class="row">
+                                <div class="col-md-12">
+                                    <label for="tags" class="form-label select-label mb-4">Select Account Type </label>
+                                </div> 
+                            </div> -->
+                            <div class="row mb-4">
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="Form-label">Colour Code <sup class="required">*</sup></label>
+                                        <select class="form-select"  name="" id="dropdown1">
+                                            <option value="0">Select Colour Code </option>
+                                            <option value="1">Colour Code 1</option>
+                                            <option value="2">Colour Code 2</option>
+                                            <option value="3">Colour Code 3</option>
+                                        </select>
+                                        <span class="error error-dropdown1 d-none" >Please select Field </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="Form-label">Frequency <sup class="required">*</sup></label>
+                                        <select class="form-select" name="" id="dropdown2">
+                                            <option value="0">Select Frequency </option>
+                                            <option value="1">Frequency 1</option>
+                                            <option value="2">Frequency 2</option>
+                                            <option value="3">Frequency 3</option>
+                                        </select>
+                                        <span class="error error-dropdown2 d-none" >Please select Field </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="Form-label">Business Segment <sup class="required">*</sup></label>
+                                        <select class="form-select" name="" id="dropdown3">
+                                            <option value="0">Select Business Segment </option>
+                                            <option value="1">Corporate </option>
+                                            <option value="2">SME </option>
+                                            <option value="3">Retail</option>
+                                        </select>
+                                        <span class="error error-dropdown3 d-none" >Please select Field </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="Form-label">Business Group <sup class="required">*</sup></label>
+                                        <select class="form-select" name="" id="dropdown4">
+                                            <option value="0">Select Business Group </option>
+                                            <option value="1">Business Group 1 </option>
+                                            <option value="2">Business Group 2 </option>
+                                            <option value="3">Business Group 3</option>
+                                        </select>
+                                        <span class="error error-dropdown4 d-none" >Please select Field </span>
+                                    </div>
+                                </div>
+                                    
+
+                            </div>
+                            <div class="autosearch">
+                                <label for="tags" class="form-label">Select Borrower </label>
+                                <div class="ui-widget">
+                                    <input id="tags" class="autosearch_input" placeholder="Search" disabled>
+                                    <span class="search-icon"></span>
+                                </div>
+                            </div>
+                        </form>
+                   
+            </div>
+            
+        </div>
+        <div class="copyright">
+            © 2024 Design and developed by Fortune4 Technologies. All rights reserved.
+        </div>
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          var availableTags = [
+          { value: "vital-stats.html",
+            label: "Priya Clay products pvt ltd"
+          },
+          { value: "vital-stats.html",
+            label: "Mr. Vinod Dinkar Mule"
+          },
+          { value: "vital-stats.html",
+            label: "Sri Srivastava Group"
+          },
+           
+          ];
+          $( "#tags" ).autocomplete({
+            source: availableTags,
+            focus: function (event, ui) {
+                      $(event.target).val(ui.item.label);
+                      return false;
+                  },
+                  select: function (event, ui) {
+                      $(event.target).val(ui.item.label);
+                      window.location = ui.item.value;
+                      return false;
+                  }
+          });
+          // $(".ui-menu-item").each("").click(function(){
+          //     window.location.href = "reportone-preview-details.html";
+          // })
+          // $( ".ui-menu" ).each("keydown",function(index) {
+          // $(this).on("click", function(){
+          //     window.location.href = "data-listing.html";
+              
+          // });
+          // });
+      
+          
+      
+        } );
+        
+        </script>
+  
+  <script>
+    const log = console.log;
+    $(document).ready(function () {
+    $('.form-select').val("0");
+    
+    $('.form-select').change(function () {
+        selectVal = $('.form-select').val();
+        var dropdown1 = $("#dropdown1").val();
+        var dropdown2 = $("#dropdown2").val();
+        var dropdown3 = $("#dropdown3").val();
+        var dropdown4 = $("#dropdown4").val();
+        log("dropdown1 : ",dropdown1);
+        log("dropdown2 : ",dropdown2);
+        log("dropdown3 : ",dropdown3);
+        log("dropdown4 : ",dropdown4);
+
+        if(dropdown1=='0'){
+
+            $(".error-dropdown1").removeClass("d-none");
+
+        }else{
+
+            $(".error-dropdown1").addClass("d-none");
+
+        }
+
+        if(dropdown2=='0'){
+
+            $(".error-dropdown2").removeClass("d-none");
+
+        }else{
+
+            $(".error-dropdown2").addClass("d-none");
+            
+        }
+
+        if(dropdown3=='0'){
+
+            $(".error-dropdown3").removeClass("d-none");
+
+        }else{
+
+            $(".error-dropdown3").addClass("d-none");
+            
+        }
+
+        if(dropdown4=='0'){
+
+            $(".error-dropdown4").removeClass("d-none");
+
+        }else{
+
+            $(".error-dropdown4").addClass("d-none");
+            
+        }
+
+        if(dropdown1!='0' && dropdown2!='0' && dropdown3!='0' && dropdown4!='0'){
+            $('#tags').prop("disabled", false);
+        }else{
+            $('#tags').prop("disabled", true);
+        }
+        
+        // if (selectVal !== 0) {
+        // $('#tags').prop("disabled", true);
+        // }
+        // else {
+        // $('#tags').prop("disabled", false);
+        // }
+    })
+    
+    });
+  </script>
+</body>
+
+</html>

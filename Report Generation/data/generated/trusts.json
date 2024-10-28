@@ -1,0 +1,10 @@
+{
+	"T001" : {
+		"trust_code": "T001",
+		"trust_name": "Trust 001"
+	},
+	"T002" : {
+		"trust_code": "T002",
+		"trust_name": "Trust 002"
+	}
+}

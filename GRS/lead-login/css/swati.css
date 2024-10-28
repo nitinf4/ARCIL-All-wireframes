@@ -1,0 +1,68 @@
+.notification::after {
+  display: none;
+}
+
+.notificationMenu {
+  width: 320px;
+  left: auto;
+  right: 0;
+  padding: 12px 10px !important;
+}
+.notificationMenu .read-text {
+  font-size: 11px;
+  text-transform: capitalize;
+  display: block;
+  text-align: right;
+  color: #461AA3;
+  font-weight: 500;
+}
+.notificationMenu .notify-box {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.notificationMenu .notify-box:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+.notificationMenu .notify-box .name-child {
+  background-color: #DDCCFF;
+  text-align: center;
+  border-radius: 50%;
+  color: #461AA3;
+  padding: 3px 10px;
+  font-size: 16px;
+  height: 32px;
+  width: 32px;
+  display: block;
+  margin-right: 11px;
+}
+.notificationMenu .notify-box .notify-wp .notify-title {
+  display: flex;
+  justify-content: space-between;
+}
+.notificationMenu .notify-box .notify-wp .notify-title h6 {
+  font-size: 14px;
+}
+.notificationMenu .notify-box .notify-wp .notify-title .hours {
+  color: #676767;
+  font-size: 12px;
+}
+.notificationMenu .notify-box .notify-wp .notify-title .hours .green-circle {
+  height: 7px;
+  width: 7px;
+  background-color: #08AC72;
+  border-radius: 50%;
+  display: inline-block;
+}
+.notificationMenu .notify-box .notify-wp .mainButton {
+  min-width: auto;
+  margin-top: 12px;
+}
+.notificationMenu .notify-box .notify-wp p {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 0px;
+}
+
+/*# sourceMappingURL=swati.css.map */

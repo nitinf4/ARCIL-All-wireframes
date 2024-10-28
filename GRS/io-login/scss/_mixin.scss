@@ -1,0 +1,41 @@
+@mixin border-radius($radius) {  
+border-radius: $radius;
+}
+@mixin status{
+    font-size: 20px;
+    font-weight:500;
+}
+@mixin medium-title{
+    font-size: 27px;
+    font-weight:500;
+    margin-bottom: 25px;
+    display: block;
+}
+@mixin para{
+    font-size: 14px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+@mixin xl-largeTitle{
+    font-size: 30px;
+    font-weight:500;
+    margin-bottom: 25px;
+}
+@mixin large-title{
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 44px;
+    &::after{
+        content: "";
+        background-color: $darktheme-pink;
+        height:3px;
+        width:59px;
+        display: block;
+        margin: auto;
+    }
+}
+
+@mixin mid-small-title{
+    font-size: 18px;
+}
+

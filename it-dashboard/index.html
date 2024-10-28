@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ARCIL - IT Performance Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.svg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.svg" alt="">
+        <span class="text-nowrap">IT Performance Dashboard</span>
+      </a>
+    </div>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="./pages-login.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header>
+  <!-- End Header -->
+
+  <main id="main" class="main ma-0">
+    <section class="section dashboard">
+      <!-- filter section start  -->
+      <div class="card p-3">
+        <div class="filter-wrapper">
+          <h5 class="card-title text-nowrap m-0 p-0 me-auto">April 2023 - March 2024</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Monthly
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Quarterly
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Yearly
+            </label>
+          </div>
+          <div class="label-wrapper">
+            <div class="date-picker dateRange-inp">
+              <span>
+                <span class="from-month"></span> / <span class="from-year"></span>
+                <span class="mx-2">→</span>
+                <span class="to-month"></span> / <span class="to-year"></span>
+              </span>
+            </div>
+            <div class="calender-container">
+              <div class="parent-container">
+                <div class="from-wrapper">
+                  <span>Start Date</span>
+                  <div class="date-wrap">
+                    <div class="date-header">
+                      <button class="next-btn" id="from-prev-btn"></button>
+                      <input class="current-year" id="from-current-year" type="text">
+                      <button class="prev-btn" id="from-next-btn"></button>
+                    </div>
+                    <ul class="month-list" id="from-month-list">
+                    </ul>
+                  </div>
+                </div>
+                <div class="from-wrapper">
+                  <span>End Date</span>
+                  <div class="date-wrap">
+                    <div class="date-header">
+                      <button class="next-btn" id="to-prev-btn"></button>
+                      <input class="current-year" id="to-current-year" type="text">
+                      <button class="prev-btn" id="to-next-btn"></button>
+                    </div>
+                    <ul class="month-list" id="to-month-list">
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-wrap">
+                  <button class="btn btn-sm btn-light" id="date-apply-btn">Apply</button>
+                  <button class="btn btn-sm btn-light" id="date-cancel-btn">cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-primary px-3">Search</button>
+        </div>
+      </div>
+      <!-- filter section end  -->
+
+      <!-- It helpdesk start  -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fieldset-main-title mb-0">IT Helpdesk</h5>
+              <div class="row">
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3 h-100">
+                    <h5 class="card-title fieldset-title">Ticket Summary</h5>
+                    <div id="ticket-summary" style="height: 475px; margin-top: 15px; width: 100%;"></div>
+                    <script>
+                      const ticketData = [
+                        ["Month", "Open Tickets", "Closed Tickets"],
+                        ["Jan", 5, 10],
+                        ["Feb", 8, 12],
+                        ["Mar", 12, 15],
+                        ["Apr", 15, 20],
+                        ["May", 20, 30],
+                        ["Jun", 30, 24],
+                        ["Jul", 17, 10],
+                        ["Aug", 19, 50],
+                        ["Sept", 13, 30],
+                        ["Oct", 15, 24],
+                        ["Nov", 11, 17],
+                        ["Dec", 30, 20],
+                      ];
+
+                      const chart = echarts.init(document.getElementById("ticket-summary"));
+                      // const isMobile = window.innerWidth <= 768;
+                      // const responsiveLabel = isMobile ? undefined : "center";
+
+                      // console.log("responsiveLabel", responsiveLabel);
+                      const ticketOptions = {
+                        dataset: [{
+                          source: ticketData
+                        }],
+                        xAxis: {
+                          type: 'category',
+                          name: 'Months',
+                          nameGap: 40,// Title for the x-axis
+                          nameLocation: "center", // Center the title
+                          nameTextStyle: {
+                            color: '#333', // Change color of x-axis title
+                            fontWeight: '600', // Set font weight of x-axis title to bold
+                            fontSize: 13, // Set font size of x-axis title
+                          },
+                          axisLabel: {
+                            interval: 0, // Show all labels
+                            rotate: 90, // Rotate labels by 45 degrees for better readability
+                            textStyle: {
+                              fontSize: 12 // Adjust font size of x-axis labels
+                            }
+                          }
+                        },
+                        yAxis: {
+                          type: 'value',
+                          name: 'Tickets', // Title for the y-axis
+                          nameLocation: "center",
+                          nameGap: 30,
+                          min: 0, // start from 0
+                          interval: 10, // interval
+                          nameTextStyle: {
+                            color: '#333', // Change color of x-axis title
+                            fontWeight: '600', // Set font weight of x-axis title to bold
+                            fontSize: 13 // Set font size of x-axis title
+                          }
+                        },
+                        series: [{
+                          type: 'bar',
+                          name: 'Open Tickets',
+                          stack: 'tickets',
+                          encode: {
+                            x: 'Month',
+                            y: 'Open Tickets'
+                          },
+                          itemStyle: {
+                            color: '#4472C4' // Set color for Open Tickets
+                          },
+                          barWidth: '60%'
+                        }, {
+                          type: 'bar',
+                          name: 'Closed Tickets',
+                          stack: 'tickets',
+                          encode: {
+                            x: 'Month',
+                            y: 'Closed Tickets'
+                          },
+                          itemStyle: {
+                            color: '#ED7D31' // Set color for Closed Tickets
+                          },
+                          barWidth: '60%'
+                        }],
+                        tooltip: {
+                          trigger: 'axis',
+                          axisPointer: {
+                            type: 'shadow'
+                          },
+                          // position: ['25%', '30%'],
+                          formatter: function (params) {
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + ` (${params[0].value[1] + params[0].value[2]})` + '</p>' +
+                              `<ul class='tooltip-tat'>
+                              <li><span>${params[0].marker} ${params[0].seriesName}</span>  <span class='value'>${params[0].value[1]}</span></li>
+                              <li style="padding-left:0"><span>${params[1].marker} ${params[1].seriesName}</span>  <span class='value'>${params[1].value[2]}</span></li>
+                              </ul>`
+                            return tooltipHtml;
+                          }
+                        },
+                        legend: {
+                          data: ['Open Tickets', 'Closed Tickets'],
+                          type: 'scroll', // Allow legend to scroll if items exceed container width
+                          orient: 'vertical', // Display legend items vertically
+                          right: 20, // Align the legend to the right
+                          top: 0, // Align the legend to the top
+                          itemHeight: 6,
+                          selectedMode: false
+                        },
+                        grid: {
+                          left: '10%', // Adjust as needed
+                          right: '5%', // Adjust as needed
+                          top: '20%', // Adjust as needed
+                          bottom: '15%', // Adjust as needed
+                        },
+                      };
+                      const isMobile = window.innerWidth <= 768;
+
+                      if (isMobile) {
+                        ticketOptions.yAxis.nameTextStyle.fontSize = 12;
+                        ticketOptions.xAxis.nameTextStyle.fontSize = 12;
+                        ticketOptions.grid.right = '0%';
+                        ticketOptions.grid.left = '13%';
+                        ticketOptions.yAxis.nameGap = 27;
+                      }
+                      chart.setOption(ticketOptions);
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3">
+                    <h5 class="card-title fieldset-title">Average TAT</h5>
+                    <div class="legend average-tat mt-2">
+                      <div class="legend__item">
+                        <div class="legend-title">Normal</div>
+                        <div>
+                          <div class="legend__icon normal-tat"></div>
+                          <div class="legend__text">Average TAT </div>
+                        </div>
+                        <div>
+                          <div class="legend__icon dashed normal-bench"></div>
+                          <div class="legend__text">Benchmark</div>
+                        </div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend-title">Urgent </div>
+                        <div>
+                          <div class="legend__icon avg-tat"></div>
+                          <div class="legend__text">Average TAT </div>
+                        </div>
+                        <div>
+                          <div class="legend__icon dashed avg-bench"></div>
+                          <div class="legend__text">Benchmark</div>
+                        </div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend-title">Very Urgent </div>
+                        <div>
+                          <div class="legend__icon poor"></div>
+                          <div class="legend__text">Average TAT </div>
+                        </div>
+                        <div>
+                          <div class="legend__icon dashed urgent-bench"></div>
+                          <div class="legend__text">Benchmark</div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div id="average-tat" style="height: 400px; margin-top: 15px;"></div>
+                    <script>
+                      var dom = document.getElementById('average-tat');
+                      var myChart = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                      });
+
+                      tatOption = {
+                        tooltip: {
+                          trigger: 'axis',
+                          formatter: function (params) {
+                            var minutes = [];
+                            let data = params.map((item, i) => {
+                              let time = ""
+                              let hours = Math.floor(item.value / 60);
+                              let remainingMinutes = item.value % 60;
+                              // Formatting hours and minutes to have leading zeros if necessary
+                              let formattedHours = String(hours).padStart(2, '0');
+                              let formattedMinutes = String(remainingMinutes).padStart(2, '0');
+                              time = `${formattedHours}:${formattedMinutes}`;
+                              minutes.push(time);
+                            })
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + '</p>' +
+                              `<ul class='tooltip-tat'>
+                                <li><span>${params[0].marker} ${params[0].seriesName}</span> <span class='value'>${minutes[0]}</span></li>
+                                <li><span>${params[5].marker}  ${params[3].seriesName}</span> <span class='value'>${minutes[3]}</span></li>
+                                <li><span>${params[1].marker} ${params[1].seriesName}</span> <span class='value'>${minutes[1]}</span></li>
+                                <li><span>${params[4].marker}  ${params[4].seriesName} </span> <span class='value'>${minutes[4]}</span></li>
+                                <li><span>${params[2].marker} ${params[2].seriesName}</span> <span class='value'>${minutes[2]}</span></li>
+                                <li><span>${params[3].marker}  ${params[5].seriesName}</span> <span class='value'>${minutes[5]}</span></li>
+                            </ul>`
+                            return tooltipHtml;
+                          }
+                        },
+                        grid: {
+                          left: '6%',
+                          right: '4%',
+                          bottom: '10%',
+                          top: '5%',
+                          containLabel: true
+                        },
+                        xAxis: {
+                          type: 'category',
+                          name: 'Months',
+                          nameGap: 40,
+                          nameLocation: 'center',
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: '600',
+                            fontSize: 13
+                          },
+                          axisLabel: {
+                            interval: 0,
+                            rotate: 90,
+                            textStyle: {
+                              fontSize: 13
+                            }
+                          },
+                          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                        },
+                        yAxis: {
+                          type: 'value',
+                          name: 'Time (HH:MM)',
+                          nameLocation: 'center',
+                          nameGap: 50,
+                          min: 0,
+                          max: 1440, // Set maximum value
+                          interval: 240,
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: '600',
+                            fontSize: 13
+                          },
+                          axisLabel: {
+                            textStyle: {
+                              fontSize: 12
+                            },
+                            formatter: function (value) {
+                              // Convert minutes to hours and display
+                              var hours = Math.floor(value / 60);
+                              var minutes = value % 60;
+                              // Formatting hours and minutes to have leading zeros if necessary
+                              var formattedHours = String(hours).padStart(2, '0');
+                              var formattedMinutes = String(minutes).padStart(2, '0');
+                              return formattedHours + ':' + formattedMinutes;
+                            },
+                          }
+                        },
+                        series: [
+                          {
+                            name: "Average TAT (Normal)",
+                            type: 'line',
+                            data: [1200, 1330, 1200, 1100, 1330, 1290, 1110, 1200, 1180, 1310, 1200, 1050],
+                            lineStyle: {
+                              color: '#4472C4',
+                            },
+                            itemStyle: {
+                              color: '#4472C4', // Set the same color as the line
+                            }
+                          },
+                          {
+                            name: 'Average TAT (Urgent)',
+                            type: 'line',
+                            data: [720, 650, 760, 790, 630, 800, 850, 800, 550, 790, 800, 730],
+                            lineStyle: {
+                              color: '#FF9900',
+                            },
+                            itemStyle: {
+                              color: '#FF9900', // Set the same color as the line
+                            }
+                          },
+                          {
+                            name: 'Average TAT (Very Urgent)',
+                            type: 'line',
+                            data: [240, 380, 180, 360, 390, 120, 400, 450, 400, 430, 200, 110],
+                            lineStyle: {
+                              color: '#DC3912',
+                            },
+                            itemStyle: {
+                              color: '#DC3912', // Set the same color as the line
+                            }
+                          },
+                          // Benchmark lines
+                          {
+                            name: 'Benchmark (Normal)',
+                            type: 'line',
+                            symbol: 'none',
+                            lineStyle: {
+                              color: '#FFBF60',
+                              type: 'dashed'
+                            },
+                            data: Array(12).fill(1200)
+                          },
+                          {
+                            name: 'Benchmark (Urgent)',
+                            type: 'line',
+                            symbol: 'none',
+                            lineStyle: {
+                              color: '#079715',
+                              type: 'dashed'
+                            },
+                            data: Array(12).fill(720)
+                          },
+                          {
+                            name: 'Benchmark (Very Urgent)',
+                            type: 'line',
+                            symbol: 'none',
+                            lineStyle: {
+                              color: '#4472C4',
+                              type: 'dashed'
+                            },
+                            data: Array(12).fill(240)
+                          }
+                        ]
+                      };
+                      const isMobile2 = window.innerWidth <= 768;
+                      if (isMobile2) {
+                        tatOption.yAxis.nameTextStyle.fontSize = 12;
+                        tatOption.yAxis.nameGap = 44;
+                        tatOption.grid.left = "6%"
+                        tatOption.grid.right = "0%"
+                      }
+
+                      if (tatOption && typeof tatOption === 'object') {
+                        myChart.setOption(tatOption);
+                      }
+
+                      window.addEventListener('resize', myChart.resize);
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- It helpdesk end  -->
+
+      <!-- Application Uptime start  -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fieldset-main-title mb-0">Application Uptime</h5>
+              <div class="row mt-4">
+                <div class="col-md-4 mb-3 mb-md-4 ">
+                  <div class="uptime-wrapper">
+                    <div class="uptime-header">
+                      <img src="assets/img/sap-logo.svg" alt="">
+                      <span class="small-title">SAP</span>
+                    </div>
+                    <div class="legend">
+                      <div class="legend__item">
+                        <div class="legend__icon poor"></div>
+                        <div class="legend__text">Poor</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon great"></div>
+                        <div class="legend__text">Great</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon excellent"></div>
+                        <div class="legend__text">Excellent</div>
+                      </div>
+                    </div>
+                    <div id="uptime-chart" style="height: 200px;"></div>
+                    <script>
+                      // Initialize ECharts instance
+                      var chartDom = document.getElementById('uptime-chart');
+                      var myChart = echarts.init(chartDom);
+
+                      // Chart configuration
+                      var option;
+
+                      option = {
+                        title: {
+                          show: false
+                        },
+                        legend: {
+                          show: true,
+                          data: ['Total Uptime'],
+                          textStyle: {
+                            color: '#464646'
+                          }
+                        },
+                        grid: {
+                          left: '10%',
+                          right: '5%',
+                          top: '10%',
+                          bottom: '15%',
+                        },
+                        series: [{
+                          type: 'gauge',
+                          startAngle: 180,
+                          center: ['50%', '60%'],
+                          endAngle: 0,
+                          radius: '100%',
+                          detail: {
+                            formatter: '{a|Total Uptime}\n{b|' + 78 + '%}',
+                            offsetCenter: [0, '50%'],
+                            rich: {
+                              a: {
+                                fontSize: 14,
+                                color: '#464646'
+                              },
+                              b: {
+                                fontSize: 24,
+                                fontWeight: "bold",
+                                color: '#464646'
+                              }
+                            }
+                          },
+                          axisLine: {
+                            lineStyle: {
+                              width: 30,
+                              color: [
+                                [0.8, '#FF4545'],
+                                [0.9, '#FFC000'],
+                                [1, '#70AD47']
+                              ]
+                            }
+                          },
+                          axisTick: {
+                            show: false
+                          },
+                          axisLabel: {
+                            color: '#464646',
+                            fontSize: 10,
+                            distance: -30,
+                            rotate: 'tangential',
+                          },
+                          splitLine: {
+                            length: 5,
+                            lineStyle: {
+                              color: '#000',
+                              width: 1,
+                              type: 'solid'
+                            }
+                          },
+                          data: [{ value: 78 }]
+                        }]
+                      };
+
+                      // Set chart configuration and render
+                      if (option && typeof option === 'object') {
+                        myChart.setOption(option);
+                      }
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-4 ">
+                  <div class="uptime-wrapper">
+                    <div class="uptime-header">
+                      <img src="assets/img/sales-force.svg" alt="">
+                      <span class="small-title">Sales Force</span>
+                    </div>
+                    <div class="legend">
+                      <div class="legend__item">
+                        <div class="legend__icon poor"></div>
+                        <div class="legend__text">Poor</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon great"></div>
+                        <div class="legend__text">Great</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon excellent"></div>
+                        <div class="legend__text">Excellent</div>
+                      </div>
+                    </div>
+                    <div id="uptime-chart1" style="height: 200px;"></div>
+                    <script>
+                      // Initialize ECharts instance
+                      var chartDom = document.getElementById('uptime-chart1');
+                      var myChart = echarts.init(chartDom);
+
+                      // Chart configuration
+                      var option;
+
+                      option = {
+                        title: {
+                          show: false
+                        },
+                        legend: {
+                          show: true,
+                          data: ['Total Uptime'],
+                          textStyle: {
+                            color: '#464646'
+                          }
+                        },
+                        grid: {
+                          left: '10%',
+                          right: '5%',
+                          top: '10%',
+                          bottom: '15%',
+                        },
+                        series: [{
+                          type: 'gauge',
+                          startAngle: 180,
+                          center: ['50%', '60%'],
+                          endAngle: 0,
+                          radius: '100%',
+                          detail: {
+                            formatter: '{a|Total Uptime}\n{b|' + 60 + '%}',
+                            offsetCenter: [0, '50%'],
+                            rich: {
+                              a: {
+                                fontSize: 14,
+                                color: '#464646'
+                              },
+                              b: {
+                                fontSize: 24,
+                                fontWeight: "bold",
+                                color: '#464646'
+                              }
+                            }
+                          },
+                          axisLine: {
+                            lineStyle: {
+                              width: 30,
+                              color: [
+                                [0.8, '#FF4545'],
+                                [0.9, '#FFC000'],
+                                [1, '#70AD47']
+                              ]
+                            }
+                          },
+                          axisTick: {
+                            show: false
+                          },
+                          axisLabel: {
+                            color: '#464646',
+                            fontSize: 10,
+                            distance: -30,
+                            rotate: 'tangential',
+                          },
+                          splitLine: {
+                            length: 5,
+                            lineStyle: {
+                              color: '#000',
+                              width: 1,
+                              type: 'solid'
+                            }
+                          },
+                          data: [{ value: 60 }]
+                        }]
+                      };
+
+                      // Set chart configuration and render
+                      if (option && typeof option === 'object') {
+                        myChart.setOption(option);
+                      }
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-4 ">
+                  <div class="uptime-wrapper">
+                    <div class="uptime-header">
+                      <img src="assets/img/arcil-logo.svg" alt="">
+                      <span class="small-title">IT Helpdesk</span>
+                    </div>
+                    <div class="legend">
+                      <div class="legend__item">
+                        <div class="legend__icon poor"></div>
+                        <div class="legend__text">Poor</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon great"></div>
+                        <div class="legend__text">Great</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon excellent"></div>
+                        <div class="legend__text">Excellent</div>
+                      </div>
+                    </div>
+                    <div id="uptime-chart2" style="height: 200px;"></div>
+                    <script>
+                      // Initialize ECharts instance
+                      var chartDom = document.getElementById('uptime-chart2');
+                      var myChart = echarts.init(chartDom);
+
+                      // Chart configuration
+                      var option;
+
+                      option = {
+                        title: {
+                          show: false
+                        },
+                        legend: {
+                          show: true,
+                          data: ['Total Uptime'],
+                          textStyle: {
+                            color: '#464646'
+                          }
+                        },
+                        grid: {
+                          left: '10%',
+                          right: '5%',
+                          top: '10%',
+                          bottom: '15%',
+                        },
+                        series: [{
+                          type: 'gauge',
+                          startAngle: 180,
+                          center: ['50%', '60%'],
+                          endAngle: 0,
+                          radius: '100%',
+                          detail: {
+                            formatter: '{a|Total Uptime}\n{b|' + 41 + '%}',
+                            offsetCenter: [0, '50%'],
+                            rich: {
+                              a: {
+                                fontSize: 14,
+                                color: '#464646'
+                              },
+                              b: {
+                                fontSize: 24,
+                                fontWeight: "bold",
+                                color: '#464646'
+                              }
+                            }
+                          },
+                          axisLine: {
+                            lineStyle: {
+                              width: 30,
+                              color: [
+                                [0.8, '#FF4545'],
+                                [0.9, '#FFC000'],
+                                [1, '#70AD47']
+                              ]
+                            }
+                          },
+                          axisTick: {
+                            show: false
+                          },
+                          axisLabel: {
+                            color: '#464646',
+                            fontSize: 10,
+                            distance: -30,
+                            rotate: 'tangential',
+                          },
+                          splitLine: {
+                            length: 5,
+                            lineStyle: {
+                              color: '#000',
+                              width: 1,
+                              type: 'solid'
+                            }
+                          },
+                          data: [{ value: 41 }]
+                        }]
+                      };
+
+                      // Set chart configuration and render
+                      if (option && typeof option === 'object') {
+                        myChart.setOption(option);
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Application Uptime end  -->
+
+      <!-- IT Project Status start   -->
+      <div class="row" id="section1">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fieldset-main-title mb-0">IT Project Status</h5>
+              <div class="faq-wrapper mt-4">
+                <ul id="faq-accordion" class="list-unstyled">
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
+                    aria-controls="collapse1">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">1. SAP S/4 HANA License Procurement</span>
+                      </div>
+                      <div id="collapse1" class="collapse multi-collapse show" aria-labelledby="heading">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹10,00,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 30%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 30%</span>
+                                <span class="medium-title dark d-block">₹3,00,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 70%</span>
+                                <span class="medium-title dark d-block">₹7,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Dec 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress" style="width: 30%;">30%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse2" aria-expanded="false"
+                    aria-controls="collapse2">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">2. Mobile Device Management (MDM)</span>
+                      </div>
+                      <div id="collapse2" class="collapse multi-collapse" aria-labelledby="heading2">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹8,50,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 60%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 60%</span>
+                                <span class="medium-title dark d-block">₹3,50,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 40%</span>
+                                <span class="medium-title dark d-block">₹5,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Jan 2024</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Mar 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">15 Jan 2024</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress overdue" style="width: 10%;">10%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse3" aria-expanded="false"
+                    aria-controls="collapse3">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">3. Credit Nirvana – Retail</span>
+                      </div>
+                      <div id="collapse3" class="collapse multi-collapse" aria-labelledby="heading3">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹10,00,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 30%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 30%</span>
+                                <span class="medium-title dark d-block">₹3,00,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 70%</span>
+                                <span class="medium-title dark d-block">₹7,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Dec 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress" style="width: 30%;">30%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul id="faq-accordion" class="list-unstyled">
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse4" aria-expanded="false"
+                    aria-controls="collapse4">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">4. Customer Grievance Application</span>
+                      </div>
+                      <div id="collapse4" class="collapse multi-collapse show" aria-labelledby="heading4">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹10,00,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 30%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 30%</span>
+                                <span class="medium-title dark d-block">₹3,00,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 70%</span>
+                                <span class="medium-title dark d-block">₹7,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Dec 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress" style="width: 30%;">30%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse5" aria-expanded="false"
+                    aria-controls="collapse5">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">5. Credit Nirvana – Wholesale</span>
+                      </div>
+                      <div id="collapse5" class="collapse multi-collapse" aria-labelledby="heading4">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹10,00,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 30%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 30%</span>
+                                <span class="medium-title dark d-block">₹3,00,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 70%</span>
+                                <span class="medium-title dark d-block">₹7,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Dec 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress" style="width: 30%;">30%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-faq" data-toggle="collapse" data-target="#collapse6" aria-expanded="false"
+                    aria-controls="collapse6">
+                    <div class="list-wrap">
+                      <div class="card-header border-0" id="heading">
+                        <span class="small-title">6. FileDirector – Branch Access Reconciliation</span>
+                      </div>
+                      <div id="collapse6" class="collapse multi-collapse" aria-labelledby="heading4">
+                        <div class="card-body">
+                          <div class="progress-bar">
+                            <div class="progress" id="progress" style="width: 40%;"></div>
+                            <div class="progress-step active" data-title="Planning"></div>
+                            <div class="progress-step active" data-title="Design"></div>
+                            <div class="progress-step active" data-title="Development"></div>
+                            <div class="progress-step inprogress" data-title="Testing"></div>
+                            <div class="progress-step" data-title="Pre-go-live"></div>
+                            <div class="progress-step" data-title="Live"></div>
+                          </div>
+                          <ul class="list-container">
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Total Budget</span>
+                                <span class="medium-title dark d-block">₹10,00,000</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="progress-bg" style="width: 30%;"></span>
+                              <div class="left-col">
+                                <span>Total Consumed: 30%</span>
+                                <span class="medium-title dark d-block">₹3,00,000</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Balance: 70%</span>
+                                <span class="medium-title dark d-block">₹7,00,000</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Planned Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Planned Completion Date:</span>
+                                <span class="medium-title dark d-block">31 Dec 2024</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col">
+                                <span>Actual Start Date:</span>
+                                <span class="medium-title dark d-block">1 Dec 2023</span>
+                              </div>
+                              <div class="right-col">
+                                <span>Actual Completion Date:</span>
+                                <span class="medium-title dark d-block">—</span>
+                              </div>
+                              <div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="left-col w-100">
+                                <span>Status: Ontime</span>
+                                <span class="status-bar">
+                                  <span class="status-progress" style="width: 30%;">30%</span>
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- IT Project Status end   -->
+
+      <!-- Cyber Security start  -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fieldset-main-title mb-0">Cyber Security</h5>
+              <!-- Intrusion Attempts start -->
+              <div class="row">
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3 h-100">
+                    <h5 class="card-title fieldset-title">Intrusion Attempts </h5>
+                    <div id="intrusion-attempts" style="height: 440px; margin-top: 15px;"></div>
+                    <script>
+                      const intrusionData = [
+                        ["Month", "Prevented by system", "Success"],
+                        ["Jan", 5, 10],
+                        ["Feb", 8, 12],
+                        ["Mar", 12, 15],
+                        ["Apr", 15, 20],
+                        ["May", 20, 30],
+                        ["Jun", 30, 24],
+                        ["Jul", 17, 10],
+                        ["Aug", 19, 50],
+                        ["Sept", 13, 30],
+                        ["Oct", 15, 24],
+                        ["Nov", 11, 17],
+                        ["Dec", 30, 20],
+                      ];
+
+                      const intrusionChart = echarts.init(document.getElementById("intrusion-attempts"));
+                      const intrusionOptions = {
+                        dataset: [{
+                          source: intrusionData
+                        }],
+                        xAxis: {
+                          type: 'category',
+                          name: 'Months',
+                          nameGap: 40,// Title for the x-axis
+                          nameLocation: 'center', // Center the title
+                          nameTextStyle: {
+                            color: '#333', // Change color of x-axis title
+                            fontWeight: 'bold', // Set font weight of x-axis title to bold
+                            fontSize: 14 // Set font size of x-axis title
+                          },
+                          axisLabel: {
+                            interval: 0, // Show all labels
+                            rotate: 45, // Rotate labels by 45 degrees for better readability
+                            textStyle: {
+                              fontSize: 12 // Adjust font size of x-axis labels
+                            }
+                          }
+                        },
+                        yAxis: {
+                          type: 'value',
+                          name: 'Intrusion Attempts', // Title for the y-axis
+                          nameLocation: 'center',
+                          nameGap: 40,
+                          min: 0, //start from 0
+                          interval: 10, // interval
+                          nameTextStyle: {
+                            color: '#333', // Change color of x-axis title
+                            fontWeight: '600', // Set font weight of x-axis title to bold
+                            fontSize: 13,
+                          },
+                          axisLabel: {
+                            textStyle: {
+                              fontSize: 12,
+                            }
+
+                          }
+                        },
+                        series: [
+                          {
+                            type: 'bar',
+                            name: 'Success',
+                            stack: 'tickets',
+                            encode: {
+                              x: 'Month',
+                              y: 'Success'
+                            },
+                            itemStyle: {
+                              color: '#FF4545' // Set color for Success
+                            },
+                            barWidth: '60%'
+                          },
+                          {
+                            type: 'bar',
+                            name: 'Prevented by system',
+                            stack: 'tickets',
+                            encode: {
+                              x: 'Month',
+                              y: 'Prevented by system'
+                            },
+                            itemStyle: {
+                              color: '#70AD47' // Set color for Prevented by system
+                            },
+                            barWidth: '60%'
+                          },
+
+                        ],
+                        tooltip: {
+                          trigger: 'axis',
+                          axisPointer: {
+                            type: 'shadow'
+                          },
+                          formatter: function (params) {
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + ` (${params[0].value[1] + params[0].value[2]})` + '</p>' +
+                              `<ul class='tooltip-tat'>
+                                <li><span>${params[0].marker} ${params[0].seriesName}</span>  <span class='value'>${params[1].value[2]}</span></li>
+                                <li style="padding-left:0"><span>${params[1].marker} ${params[1].seriesName}</span>  <span class='value'>${params[0].value[1]}</span></li>
+                                </ul>`
+                            return tooltipHtml;
+                          }
+                        },
+                        legend: {
+                          data: ['Prevented by system', 'Success'],
+                          type: 'scroll', // Allow legend to scroll if items exceed container width
+                          orient: 'vertical', // Display legend items vertically
+                          right: 20, // Align the legend to the right
+                          top: 0, // Align the legend to the top
+                          itemHeight: 6,
+                          selectedMode: false
+                        },
+                        grid: {
+                          left: '10%', // Adjust as needed
+                          right: '5%', // Adjust as needed
+                          top: '20%', // Adjust as needed
+                          bottom: '15%', // Adjust as needed
+                        },
+                      };
+                      const isMobile3 = window.innerWidth <= 768;
+                      if (isMobile3) {
+                        intrusionOptions.yAxis.nameTextStyle.fontSize = 12;
+                        intrusionOptions.xAxis.nameTextStyle.fontSize = 12;
+                        intrusionOptions.yAxis.nameGap = 28;
+                        intrusionOptions.grid.top = "15%"
+                        intrusionOptions.grid.left = "13%"
+                      }
+                      intrusionChart.setOption(intrusionOptions);
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3">
+                    <h5 class="card-title fieldset-title">Mean Detect & Resolve Time</h5>
+                    <div class="legend average-tat mean-detect mt-2">
+                      <div class="legend__item">
+                        <div>
+                          <div class="legend__icon mean-detect"></div>
+                          <div class="legend__text">Mean detect time</div>
+                        </div>
+                        <div>
+                          <div class="legend__icon dashed"></div>
+                          <div class="legend__text">Benchmark MTTD</div>
+                        </div>
+                      </div>
+                      <div class="legend__item">
+                        <div>
+                          <div class="legend__icon mean-resolve"></div>
+                          <div class="legend__text">Mean resolve time </div>
+                        </div>
+                        <div>
+                          <div class="legend__icon dashed benct-mttr"></div>
+                          <div class="legend__text">Benchmark MTTR</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="mean-time" style="height: 400px; margin-top: 15px;"></div>
+                    <script>
+                      var dom = document.getElementById('mean-time');
+                      var myChart = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                      });
+
+                      meanDetectOption = {
+                        tooltip: {
+                          trigger: 'axis',
+                          formatter: function (params) {
+                            var minutes = [];
+                            let data = params.map((item, i) => {
+                              let time = "";
+                              let hours = Math.floor(item.value / 60);
+                              let remainingMinutes = item.value % 60;
+                              // Formatting hours and minutes to have leading zeros if necessary
+                              let formattedHours = String(hours).padStart(2, '0');
+                              let formattedMinutes = String(remainingMinutes).padStart(2, '0');
+                              time = `${formattedHours}:${formattedMinutes}`;
+                              minutes.push(time);
+                            });
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + '</p>' +
+                              `<ul class='tooltip-tat'>
+                                <li><span>${params[0].marker} ${params[0].seriesName}</span> <span class='value'>${minutes[0]}</span></li>
+                                <li><span class="mttd-benchmark"> <span class="dot"> ${params[2].seriesName}</span> </span> <span class='value'>${minutes[2]}</span></li>
+                                <li><span>${params[1].marker} ${params[1].seriesName}</span> <span class='value'>${minutes[1]}</span></li>
+                                <li><span class="mttr-benchmark"> <span class="dot"> ${params[3].seriesName}</span></span> <span class='value'>${minutes[3]}</span></li>
+                              </ul>`;
+                            return tooltipHtml;
+                          }
+                        },
+                        grid: {
+                          top: '7%',
+                          left: '6%',
+                          right: '4%',
+                          bottom: '10%',
+                          containLabel: true
+                        },
+                        xAxis: {
+                          type: 'category',
+                          name: 'Months',
+                          nameGap: 40,
+                          nameLocation: 'center',
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: 'bold',
+                            fontSize: 14
+                          },
+                          axisLabel: {
+                            interval: 0,
+                            rotate: 45,
+                            textStyle: {
+                              fontSize: 12
+                            }
+                          },
+                          data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                        },
+                        yAxis: {
+                          type: 'value',
+                          name: 'Time (HH:MM)',
+                          nameLocation: 'center',
+                          nameGap: 50,
+                          min: 0,
+                          interval: 240,
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: '600',
+                            fontSize: 13
+                          },
+                          axisLabel: {
+                            textStyle: {
+                              fontSize: 12
+                            },
+                            formatter: function (value) {
+                              // Convert minutes to hours and display
+                              var hours = Math.floor(value / 60);
+                              var minutes = value % 60;
+                              // Formatting hours and minutes to have leading zeros if necessary
+                              var formattedHours = String(hours).padStart(2, '0');
+                              var formattedMinutes = String(minutes).padStart(2, '0');
+                              return formattedHours + ':' + formattedMinutes;
+                            },
+                          }
+                        },
+                        series: [
+                          {
+                            name: 'Mean detect time',
+                            type: 'line',
+                            smooth: true,
+                            lineStyle: {
+                              color: '#6F58E9',
+                            },
+                            data: [720, 520, 300, 520, 800, 1020, 1100, 1200, 1150, 1080, 980, 890]
+                          },
+                          {
+                            name: 'Mean resolve time',
+                            type: 'line',
+                            smooth: true,
+                            lineStyle: {
+                              color: '#94D13D',
+                            },
+                            data: [1080, 920, 830, 740, 680, 610, 570, 710, 900, 630, 570, 500]
+                          },
+                          // Benchmark lines
+                          {
+                            name: 'Benchmark MTTD',
+                            type: 'line',
+                            symbol: 'none',
+                            lineStyle: {
+                              color: '#FA233E',
+                              type: 'dashed'
+                            },
+                            data: Array(12).fill(480)
+                          },
+                          {
+                            name: 'Benchmark MTTR',
+                            type: 'line',
+                            symbol: 'none',
+                            lineStyle: {
+                              color: '#FFA800',
+                              type: 'dashed'
+                            },
+                            data: Array(12).fill(960)
+                          }
+                        ]
+                      };
+
+                      const isMobile4 = window.innerWidth <= 768;
+                      if (isMobile4) {
+                        meanDetectOption.yAxis.nameGap = 43;
+                        meanDetectOption.yAxis.nameTextStyle.fontSize = 12;
+                        meanDetectOption.xAxis.nameTextStyle.fontSize = 12;
+                        meanDetectOption.grid.left = "6%"
+                      }
+
+                      if (meanDetectOption && typeof meanDetectOption === 'object') {
+                        myChart.setOption(meanDetectOption);
+                      }
+
+                      window.addEventListener('resize', myChart.resize);
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <!-- Intrusion Attempts end -->
+
+              <!-- Intrusion Attempts by malware type start  -->
+              <div class="row">
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3 h-100">
+                    <h5 class="card-title fieldset-title">Intrusion Attempts by Malware Type</h5>
+                    <span class="intrusion-daterange">April 2023 - March 2024</span>
+                    <div id="intrusion-Malware" style="height: 420px; width: 100%;"></div>
+                    <script type="text/javascript">
+                      var dom = document.getElementById('intrusion-Malware');
+                      var myChart = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                      });
+
+                      intrusionOption = {
+                        tooltip: {
+                          trigger: 'item'
+                        },
+                        legend: {
+                          bottom: '0',
+                          left: 'center',
+                          itemHeight: 6,
+                          selectedMode: false
+                        },
+                        series: [{
+                          name: '',
+                          type: 'pie',
+                          radius: ['40%', '70%'],
+                          avoidLabelOverlap: false,
+                          label: {
+                            show: true, // Show labels
+                            position: 'outside', // Position labels outside the pie chart
+                            formatter: function (params) {
+                              return params.data.value; // Display name and value
+                            }, // Display name and percentage
+                            textStyle: {
+                              fontSize: 12 // Adjust label font size
+                            }
+                          },
+                          labelLine: {
+                            show: true, // Show label lines
+                            length: 30, // Lengthen label lines
+                            length2: 10, // Lengthen label lines
+                            smooth: true // Make the lines smooth
+                          },
+                          emphasis: {
+                            label: {
+                              show: true,
+                              fontSize: 20,
+                              fontWeight: 'bold'
+                            }
+                          },
+                          data: [
+                            { value: 90, name: 'Adware', itemStyle: { color: '#E88109' } },
+                            { value: 80, name: 'Ransomware', itemStyle: { color: '#FF4545' } },
+                            { value: 13, name: 'Spyware', itemStyle: { color: '#764800' } },
+                            { value: 15, name: 'Trojans', itemStyle: { color: '#FFD832' } },
+                            { value: 17, name: 'Worms', itemStyle: { color: '#85BAF8' } }
+                          ]
+                        }]
+                      };
+                      const isMobileMalware = window.innerWidth <= 768;
+                      if (isMobileMalware) {
+                        intrusionOption.series[0].radius = ['40%', '60%'];
+                      }
+                      if (intrusionOption && typeof intrusionOption === 'object') {
+                        myChart.setOption(intrusionOption);
+                      }
+
+
+                      window.addEventListener('resize', myChart.resize);
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3 h-100">
+                    <h5 class="card-title fieldset-title">Phishing Test Success Result</h5>
+                    <div class="venn-wrapper">
+                      <ul>
+                        <li class="total-employee">
+                          <span class="count-wrap">Total Employees <span class="count">100</span></span>
+                        </li>
+                        <li class="opened-emails">
+                          <span class="count-wrap">Opened Emails <span class="count">60</span></span>
+                        </li>
+                        <li class="link-clicked">
+                          <span class="count-wrap">Link Clicked <span class="count">30</span></span>
+                        </li>
+                        <li class="info-provide">
+                          <span class="count-wrap">Info Provided <span class="count">10</span></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="legend venn-dig">
+                      <div class="legend__item">
+                        <div class="legend__icon excellent"></div>
+                        <div class="legend__text">Total Employees</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon great"></div>
+                        <div class="legend__text">Opened Emails</div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon link-click"></div>
+                        <div class="legend__text">Link Clicked </div>
+                      </div>
+                      <div class="legend__item">
+                        <div class="legend__icon poor"></div>
+                        <div class="legend__text">Information Provided</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Intrusion Attempts by malware type end  -->
+
+              <!-- phishing-test start  -->
+              <div class="row section-wrapper">
+                <div class="col-md-12">
+                  <div class="fieldset-wrap border rounded p-3">
+                    <h5 class="card-title fieldset-title">Phishing Test Success Rate </h5>
+                    <div class="row">
+                      <div class="col-md-2 order-md-2">
+                        <div class="legend success-rate">
+                          <div class="legend__item">
+                            <div class="legend__icon opened"></div>
+                            <div class="legend__text">Cluster 1</div>
+                          </div>
+                          <div class="legend__item">
+                            <div class="legend__icon great"></div>
+                            <div class="legend__text">Cluster 2</div>
+                          </div>
+                          <div class="legend__item">
+                            <div class="legend__icon cluster-3"></div>
+                            <div class="legend__text">Cluster 3</div>
+                          </div>
+                          <div class="legend__item">
+                            <div class="legend__icon cluster-4"></div>
+                            <div class="legend__text">Cluster 4 </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-10 order-md-1">
+                        <div id="phishing-test" style="height: 400px;"></div>
+                        <script>
+                          // Data for the stacked bar chart
+                          const phishingData = [
+                            ["Category", "Opened Emails (CL1)", "Repeat Offenders (CL1)", "Opened Emails (CL2)", "Repeat Offenders (CL2)", "Opened Emails (CL3)", "Repeat Offenders (CL3)", "Opened Emails (CL4)", "Repeat Offenders (CL4)"],
+                            ["Opened Emails", 50, 35, 40, 25, 25, 30, 15, 5],
+                            ["Link Clicked", 45, 30, 35, 20, 20, 25, 10, 4],
+                            ["Info Provided", 35, 25, 30, 15, 15, 10, 7, 2]
+                          ];
+
+                          // Initialize ECharts instance
+                          var stackedBarChart = echarts.init(document.getElementById('phishing-test'));
+
+                          // Specify options
+                          var phishingOptions = {
+                            dataset: [{
+                              source: phishingData
+                            }],
+                            tooltip: {
+                              trigger: 'axis',
+                              formatter: function (params) {
+                                console.log("params[0]", params[0].dimensionNames[1]);
+                                console.log("params[0]", params[0].data[1]);
+                                var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + '</p>' +
+                                  `<ul class='tooltip-tat success-rate'>
+                                          <li><span>${params[0].marker} ${params[0].dimensionNames[1]}</span> <span class='value'>${params[0].data[1]}</span></li>
+                                          <li><span>${params[1].marker} ${params[1].dimensionNames[2]}</span> <span class='value'>${params[0].data[2]}</span></li>
+                                          <li><span>${params[2].marker} ${params[2].dimensionNames[3]}</span> <span class='value'>${params[0].data[3]}</span></li>
+                                          <li><span>${params[3].marker} ${params[3].dimensionNames[4]}</span> <span class='value'>${params[0].data[4]}</span></li>
+                                          <li><span>${params[4].marker} ${params[4].dimensionNames[5]}</span> <span class='value'>${params[0].data[5]}</span></li>
+                                          <li><span>${params[5].marker} ${params[5].dimensionNames[6]}</span> <span class='value'>${params[0].data[6]}</span></li>
+                                          <li><span>${params[6].marker} ${params[6].dimensionNames[7]}</span> <span class='value'>${params[0].data[7]}</span></li>
+                                          <li><span>${params[7].marker} ${params[7].dimensionNames[8]}</span> <span class='value'>${params[0].data[8]}</span></li>
+                                          
+                                      </ul>`
+                                return tooltipHtml;
+                              }
+                            },
+                            grid: {
+                              left: '10%',
+                              right: '5%',
+                              top: '20%',
+                              bottom: '15%',
+                            },
+                            xAxis: {
+                              type: 'category',
+                              data: ['Opened Emails', 'Link Clicked', 'Info Provided'] // Setting the category labels
+                            },
+                            yAxis: {
+                              type: 'value',
+                              name: 'Emails',
+                              nameLocation: 'center',
+                              nameGap: 40,
+                              min: 0,
+                              nameTextStyle: {
+                                color: '#333',
+                                fontWeight: '600',
+                                fontSize: 14
+                              },
+                              axisLabel: {
+                                textStyle: {
+                                  fontSize: 12
+                                }
+                              },
+                              axisLine: {
+                                lineStyle: {
+                                  width: 30,
+                                  color: [
+                                    [0.8, '#FF4545'],
+                                    [0.9, '#FFC000'],
+                                    [1, '#70AD47']
+                                  ]
+                                }
+                              },
+                            },
+                            series: [
+                              {
+                                type: 'bar',
+                                name: 'Opened Emails (CL1)',
+                                stack: 'Bar 1',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Opened Emails (CL1)'
+                                },
+                                itemStyle: {
+                                  color: '#FFB000'
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Repeat Offenders (CL1)',
+                                stack: 'Bar 1',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Repeat Offenders (CL1)'
+                                },
+                                itemStyle: {
+                                  color: '#FAC858'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  offset: [0, -10],
+                                  formatter() {
+                                    return "CL1"
+                                  }
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Opened Emails (CL2)',
+                                stack: 'Bar 2',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Opened Emails (CL2)'
+                                },
+                                itemStyle: {
+                                  color: '#ED7D31'
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Repeat Offenders (CL2)',
+                                stack: 'Bar 2',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Repeat Offenders (CL2)'
+                                },
+                                itemStyle: {
+                                  color: '#FF9E5B'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  offset: [0, -10],
+                                  formatter(item) {
+                                    return "CL2"
+                                  }
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Opened Emails (CL3)',
+                                stack: 'Bar 3',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Opened Emails (CL3)'
+                                },
+                                itemStyle: {
+                                  color: '#FF4545'
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Repeat Offenders (CL3)',
+                                stack: 'Bar 3',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Repeat Offenders (CL3)'
+                                },
+                                itemStyle: {
+                                  color: '#FF7070'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  offset: [0, -10],
+                                  formatter(item) {
+                                    return "CL3"
+                                  }
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Opened Emails (CL4)',
+                                stack: 'Bar 4',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Opened Emails (CL4)'
+                                },
+                                itemStyle: {
+                                  color: '#25BAFF'
+                                }
+                              },
+                              {
+                                type: 'bar',
+                                name: 'Repeat Offenders (CL4)',
+                                stack: 'Bar 4',
+                                encode: {
+                                  x: 'Category',
+                                  y: 'Repeat Offenders (CL4)'
+                                },
+                                itemStyle: {
+                                  color: '#B5E7FF'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  offset: [0, -10],
+                                  formatter(item) {
+                                    return "CL4"
+                                  }
+                                }
+                              }
+                            ]
+                          };
+                          const isMobile5 = window.innerWidth <= 768;
+                          if (isMobile5) {
+                            phishingOptions.yAxis.nameTextStyle.fontSize = 12;
+                            phishingOptions.yAxis.nameGap = 28;
+                            phishingOptions.grid.top = "5%"
+                            phishingOptions.grid.left = "13%"
+                          }
+                          // Apply phishingOptions
+
+                          stackedBarChart.setOption(phishingOptions);
+                        </script>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <!-- phishing-test end  -->
+
+              <!-- VAPT observations start  -->
+              <div class="row">
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3">
+                    <h5 class="card-title fieldset-title">Previous VAPT Observations</h5>
+                    <div id="previous-vapt" style="height: 400px; margin-top: 15px;"></div>
+                    <script>
+                      var chart1 = echarts.init(document.getElementById('previous-vapt'));
+
+                      var priorData = {
+                        total: [50, 80, 120],
+                        remedied: [20, 50, 100]
+                      };
+                      var prevVaptOptions = {
+                        xAxis: {
+                          type: 'category',
+                          data: ['High', 'Medium', 'Low']
+                        },
+                        // Y-axis
+                        yAxis: {
+                          name: 'No. Of Observations',
+                          type: 'value',
+                          nameLocation: 'center',
+                          nameGap: 40,
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: 'bold',
+                            fontSize: 14 // Set font size of x-axis title
+                          },
+
+                        },
+                        // Series data
+                        series: [
+                          {
+                            name: 'Total Observations',
+                            type: 'bar',
+                            data: priorData.total,
+                            barWidth: '35px',
+                            barGap: '70%',
+                            itemStyle: {
+                              color: '#67B7DC'
+                            }
+                          },
+                          {
+                            name: 'Observations yet to be remedied',
+                            type: 'bar',
+                            data: priorData.remedied,
+                            barWidth: '35px',
+                            barGap: '70%',
+                            itemStyle: {
+                              color: '#BEBEBE'
+                            }
+                          }
+                        ],
+
+                        legend: {
+                          data: ['Total Observations', 'Observations yet to be remedied'],
+                          type: 'scroll',
+                          orient: 'vertical',
+                          right: 20,
+                          top: 0,
+                          itemHeight: 6,
+                          selectedMode: false
+                        },
+                        grid: {
+                          left: '10%',
+                          right: '5%',
+                          top: '20%',
+                          bottom: '15%',
+                        },
+                        tooltip: {
+                          trigger: 'axis',
+                          axisPointer: {
+                            type: 'none'
+                          },
+                          formatter: function (params) {
+                            console.log("params", params);
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + '</p>' +
+                              `<ul class='tooltip-tat'>
+                              <li><span>${params[0].marker} ${params[0].seriesName}</span>  <span class='value'>${params[0].value}</span></li>
+                              <li style="padding-left:0"><span>${params[1].marker} ${params[1].seriesName}</span>  <span class='value'>${params[1].value}</span></li>
+                            </ul>`
+                            return tooltipHtml
+                          }
+                        },
+                      };
+                      const isMobile6 = window.innerWidth <= 768;
+                      if (isMobile6) {
+                        prevVaptOptions.yAxis.nameTextStyle.fontSize = 12;
+                        prevVaptOptions.yAxis.nameGap = 28;
+                        prevVaptOptions.grid.left = "13%";
+                        prevVaptOptions.series[0].barGap = "10%";
+                        prevVaptOptions.series[1].barGap = "10%";
+                      }
+                      chart1.setOption(prevVaptOptions);
+                    </script>
+                  </div>
+                </div>
+                <div class="col-md-6 section-gap">
+                  <div class="fieldset-wrap border rounded p-3">
+                    <h5 class="card-title fieldset-title">Current VAPT Observations</h5>
+                    <div id="current-vapt" style="height: 400px; margin-top: 15px;"></div>
+                    <script>
+                      var chart1 = echarts.init(document.getElementById('current-vapt'));
+
+                      var priorData = {
+                        total: [50, 80, 120],
+                        remedied: [20, 50, 100]
+                      };
+                      var currentVaptOptions = {
+                        xAxis: {
+                          type: 'category',
+                          data: ['High', 'Medium', 'Low']
+                        },
+                        // Y-axis
+                        yAxis: {
+                          name: 'No. Of Observations',
+                          type: 'value',
+                          nameLocation: 'center',
+                          nameGap: 40,
+                          nameTextStyle: {
+                            color: '#333',
+                            fontWeight: 'bold',
+                            fontSize: 14 // Set font size of x-axis title
+                          },
+
+                        },
+                        // Series data
+                        series: [
+                          {
+                            name: 'Total Observations',
+                            type: 'bar',
+                            data: priorData.total,
+                            barWidth: '35px',
+                            barGap: '70%',
+                            itemStyle: {
+                              color: '#67B7DC'
+                            }
+                          },
+                          {
+                            name: 'Observations yet to be remedied',
+                            type: 'bar',
+                            data: priorData.remedied,
+                            barWidth: '35px',
+                            barGap: '70%',
+                            itemStyle: {
+                              color: '#BEBEBE'
+                            }
+                          }
+                        ],
+
+                        legend: {
+                          data: ['Total Observations', 'Observations yet to be remedied'],
+                          type: 'scroll',
+                          orient: 'vertical',
+                          right: 20,
+                          top: 0,
+                          itemHeight: 6,
+                          selectedMode: false
+                        },
+                        grid: {
+                          left: '10%',
+                          right: '5%',
+                          top: '20%',
+                          bottom: '15%',
+                        },
+                        tooltip: {
+                          trigger: 'axis',
+                          axisPointer: {
+                            type: 'none'
+                          },
+                          formatter: function (params) {
+                            console.log("params", params);
+                            var tooltipHtml = '<p class="tooltip-title">' + params[0].axisValue + '</p>' +
+                              `<ul class='tooltip-tat'>
+                              <li><span>${params[0].marker} ${params[0].seriesName}</span>  <span class='value'>${params[0].value}</span></li>
+                              <li style="padding-left:0"><span>${params[1].marker} ${params[1].seriesName}</span>  <span class='value'>${params[1].value}</span></li>
+                            </ul>`
+                            return tooltipHtml
+                          }
+                        },
+                      };
+                      const isMobile7 = window.innerWidth <= 768;
+                      if (isMobile7) {
+                        currentVaptOptions.yAxis.nameTextStyle.fontSize = 12;
+                        currentVaptOptions.yAxis.nameGap = 28;
+                        currentVaptOptions.grid.left = "13%";
+                        currentVaptOptions.series[0].barGap = "10%";
+                        currentVaptOptions.series[1].barGap = "10%";
+                      }
+                      chart1.setOption(currentVaptOptions);
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <!-- VAPT observations end  -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cyber Security start  -->
+
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; 2024 Designed and developed by Fortune4 Technologies. All rights reserved.
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('input[name="dates"]').daterangepicker();
+
+      $('.card-faq').on('show.bs.collapse', function () {
+        $(this).find('.list-wrap').addClass('active');
+      });
+
+      $('.card-faq').on('hide.bs.collapse', function () {
+        $(this).find('.list-wrap').removeClass('active');
+      });
+
+      $(".collapse").each(function (key, item) {
+        if ($(item).hasClass("show")) {
+          $(item).parent().addClass("active");
+        }
+        $('.collapse .card-body').click(function (event) {
+          event.stopPropagation();
+        });
+      });
+
+      // in mobile device remove show class on second accordion item start
+      const isMobile3 = window.innerWidth <= 768;
+      if (isMobile3) {
+        var arr = [];
+        $(".collapse").each(function (key, item) {
+          if ($(item).hasClass("show")) {
+            arr.push(item)
+          }
+        })
+        let selectedClass = arr[1]
+        $(selectedClass).removeClass("show")
+        $(selectedClass).parent().removeClass("active")
+      }
+      // in mobile device remove show class on second accordion item end
+
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      let currentYear = new Date().getFullYear();
+      let currentMonth = new Date().getMonth();
+      let startYear = currentYear - 100;
+      let endYear = currentYear + 10;
+      let months = [
+        "Jan", "Feb", "Mar",
+        "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep",
+        "Oct", "Nov", "Dec"];
+
+      $(".from-month").text(`${months[currentMonth]}`)
+      $(".to-month").text(`${months[currentMonth]}`)
+
+      
+
+      // from logic 
+      function fromUpdateYearDisplay() {
+        $("#from-current-year").val(currentYear);
+        $(".from-year").text(currentYear);
+      }
+      $("#from-prev-btn").click(function () {
+        currentYear -= 1;
+        fromUpdateYearDisplay();
+      });
+      $("#from-next-btn").click(function () {
+        currentYear += 1;
+        fromUpdateYearDisplay();
+      });
+      months.forEach(function (item, index) {
+        $("#from-month-list").append(`<li class="${index === currentMonth ? 'active' : ''}">${item}</li>`);
+      })
+
+      $("#from-month-list li").click(function () {
+        $("#from-month-list li").removeClass("active");
+        let selectedMonth = $(this).text();
+        $(this).addClass("active")
+        $(".from-month").text(selectedMonth);
+      });
+      $("#from-current-year").on("change", function (e) {
+        $(".from-year").text($(this).val())
+      })
+      fromUpdateYearDisplay();
+      // to logic 
+      function toUpdateYearDisplay() {
+        $("#to-current-year").val(currentYear);
+        $(".to-year").text(currentYear);
+      }
+      $("#to-prev-btn").click(function () {
+        currentYear -= 1;
+        toUpdateYearDisplay();
+      });
+      $("#to-next-btn").click(function () {
+        currentYear += 1;
+        toUpdateYearDisplay();
+      });
+      $("#from-current-year").on("change", function (e) {
+        $(".from-year").text($(this).val())
+      })
+      months.forEach(function (item, index) {
+        $("#to-month-list").append(`<li class="${index === currentMonth ? 'active' : ''}">${item}</li>`);
+      })
+
+      $("#to-month-list li").click(function () {
+        $("#to-month-list li").removeClass("active");
+        let selectedMonth = $(this).text();
+        $(this).addClass("active")
+        $(".to-month").text(selectedMonth);
+      });
+      $("#to-current-year").on("change", function (e) {
+        $(".to-year").text($(this).val())
+      })
+      toUpdateYearDisplay();
+
+      $(".dateRange-inp").click(function () {
+        $(".calender-container").show()
+      })
+      // $(".calender-container").css({"display":"none"})
+
+      $("#date-cancel-btn").click(function (e) {
+        $(".calender-container").hide()
+      })
+      $("#date-apply-btn").click(function () {
+        alert(`Selected date is ${$(".from-month").text()} / ${$(".from-year").text()} - ${$(".to-month").text()} / ${$(".to-year").text()} `)
+        $(".calender-container").hide()
+      })
+    });
+  </script>
+</body>
+
+</html>

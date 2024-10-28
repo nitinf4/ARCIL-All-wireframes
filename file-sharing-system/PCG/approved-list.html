@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Approved List</title>
+		<link rel="icon" type="image/x-icon" href="./Images/logo.svg" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta
+			name="author"
+			content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+		/>
+		<meta name="generator" content="Hugo 0.118.2" />
+
+		<link
+			rel="canonical"
+			href="https://getbootstrap.com/docs/5.3/examples/dashboard/"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+		/>
+		<link href="./style/style.css" rel="stylesheet" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<script
+			type="text/javascript"
+			src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"
+		></script>
+		<style>
+			#search-results {
+				position: absolute;
+				background: white;
+				border: 1px solid #ddd;
+				max-height: 200px;
+				overflow-y: auto;
+				display: none;
+				z-index: 1000;
+			}
+
+			.search-item {
+				cursor: pointer;
+			}
+
+			.search-item:hover {
+				background-color: #f8f9fa;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+			<symbol id="calendar3" viewBox="0 0 16 16">
+				<path
+					d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+				/>
+				<path
+					d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+				/>
+			</symbol>
+			<symbol id="cart" viewBox="0 0 16 16">
+				<path
+					d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+				/>
+			</symbol>
+			<symbol id="chevron-right" viewBox="0 0 16 16">
+				<path
+					fill-rule="evenodd"
+					d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+				/>
+			</symbol>
+			<symbol id="door-closed" viewBox="0 0 16 16">
+				<path
+					d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"
+				/>
+				<path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+			</symbol>
+			<symbol id="file-earmark" viewBox="0 0 16 16">
+				<path
+					d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"
+				/>
+			</symbol>
+			<symbol id="file-earmark-text" viewBox="0 0 16 16">
+				<path
+					d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+				/>
+				<path
+					d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"
+				/>
+			</symbol>
+			<symbol id="gear-wide-connected" viewBox="0 0 16 16">
+				<path
+					d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z"
+				/>
+			</symbol>
+			<symbol id="graph-up" viewBox="0 0 16 16">
+				<path
+					fill-rule="evenodd"
+					d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"
+				/>
+			</symbol>
+			<symbol id="house-fill" viewBox="0 0 16 16">
+				<path
+					d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
+				/>
+				<path
+					d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+				/>
+			</symbol>
+			<symbol id="list" viewBox="0 0 16 16">
+				<path
+					fill-rule="evenodd"
+					d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+				/>
+			</symbol>
+			<symbol id="people" viewBox="0 0 16 16">
+				<path
+					d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+				/>
+			</symbol>
+			<symbol id="plus-circle" viewBox="0 0 16 16">
+				<path
+					d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+				/>
+				<path
+					d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+				/>
+			</symbol>
+			<symbol id="puzzle" viewBox="0 0 16 16">
+				<path
+					d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .039-.063v-.009a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003a.214.214 0 0 0-.039-.064.859.859 0 0 0-.27-.193C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.039.063v.003l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855zM4.605 3a.5.5 0 0 0-.498.55l.001.007.29 3.4A.5.5 0 0 1 3.9 7.5h-.782c-.696 0-1.182-.497-1.469-.872a.459.459 0 0 0-.118-.115.112.112 0 0 0-.025-.012L1.5 6.5h-.003a.213.213 0 0 0-.064.039.86.86 0 0 0-.193.27C1.1 7.09 1 7.51 1 8c0 .491.1.912.24 1.19.07.14.14.225.194.271a.213.213 0 0 0 .063.039H1.5l.006-.001a.112.112 0 0 0 .025-.012.459.459 0 0 0 .118-.115c.287-.375.773-.872 1.469-.872H3.9a.5.5 0 0 1 .498.542l-.29 3.408a.5.5 0 0 0 .497.55h1.878c-.048-.166-.195-.352-.463-.557-.274-.21-.52-.528-.52-.943 0-.568.447-.947.862-1.154C6.807 10.123 7.387 10 8 10s1.193.123 1.638.346c.415.207.862.586.862 1.154 0 .415-.246.733-.52.943-.268.205-.415.39-.463.557h1.878a.5.5 0 0 0 .498-.55l-.001-.007-.29-3.4A.5.5 0 0 1 12.1 8.5h.782c.696 0 1.182.497 1.469.872.05.065.091.099.118.115.013.008.021.01.025.012a.02.02 0 0 0 .006.001h.003a.214.214 0 0 0 .064-.039.86.86 0 0 0 .193-.27c.14-.28.24-.7.24-1.191 0-.492-.1-.912-.24-1.19a.86.86 0 0 0-.194-.271.215.215 0 0 0-.063-.039H14.5l-.006.001a.113.113 0 0 0-.025.012.459.459 0 0 0-.118.115c-.287.375-.773.872-1.469.872H12.1a.5.5 0 0 1-.498-.543l.29-3.407a.5.5 0 0 0-.497-.55H9.517c.048.166.195.352.463.557.274.21.52.528.52.943 0 .568-.447.947-.862 1.154C9.193 5.877 8.613 6 8 6s-1.193-.123-1.638-.346C5.947 5.447 5.5 5.068 5.5 4.5c0-.415.246-.733.52-.943.268-.205.415-.39.463-.557H4.605z"
+				/>
+			</symbol>
+			<symbol id="search" viewBox="0 0 16 16">
+				<path
+					d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+				/>
+			</symbol>
+			<symbol id="alert" viewBox="0 0 16 16">
+				<path
+					d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+				/>
+				<path
+					d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+				/>
+			</symbol>
+			<symbol id="add-mail" viewBox="0 0 16 16">
+				<path
+					d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"
+				/>
+				<path
+					d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"
+				/>
+			</symbol>
+			<symbol id="add-file" viewBox="0 0 16 16">
+				<path
+					d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"
+				/>
+				<path
+					d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"
+				/>
+			</symbol>
+			<symbol id="approved-file" viewBox="0 0 16 16">
+                <path d="m.5 3 .04.87a2 2 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2m5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19q-.362.002-.683.12L1.5 2.98a1 1 0 0 1 1-.98z"/>
+                <path d="M15.854 10.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.707 0l-1.5-1.5a.5.5 0 0 1 .707-.708l1.146 1.147 2.646-2.647a.5.5 0 0 1 .708 0"/>
+            </symbol>
+		</svg>
+
+		<!-- header started-->
+		<header
+			class="navbar navbar-dark sticky-top flex-md-nowrap p-0 bg-white"
+			data-bs-theme="dark"
+		>
+			<div
+				class="navbar-brand col-md-3 col-lg-2 me-0 px-3 shadow-none d-flex align-items-center"
+			>
+				<span class="logo cursor-pointer" id="logo-pointer"></span>
+			</div>
+
+			<ul class="navbar-nav flex-row d-md-none px-4">
+				<li class="nav-item text-nowrap">
+					<button
+						class="navbar-toggler d-md-none collapsed"
+						type="button"
+						data-bs-target="#sidebarMenu"
+						aria-controls="sidebarMenu"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+						id="navBarBtn"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</li>
+			</ul>
+			<div class="gap-3 me-3 userdetail" style="font-weight: 500; color: #333">
+				<span class="loggedin-user">John Doe</span>
+				<a
+					href="#"
+					class="d-flex gap-1"
+					id="logout-user"
+					style="font-weight: 500; color: #333"
+				>
+					<svg class="bi" style="margin-top: 1px">
+						<use xlink:href="#door-closed" />
+					</svg>
+					<span>Sign Out</span>
+				</a>
+			</div>
+		</header>
+
+		<!-- header ended-->
+		<div class="container-fluid">
+			<div class="row">
+				<nav
+					id="sidebarMenu"
+					class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-top-0"
+				>
+					<div class="position-sticky d-flex flex-column h-100 pt-3">
+						<span class="sideBar-toggle"></span>
+						<ul class="nav flex-column">
+							<li class="nav-item">
+								<a
+									class="nav-link d-flex align-items-center gap-2 rounded position-relative"
+									aria-current="page"
+									href="./dashboard.html"
+								>
+									<svg class="bi">
+										<use xlink:href="#house-fill" />
+									</svg>
+									<span class="sidebar-label nowrap">Dashboard</span>
+									<span class="tool-tip">Dashboard</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link d-flex align-items-center gap-2 rounded position-relative"
+									href="./view-request.html"
+								>
+									<svg class="bi">
+										<use xlink:href="#cart" />
+									</svg>
+									<span class="sidebar-label nowrap">View Request</span>
+									<span class="tool-tip">View Request</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link d-flex align-items-center gap-2 rounded position-relative active"
+									href="./approved-list.html"
+								>
+									<svg class="bi">
+										<use xlink:href="#approved-file" />
+									</svg>
+									<span class="sidebar-label nowrap">Approved List</span>
+									<span class="tool-tip">Approved List</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link d-flex align-items-center gap-2 rounded position-relative"
+									href="./report.html"
+								>
+									<svg class="bi">
+										<use xlink:href="#graph-up" />
+									</svg>
+									<span class="sidebar-label nowrap">Report</span>
+									<span class="tool-tip">Report</span>
+								</a>
+							</li>
+						</ul>
+						<ul class="nav flex-column mb-4 userinfo mt-auto userdetail ">
+							<li class="nav-item">
+								<span class="loggedin-user"></span>
+								<a
+									href="#"
+									id="logout-user"
+									style="font-weight: 500; color: #333"
+								>
+									<svg class="bi">
+										<use xlink:href="#door-closed" />
+									</svg>
+									<span>Sign Out</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<main class="mainContent-wrap col-md-9 ms-sm-auto col-lg-10 px-md-4">
+					<div>
+						<div class="ticket-details-wrapper">
+							<div class="info-wrapper">
+								<div class="card-wrapper">
+									<div class="mb-4 mt-3 p-4 common-card">
+										<header class="border-bottom mb-4">
+											<h5>Approved List (10)</h5>
+										</header>
+										<div>
+											<div class="table-responsive">
+												<table class="table">
+													<thead class="table-light">
+														<tr>
+															<th>
+																<span>Request ID</span>
+																<div class="label-wrapper icon">
+																	<input
+																		type="text"
+																		class="filter-input"
+																		name=""
+																		placeholder="Search"
+																		id=""
+																		data-datatype="Text"
+																		data-fieldname="TicketNo"
+																	/>
+																</div>
+															</th>
+															<th>
+																<span>Asset Code</span>
+																<div class="label-wrapper icon">
+																	<input
+																		type="text"
+																		class="filter-input"
+																		name=""
+																		placeholder="Search"
+																		id=""
+																		data-datatype="Text"
+																		data-fieldname="RecievedMailId"
+																	/>
+																</div>
+															</th>
+															<th>
+																<span>Borrower Name</span>
+																<div class="label-wrapper icon">
+																	<input
+																		type="text"
+																		class="filter-input"
+																		name=""
+																		placeholder="Search"
+																		id=""
+																		data-datatype="Text"
+																		data-fieldname="Source"
+																	/>
+																</div>
+															</th>
+															<th>
+																<span>Dealing Officer</span>
+																<div class="label-wrapper icon">
+																	<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+																</div>
+															</th>
+															<th>
+																<span>Case Type</span>
+																<div class="label-wrapper newdrop-list">
+																	<div class="formGroup">
+																		<select
+																			class="form-select filter-input dropdown-field"
+																			id="category-filter"
+																			data-datatype="Integer"
+																			data-fieldname="CategoryId"
+																		>
+																			<option value="">Select Category</option>
+																			<option value="1">Corporate</option>
+																			<option value="2">Retail</option>
+																			<option value="3">SME</option>
+																		</select>
+																	</div>
+																</div>
+															</th>
+															<th>
+																<span>Received On</span>
+																<div class="label-wrapper icon">
+																	<input
+																		type="date"
+																		name=""
+																		placeholder="Search"
+																		id=""
+																		class="filter-input"
+																		data-datatype="DateTime"
+																		data-fieldname="RecievedOn"
+																	/>
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody id="viewallticket">
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-001</a></td>
+															<td>AC-0543</td>
+															<td>Marcus James</td>
+															<td>Anubha Puthiyaveettil</td>
+															<td>Corporate</td>
+															<td>Oct 10, 2024, 10:15 AM</td>
+															
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-002</a></td>
+															<td>AC-0089</td>
+															<td>Ava Johnson</td>
+															<td>Sarthak Jindal</td>
+															<td>Retail</td>
+															<td>Oct 11, 2024, 5:15 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-003</a></td>
+															<td>AC-3452</td>
+															<td>Lucas Taylor</td>
+															<td>Sarthak Jindal</td>
+															<td>Corporate</td>
+															<td>Oct 12, 2024, 4:35 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-004</a></td>
+															<td>AC-3452</td>
+															<td>Leo Smith</td>
+															<td>Sarthak Jindal</td>
+															<td>Corporate</td>
+															<td>Oct 14, 2024, 3:15 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-005</a></td>
+															<td>AC-4542</td>
+															<td>Noah Williams</td>
+															<td>Sarthak Jindal</td>
+															<td>SME</td>
+															<td>Oct 16, 2024, 12:15 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-006</a></td>
+															<td>AC-7634</td>
+															<td>Chloe Davis</td>
+															<td>Sarthak Jindal</td>
+															<td>Corporate</td>
+															<td>Oct 18, 2024, 4:12 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-007</a></td>
+															<td>AC-2723</td>
+															<td>Ethan Wilson</td>
+															<td>Sarthak Jindal</td>
+															<td>Retail</td>
+															<td>Oct 19, 2024, 11:67 AM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-008</a></td>
+															<td>AC-1232</td>
+															<td>Lily Anderson</td>
+															<td>Sarthak Jindal</td>
+															<td>Corporate</td>
+															<td>Oct 20, 2024, 10:40 AM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-009</a></td>
+															<td>AC-3456</td>
+															<td>Oliver Thomas</td>
+															<td>Sarthak Jindal</td>
+															<td>SME</td>
+															<td>Oct 21, 2024, 2:15 PM</td>
+														</tr>
+														<tr>
+															<td><a class="view-link" href="./approved-list-detail.html">REQ-010</a></td>
+															<td>AC-2354</td>
+															<td>Grace Martinez</td>
+															<td>Sarthak Jindal</td>
+															<td>Corporate</td>
+															<td>Oct 22, 2024, 9:23 AM</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div
+												class="paginationWrapper d-flex justify-content-center align-items-center gap-2 mt-4 mb-5"
+												id="paginationContainer"
+											>
+												<button class="btn btn-primary btn-sm page-btns">
+													First
+												</button>
+												<button class="btn btn-primary btn-sm page-btns">
+													Previous
+												</button>
+												<nav aria-label="Page navigation example">
+													<ul class="pagination justify-content-center m-0">
+														<li class="page-item active disabled">
+															<button class="page-link">1</button>
+														</li>
+													</ul>
+												</nav>
+												<button class="btn btn-primary btn-sm page-btns">
+													Next
+												</button>
+												<button class="btn btn-primary btn-sm page-btns">
+													Last
+												</button>
+												<span class="page-details-container">Page 1 of 1</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<form class="needs-validation" novalidate id="ticket-approval-form">
+							<div class="custom-modal" id="exampleModal3">
+								<div class="custom-modal-dialog custom-tab-modal">
+									<div class="custom-modal-content">
+										<div class="custom-modal-body p-4">
+											<div class="d-flex align-items-center">
+												<button
+													type="button"
+													class="minimiseBtn ms-auto me-1 py-2"
+													data-bs-dismiss="modal"
+													aria-label="Close"
+													id="minimiseBtn"
+												></button>
+												<button
+													type="button"
+													class="btn-close close-btn d-block ms-2"
+													data-bs-dismiss="modal"
+													aria-label="Close"
+													id="closeSubmitBtn"
+												></button>
+											</div>
+											<nav>
+												<div class="nav nav-tabs" id="nav-tab" role="tablist">
+													<button
+														class="nav-link active"
+														id="nav-home-tab"
+														data-bs-toggle="tab"
+														data-bs-target="#nav-home"
+														type="button"
+														role="tab"
+														aria-controls="nav-home"
+														aria-selected="true"
+													>
+														Resolutions
+													</button>
+													<button
+														class="nav-link"
+														id="nav-profile-tab"
+														data-bs-toggle="tab"
+														data-bs-target="#nav-profile"
+														type="button"
+														role="tab"
+														aria-controls="nav-profile"
+														aria-selected="false"
+													>
+														Response to complainant
+													</button>
+													<button
+														class="nav-link"
+														id="nav-contact-tab"
+														data-bs-toggle="tab"
+														data-bs-target="#nav-contact"
+														type="button"
+														role="tab"
+														aria-controls="nav-contact"
+														aria-selected="false"
+													>
+														Response to RBI
+													</button>
+												</div>
+											</nav>
+											<div class="tab-content" id="nav-tabContent">
+												<div
+													class="tab-pane fade show active mt-4"
+													id="nav-home"
+													role="tabpanel"
+													aria-labelledby="nav-home-tab"
+												>
+													<div class="row">
+														<div class="col-md-6">
+															<div class="label-wrap mb-3">
+																<label class="form-label"
+																	>Resolution Sub-Category:<span
+																		class="text-danger"
+																		>*</span
+																	></label
+																>
+																<select
+																	id="subCategoryDropdown"
+																	class="form-select"
+																	required="required"
+																>
+																	<option value="" disabled="" selected="">
+																		Select Sub Category
+																	</option>
+																	<option value="">
+																		Resolution Sub-Category
+																	</option>
+																	<option value="">Auction Related</option>
+																	<option value="">
+																		Charge not released in CERSAI
+																	</option>
+																	<option value="">CIBIL not updated</option>
+																	<option value="">
+																		Payment made but receipt not provided
+																	</option>
+																</select>
+																<div class="invalid-feedback">
+																	Please select a sub-category
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="label-wrap mb-3">
+														<label class="form-label"
+															><span id="current-role"></span> Comments:<span
+																class="text-danger"
+																>*</span
+															></label
+														>
+														<textarea
+															class="form-control textEditor"
+															id="resol-comment"
+															required="required"
+														></textarea>
+														<div class="invalid-feedback">
+															Please enter comment
+														</div>
+													</div>
+												</div>
+												<div
+													class="tab-pane complainant-rbi-form fade mt-4 complainant-details"
+													data-parrenttag="complainant-details"
+													id="nav-profile"
+													role="tabpanel"
+													aria-labelledby="nav-profile-tab"
+												>
+													<div class="row">
+														<div class="col-md-6 to">
+															<div class="label-wrap mb-3">
+																<label class="form-label"
+																	>To:<span
+																		style="display: none"
+																		class="text-danger"
+																		>*</span
+																	></label
+																>
+																<input
+																	type="email"
+																	id="complainant-to"
+																	title="Enter comma separated emails"
+																	multiple
+																	pattern="^([\w+-.%]+@[\w\-.]+\.[A-Za-z]{2,4},*[\W]*)+$"
+																	class="form-control tags-inputclass"
+																	required
+																/>
+																<div class="invalid-feedback">
+																	Please enter valid comma separated email
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6 cc">
+															<div class="label-wrap mb-3">
+																<div class="label-wrap mb-3">
+																	<label class="form-label"
+																		>CC:<span
+																			style="display: none"
+																			class="text-danger"
+																			>*</span
+																		></label
+																	>
+																	<input
+																		type="email"
+																		id="complainant-cc"
+																		title="Enter comma separated emails"
+																		multiple
+																		pattern="^([\w+-.%]+@[\w\-.]+\.[A-Za-z]{2,4},*[\W]*)+$"
+																		class="form-control tags-inputclass"
+																	/>
+																	<div class="invalid-feedback">
+																		Please enter valid comma separated email
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<span class="d-block mt-2 mb-2">Attachments:</span>
+													<div class="row gy-2 complainant-attachment"></div>
+													<div class="label-wrap mb-3 mt-3 message">
+														<label class="form-label"
+															>Message:<span
+																style="display: none"
+																class="text-danger"
+																>*</span
+															></label
+														>
+														<textarea
+															class="form-control textEditor"
+															id="complainant-message"
+														></textarea>
+														<div class="invalid-feedback">
+															Please enter Message
+														</div>
+													</div>
+												</div>
+												<div
+													class="tab-pane complainant-rbi-form fade mt-4 rbi-details"
+													id="nav-contact"
+													data-parrenttag="rbi-details"
+													role="tabpanel"
+													aria-labelledby="nav-contact-tab"
+												>
+													<div class="row">
+														<div class="col-md-6 to">
+															<div class="label-wrap mb-3">
+																<label class="form-label"
+																	>To:<span
+																		style="display: none"
+																		class="text-danger"
+																		>*</span
+																	></label
+																>
+																<input
+																	type="email"
+																	id="rbi-to"
+																	title="Enter comma separated emails"
+																	multiple
+																	pattern="^([\w+-.%]+@[\w\-.]+\.[A-Za-z]{2,4},*[\W]*)+$"
+																	class="form-control tags-inputclass"
+																/>
+																<div class="invalid-feedback">
+																	Please enter valid comma separated email
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6 cc">
+															<div class="label-wrap mb-3">
+																<div class="label-wrap mb-3">
+																	<label class="form-label"
+																		>CC:<span
+																			style="display: none"
+																			class="text-danger"
+																			>*</span
+																		></label
+																	>
+																	<input
+																		type="email"
+																		id="rbi-cc"
+																		title="Enter comma separated emails"
+																		multiple
+																		pattern="^([\w+-.%]+@[\w\-.]+\.[A-Za-z]{2,4},*[\W]*)+$"
+																		class="form-control tags-inputclass"
+																	/>
+																	<div class="invalid-feedback">
+																		Please enter valid comma separated email
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<span class="d-block mt-2 mb-2">Attachments:</span>
+													<div class="row gy-2 rbi-attachments"></div>
+													<div class="label-wrap mb-3 mt-3 message">
+														<label class="form-label"
+															>Message:<span
+																style="display: none"
+																class="text-danger"
+																>*</span
+															></label
+														>
+														<textarea
+															class="form-control textEditor"
+															id="rbi-message"
+														></textarea>
+														<div class="invalid-feedback">
+															Please enter message
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-end gap-3">
+												<button
+													class="btn btn-danger px-4"
+													id="reject-ticket-btn"
+													type="button"
+												>
+													Reject
+												</button>
+
+												<button
+													class="btn btn-primary px-4"
+													id="approval-submit"
+													type="button"
+												>
+													Submit
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						<form class="needs-validation" novalidate id="file-validation">
+							<div class="custom-modal" id="exampleModal9">
+								<div class="custom-modal-dialog custom-modal-dialog-centered">
+									<div class="custom-modal-content">
+										<div class="custom-modal-body p-4">
+											<button
+												type="button"
+												class="btn-close custom-close-btn modal-close"
+												aria-label="Close"
+												id="closeConfrmModal"
+											></button>
+											<h4 class="mb-3 text-center">
+												Are you sure you want to close?
+											</h4>
+											<p class="text-center">
+												If you close the window, all data will be lost.
+											</p>
+											<div class="d-flex justify-content-center gap-3">
+												<button class="btn btn-primary px-4">Yes</button>
+												<button class="btn btn-primary px-4" id="modalCloseBtn">
+													No
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<span class="footer-copy d-block text-center py-2"
+						>© 2024 Design and developed by Fortune4 Technologies. All rights
+						reserved.
+					</span>
+				</main>
+			</div>
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+			integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="../Scripts/bootstrap.bundle.min.js"></script>
+
+		<script src="../Scripts/ApproveTicket.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.14.2/dist/tagify.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#closeSubmitBtn").click(function () {
+					document.getElementById("exampleModal9").style.display = "block";
+				});
+				$("#modalCloseBtn").click(function (e) {
+					e.preventDefault();
+					$("body").addClass("showModal");
+					document.getElementById("exampleModal9").style.display = "none";
+				});
+				$("#closeConfrmModal").click(function (e) {
+					e.preventDefault();
+					$("body").addClass("showModal");
+					document.getElementById("exampleModal9").style.display = "none";
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				// Sample data (you can replace this with an AJAX call to fetch data dynamically)
+				var data = [
+					{ code: "A001", borrower: "John Doe" },
+					{ code: "A002", borrower: "Jane Smith" },
+					{ code: "B003", borrower: "Alice Johnson" },
+					{ code: "B004", borrower: "Bob Williams" },
+					{ code: "C005", borrower: "Carol Taylor" },
+				];
+
+				// Listen for input change
+				$("#search-input").on("input", function () {
+					let query = $(this).val().toLowerCase();
+					let filteredResults = data.filter(
+						(item) =>
+							item.code.toLowerCase().includes(query) ||
+							item.borrower.toLowerCase().includes(query)
+					);
+
+					// Display the results
+					let resultHTML = "";
+					if (query.length > 0 && filteredResults.length > 0) {
+						filteredResults.forEach((item) => {
+							resultHTML += `
+						<a href="./select-documents.html"><div class="search-item p-2 border-bottom"><strong>${item.code}</strong> - ${item.borrower}</div></a>
+				`;
+						});
+					} else {
+						resultHTML = '<div class="p-2">No results found</div>';
+					}
+
+					$("#search-results").html(resultHTML).show();
+				});
+
+				// Hide the result list when input is empty or not focused
+				$("#search-input").on("blur", function () {
+					setTimeout(function () {
+						$("#search-results").hide();
+					}, 200);
+				});
+			});
+		</script>
+	</body>
+</html>

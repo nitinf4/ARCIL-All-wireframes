@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ARCIL | Reports</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.svg" rel="icon">
+
+
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="data-listing.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.svg" alt="">
+                <!-- <span class="d-none d-lg-block">Account Plan</span> -->
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson<i class="bi bi-caret-down-fill"></i></span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Borrower's Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="trust-index.html">
+                    <i class="bi bi-menu-button-wide"></i>
+                    <span>Trusts Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="account-plan.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Account Plan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="mis-reports.html">
+                    <i class="bi bi-grid"></i>
+                    <span>MIS Reports</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="main-wrapper">
+            <div class="pagetitle">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Trust</li>
+                    </ol>
+                </nav>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="m-0">ARCIL-ABPS-023-Trust</h4>
+
+                </div>
+            </div><!-- End Page Title -->
+            <div class="common-card">
+                <div class="tabs-wrapper" id="tab-wrapper">
+                    <nav>
+                        <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#report-one" type="button" role="tab" aria-controls="report-one"
+                                aria-selected="true">Trust Wise Summary</button>
+                            <!-- <button class="nav-link disabled" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">Report 2</button>
+                            <button class="nav-link disabled" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Report 3</button>
+                            <button class="nav-link disabled" id="nav-four-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-four" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Report 4</button>
+                            <button class="nav-link active" id="nav-five-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-five" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Report 5</button> -->
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade active show" id="nav-five" role="tabpanel"
+                            aria-labelledby="nav-five-tab">
+                            <div class="progress-bar">
+                                <div class="progress" id="progress" style="width: 50.3333%;"></div>
+                                <div class="progress-step active" data-title="Fetch Details"></div>
+                                <div class="progress-step active" data-title="Preview Details"></div>
+                                <div class="progress-step" data-title="Download"></div>
+                            </div>
+                            <div class="reports" style="border: 1px solid #eee; padding: 10px 20px;">
+                                <table style="width:100%;">
+                                    <tbody><tr style="vertical-align: middle;">
+                                      <td style="font-size: 18px;color: #000;font-weight:500;padding-bottom: 20px;">
+                                        Trust Wise Summary</td>
+                                      <!-- <td align="right" style="font-size: 13px;padding-bottom: 20px;">Report Generated By : 27-04-2024 11:30 AM</td> -->
+                                    </tr>
+                                    
+                                </tbody></table>
+                                    <table style="width: 100%;border: 1px solid #ddd;font-family: 'Open Sans', sans-serif!important;">
+                                        <thead>
+                                        <tr>
+                                            <th colspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Acquired </th>
+                                            <th colspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Original SR Value</th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Gross</th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">SR Value 
+                                            
+                                            </th>
+                                            <th colspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">O/s SR Value</th>
+                                            <th colspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Management
+                                            Fee &amp; Expense </th>
+                                            <th rowspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">NAV </th>
+                                            <th rowspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Up
+                                            side
+                                            </th>
+                                            <th rowspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Future Cash Flows</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">POS (Amount in CR)</th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">TOS (Amount in CR)</th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Total (Amount in CR) </th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Arcil (Amount in CR) </th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Recovery (Amount in CR) </th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Redeem (Amount in CR)</th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;" th="">
+                                            </th><th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">To&gt;Arcil   </th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Accrued   </th>
+                                            <th style="padding: 10px;border: 1px solid #ddd;font-size: 14px;font-weight:600;color: #000;text-align: center;">Realized   </th>
+                                        
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">10</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">13</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">13</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">13</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">13</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">13</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">10</td>
+                                                <td align="center" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;">1000</td>
+                                                
+                                            </tr>
+                                        
+                                        
+                                        </tbody>
+                                    
+                                    </table>
+                            </div>
+                            <div class="btn-wrapper mt-4">
+                                <button class="main-btn stroke" id="back-btn">Back</button>
+                                <button class="main-btn fill" id="submitTrust-btn">Submit</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            dff
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <p><strong>This is some placeholder content the Contact tab's associated content.</strong>
+                                Clicking another tab will toggle the visibility of this one for the next.
+                                The tab JavaScript swaps classes to control the content visibility and styling. You can
+                                use it with
+                                tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="btn-wrapper">
+                <button class="main-btn fill">Back</button>
+                <button class="main-btn stroke">Save</button>
+            </div> -->
+        </div>
+        <div class="copyright">
+            © 2024 Design and developed by Fortune4 Technologies. All rights reserved.
+        </div>
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#borower-list").select2({
+                placeholder: "Select a borrower",
+                // allowClear: true
+            });
+
+            // Adding event listener for change in select value
+            $("#borower-list").on("change", function () {
+                var selectedValue = $(this).val();
+                if (selectedValue !== "") {
+                    $("#tab-wrapper").removeClass("d-none").addClass("d-block");
+                } else {
+                    $("#tab-wrapper").removeClass("d-block").addClass("d-none");
+                }
+            });
+
+            $("#back-btn").click(function(){
+                window.location.href = "trust-details.html";
+            })
+            $("#submitTrust-btn").click(function(){
+                window.location.href = "download-trust.html";
+            })
+        });
+    </script>
+</body>
+
+</html>

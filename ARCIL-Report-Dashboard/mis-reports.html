@@ -1,0 +1,633 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>ARCIL | Account Plan</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+<link href="assets/img/logo.svg" rel="icon">
+
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            
+            <a href="data-listing.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.svg" alt="">
+                <!-- <span class="d-none d-lg-block">Account Plan</span> -->
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Borrower's Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="trust-index.html">
+                    <i class="bi bi-menu-button-wide"></i>
+                    <span>Trusts Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="account-plan.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Account Plan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mis-reports.html">
+                    <i class="bi bi-grid"></i>
+                    <span>MIS Reports</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="main-wrapper">
+            <div class="pagetitle">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Account Plan</li>
+                    </ol>
+                </nav>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="m-0">Account Plan Template</h4>
+
+                </div>
+            </div><!-- End Page Title -->
+            <div class="common-card account-plan">
+                <h5 class="small-title">Priya Clay products pvt ltd</h5>
+                <!-- <div class="progress-bar">
+                    <div class="progress" id="progress" style="width:0%;"></div>
+                    <div class="progress-step active" data-title="Fetch Details"></div>
+                    <div class="progress-step" data-title="Preview Details"></div>
+                    <div class="progress-step" data-title="Download"></div>
+                </div>
+                <h6>Vital Stats</h6> -->
+                <div id="table-scroll"  class="tableScroll table-scroll">
+                    <div class="table-wrap">
+                        <table class="main-table">
+                            <thead>
+                                <tr>
+                                    <th class="fixed-side"><span class="longestName">S. No. </span></th>
+                                    <th class="fixed-side"><span class="longestName">Trust Code </span></th>
+                                    <th class="fixed-side" style="width:100px"><span class="longestName">Trust name </span></th>
+                                    <th class="fixed-side" style="width:200px"><span class="longestName">Account Name</span></th>
+                                    <th>Single Corporate or Part of Portfolio?</th>
+                                    <th>Industry</th>
+                                    <th>Asset Location (State)</th>
+                                    <th>ARCIL Investment</th>
+                                    <th>Deal Type (100% Cash or 15:85 or Assured IRR)</th>
+                                    <th>IRR Cap if Assured IRR Deal?</th>
+                                    <th>Acquisition Date</th>
+                                    <th>PoS Acquired</th>
+                                    <th>Total Debt at Company Level</th>
+                                    <th>Share of Loan Acquired</th>
+                                    <th>SR Issued - at trust level</th>
+                                    <th>SR / PoS</th>
+                                    <th>SR o/s</th>
+                                    <th>SR issued to ARCIL </th>
+                                    <th></th>
+                                    <th>NAV on ARCIL Books</th>
+                                    <th>Collateral Value - total</th>
+                                    <th>Collateral Value - trusts share</th>
+                                    <th>Description / Basis of Collateral Value</th>
+                                    <th>Collateral Valuation Date</th>
+                                    <th>Physical Pocession?</th>
+                                    <th>Resolution Strategy</th>
+                                    <th>Who is driving recovery? (ARCIL or other Lenders)</th>
+                                    <th>Operating Asset</th>
+                                    <th>Cash Flow Generating Asset</th>
+                                    <th>Total Recovery</th>
+                                    <th>as a % of Collateral Value</th>
+                                    <th>Gross Recovery till March 2022</th>
+                                    <th>Expenses Incurred Till Aug 31,2022</th>
+                                    <th>Expected Exit Date</th>
+                                    <th>Balance Gross Recovery</th>
+                                    <th>FY 2023</th>
+                                    <th>FY 2024</th>
+                                    <th>FY 2025</th>
+                                    <th>FY 2026</th>
+                                    <th>FY 2027</th>
+                                    <th>FY 2028</th>
+                                    <th>FY 2029</th>
+                                    <th>FY 2030</th>
+                                    <th style="text-align: right;">Total Cash Flow to ARCIL</th>
+                                    <th style="text-align: right;">As a SR Investor</th>
+                                    <th style="text-align: right;">As a Trustee</th>
+                                    <th style="text-align: right;">Expenses Recovered</th>
+                                    <th style="text-align: right;">Brief Notes for Asset/ Recovery Scenario / Assumption:</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fixed-side"  rowspan="6">1</td>
+                                    <td class="fixed-side">1331</td>
+                                    <td class="fixed-side" style="width:300px">Arcil-AST-026-III-Trust </td>
+                                    <td class="fixed-side"  rowspan="6" style="width:150px">Surat Hazira NH-6 Tollway Pvt.</td>
+                                    <td rowspan="6">Single</td>
+                                    <td rowspan="6">Toll Road concession</td>
+                                    <td rowspan="6">Surat, Gujarat</td>
+                                    <td rowspan="6" class="text-right">15:85</td>
+                                    <td rowspan="6" class="text-right">15%</td>
+                                    <td rowspan="6" class="text-right">NA</td>
+                                    <td rowspan="6" class="text-right">'Dec 2019, Jan 2020, Dec 2020, Oct 2021, Nov 2021, Mar 2022</td>
+                                    <td rowspan="6" class="text-right"> 1,153 </td>
+                                    <td rowspan="6"> <input class="form-control" type="text" value="2151"> </td>
+                                    <td rowspan="6"><input class="form-control" type="text" value="54%"></td>
+                                    <td rowspan="6" class="text-right">503</td>
+                                    <td rowspan="6" class="text-right">44%</td>
+                                    <td rowspan="6" class="text-right">405</td>
+                                    <td rowspan="6" class="text-right">75</td>
+                                    <td rowspan="6" class="text-right">  61 </td>
+                                    <td rowspan="6" class="text-right">471 </td>
+                                    <td rowspan="6" class="text-right">1,073  </td>
+                                    <td rowspan="6" class="text-right">  <input class="form-control" type="text" value="575"> </td>
+                                    <td rowspan="6" class="text-right"> valuation by LSI Financial Services Ltd and MSKM </td>
+                                    <td rowspan="6" class="text-right"> Sept 2021 </td>
+                                    <td rowspan="6" class="text-right"> With Borrower </td>
+                                    <td rowspan="6"> Restructuring </td>
+                                    <td rowspan="6" class="text-right"> <input class="form-control" type="text" value="ARCIL"> </td>
+                                    <td rowspan="6" class="text-right"> <input class="form-control" type="text" value="Yes"> </td>
+                                    <td rowspan="6" class="text-right"> <input class="form-control" type="text" value="Yes"> </td>
+                                    <td rowspan="6" class="text-right"> 103 </td>
+                                    <td rowspan="6" class="text-right"> 18%</td>
+                                    <td rowspan="6" class="text-right"> 77</td>
+                                    <td rowspan="6" class="text-right"> 1</td>
+                                    <td rowspan="6" class="text-right"> March-25</td>
+                                    <td rowspan="6" class="text-right"> 812</td>
+                                    <td rowspan="6" class="text-right"> 10</td>
+                                    <td rowspan="6" class="text-right"> 85</td>
+                                    <td rowspan="6" class="text-right"> 717</td>
+                                    <td rowspan="6" class="text-right"> </td>
+                                    <td rowspan="6" class="text-right"> </td>
+                                    <td rowspan="6" class="text-right"> </td>
+                                    <td rowspan="6" class="text-right"> </td>
+                                    <td rowspan="6" class="text-right"> </td>
+                                    <td rowspan="6" class="text-right">17</td>
+                                    <td rowspan="6" class="text-right"> 15 </td>
+                                    <td rowspan="6" class="text-right"> 2 </td>
+                                    <td rowspan="6" class="text-right"> 0 </td>
+                                    <td rowspan="6"><textarea class="textarea-form-control" type="text" value="">Debt aggregation is in progress and restructuring after substantial debt is acquired </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1329</td>
+                                    <td class="fixed-side">Arcil-AST-072-I-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1326 </td>
+                                    <td class="fixed-side">Arcil-AST 023-VI Trust </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1321 </td>
+                                    <td class="fixed-side" > Arcil-AST-031-III-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side" >1315 </td>
+                                    <td class="fixed-side"> Arcil-AST-011-II-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1313 </td>
+                                    <td class="fixed-side"> Arcil-AST-011-I-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side"  rowspan="3">2</td>
+                                    <td class="fixed-side" >1328</td>
+                                    <td class="fixed-side" >Arcil-AST-071-I-Trust</td>
+                                    <td class="fixed-side"  rowspan="3">NSSL Pvt. Ltd.</td>
+                                    <td rowspan="3">Single</td>
+                                    <td rowspan="3">Valves and Auto Components</td>
+                                    <td rowspan="3">Nagpur, Maharashtra</td>
+                                    <td rowspan="3" class="text-right">15:85</td>
+                                    <td rowspan="3" class="text-right">15%</td>
+                                    <td rowspan="3" class="text-right">NA</td>
+                                    <td rowspan="3" class="text-right">Sept 2019, Feb 2020 and Nov 2021</td>
+                                    <td rowspan="3" class="text-right">  228 </td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="  228 "> </td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="  100% "> </td>
+                                    <td rowspan="3" class="text-right"> 95  </td>
+                                    <td rowspan="3" class="text-right"> 42% </td>
+                                    <td rowspan="3" class="text-right"> 60  </td>
+                                    <td rowspan="3" class="text-right"> 14 </td>
+                                    <td rowspan="3" class="text-right"> 9 </td>
+                                    <td rowspan="3" class="text-right">  87  </td>
+                                    <td rowspan="3" class="text-right">  163 </td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="163"> </td>
+                                    <td rowspan="3" class="text-right">  Rathi & Associates </td>
+                                    <td rowspan="3" class="text-right"> April 2019 </td>
+                                    <td rowspan="3" class="text-right"> With Borrower </td>
+                                    <td rowspan="3">Restructuring</td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="ARCIL"> </td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="Yes"> </td>
+                                    <td rowspan="3" class="text-right">  <input class="form-control" type="text" value="Yes"> </td>
+                                    <td rowspan="3" class="text-right">  64 </td>
+                                    <td rowspan="3" class="text-right">  39% </td>
+                                    <td rowspan="3" class="text-right">  61  </td>
+                                    <td rowspan="3" class="text-right">  0  </td>
+                                    <td rowspan="3" class="text-right">  June-24  </td>
+                                    <td rowspan="3" class="text-right">  138  </td>
+                                    <td rowspan="3" class="text-right">  17 </td>
+                                    <td rowspan="3" class="text-right">  37 </td>
+                                    <td rowspan="3" class="text-right">  66  </td>
+                                    <td rowspan="3" class="text-right">  3 </td>
+                                    <td rowspan="3" class="text-right">  -  </td>
+                                    <td rowspan="3" class="text-right">  - </td>
+                                    <td rowspan="3" class="text-right">  - </td>
+                                    <td rowspan="3" class="text-right">  16  </td>
+                                    <td rowspan="3" class="text-right">  7 </td>
+                                    <td rowspan="3" class="text-right">  5  </td>
+                                    <td rowspan="3" class="text-right">  2   </td>
+                                    <td rowspan="3" class="text-right">  0   </td>
+                                    <td rowspan="3"><textarea class="textarea-form-control" type="text" value="">Restructuring is in place and no default in payment by Borrower so far although operations are lower than the projected nos. </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1316</td>
+                                    <td class="fixed-side">Arcil-AST-026-II-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side" >1312</td>
+                                    <td class="fixed-side">Arcil-AST-001-XIV-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">3</td>
+                                    <td class="fixed-side">3063</td>
+                                    <td class="fixed-side">Arcil-CPS-I Trust</td>
+                                    <td class="fixed-side">Al Ibrahim Infra Pvt. Ltd.</td>
+                                    <td>Part of Portfolio</td>
+                                    <td>Real Estate</td>
+                                    <td>Mumbai</td>
+                                    <td class="text-right">15:85</td>
+                                    <td class="text-right">15%</td>
+                                    <td class="text-right">22%</td>
+                                    <td class="text-right">3/12/2021</td>
+                                    <td class="text-right">  143 </td>
+                                    <td class="text-right">  <input class="form-control" type="text" value="143"> </td>
+                                    <td class="text-right">  <input class="form-control" type="text" value="100%"> </td>
+                                    <td class="text-right">  176  </td>
+                                    <td class="text-right"> 123% </td>
+                                    <td class="text-right"> 131 </td>
+                                    <td class="text-right">   26  </td>
+                                    <td class="text-right">  20  </td>
+                                    <td class="text-right">  165   </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="-">    </td>
+                                    <td class="text-right">Through operations </td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right">With Borrower</td>
+                                    <td>Restructuring</td>
+                                    <td class="text-right"><input class="form-control" type="text" value="ARCIL"></td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes"></td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes"></td>
+                                    <td class="text-right">  48 </td>
+                                    <td class="text-right">  0 </td>
+                                    <td class="text-right">  10  </td>
+                                    <td class="text-right">   3   </td>
+                                    <td class="text-right"> March-25 </td>
+                                    <td class="text-right">   191  </td>
+                                    <td class="text-right">  - </td>
+                                    <td class="text-right"> 106  </td>
+                                    <td class="text-right"> 85 </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right">   8  </td>
+                                    <td class="text-right">   7   </td>
+                                    <td class="text-right"> - </td>
+                                    <td class="text-right"> 1 </td>
+                                    <td ><textarea class="textarea-form-control" type="text" value="">Restructuring has been entered upon in Feb 2022 and repayment commences from October 2022 (group account with Nathani Parekh).  </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">4</td>
+                                    <td class="fixed-side"></td>
+                                    <td class="fixed-side">Arcil-CPS-I Trust</td>
+                                    <td class="fixed-side">Nathani Parekh Construction Pvt</td>
+                                    <td>Single</td>
+                                    <td>Real Estate</td>
+                                    <td>Mumbai</td>
+                                    <td class="text-right">15:85</td>
+                                    <td class="text-right">15%</td>
+                                    <td class="text-right">22%</td>
+                                    <td class="text-right">14-May-21</td>
+                                    <td class="text-right">  146 </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="146">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="100%">    </td>
+                                    <td class="text-right">  163 </td>
+                                    <td class="text-right">  112% </td>
+                                    <td class="text-right">  144  </td>
+                                    <td class="text-right">  24 </td>
+                                    <td class="text-right">  22  </td>
+                                    <td class="text-right">  161  </td>
+                                    <td class="text-right">    375  </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="375 ">    </td>
+                                    <td class="text-right">    Through operations  </td>
+                                    <td class="text-right">  </td>
+                                    <td class="text-right"> With Borrower </td>
+                                    <td> Restructuring</td>
+                                    <td class="text-right"><input class="form-control" type="text" value="ARCIL">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes">    </td>
+                                    <td class="text-right">21</td>
+                                    <td class="text-right">6%</td>
+                                    <td class="text-right">  4 </td>
+                                    <td class="text-right">    1  </td>
+                                    <td class="text-right"> March-25 </td>
+                                    <td class="text-right">   245  </td>
+                                    <td class="text-right">   27 </td>
+                                    <td class="text-right">  124 </td>
+                                    <td class="text-right">  94  </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right">   </td>
+                                    <td class="text-right">   3   </td>
+                                    <td class="text-right">   3   </td>
+                                    <td class="text-right">   -   </td>
+                                    <td class="text-right">   0   </td>
+                                    <td><textarea class="textarea-form-control" type="text" value="">Restructuring has been entered upon in Feb 2022 and repayment commences from October 2022 (group account with AL Ibrahim). The project is a 72 storied building in Mumbai which was ~95% complete when Arcil acquired the debt. Based on availability of additional FSI post acquisition, fresh construction is ongoing.  the inventory is 2/3/4 BHK flats and commercial shops. </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">5</td>
+                                    <td class="fixed-side">3062</td>
+                                    <td class="fixed-side">Arcil-CPS-062-I-Trust</td>
+                                    <td class="fixed-side">KSK Mahanadi Power Co. Ltd.</td>
+                                    <td>Portfolio</td>
+                                    <td>Power</td>
+                                    <td>Chattisgarh</td>
+                                    <td class="text-right">15:85</td>
+                                    <td class="text-right">15%</td>
+                                    <td class="text-right">21%</td>
+                                    <td class="text-right">16-Mar-20</td>
+                                    <td class="text-right">  222 </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="  23,171 ">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="  1% ">    </td>
+                                    <td class="text-right"> 134  </td>
+                                    <td class="text-right"> 60%  </td>
+                                    <td class="text-right">  134  </td>
+                                    <td class="text-right">  20  </td>
+                                    <td class="text-right">  20 </td>
+                                    <td class="text-right">   101  </td>
+                                    <td class="text-right">    8,646  </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="83">    </td>
+                                    <td>Estimated realisation and assignment of debt offer</td>
+                                    <td></td>
+                                    <td class="text-right">RP</td>
+                                    <td class="text-right">NCLT</td>
+                                    <td class="text-right"><input class="form-control" type="text" value="RP and lenders">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes">    </td>
+                                    <td class="text-right"><input class="form-control" type="text" value="Yes">    </td>
+                                    <td class="text-right">-</td>
+                                    <td class="text-right">0%</td>
+                                    <td class="text-right">-</td>
+                                    <td class="text-right">  0 </td>
+                                    <td class="text-right">March-24</td>
+                                    <td class="text-right">  83 </td>
+                                    <td class="text-right">  8 </td>
+                                    <td class="text-right">  75  </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right"> </td>
+                                    <td class="text-right">  0  </td>
+                                    <td class="text-right">  - </td>
+                                    <td class="text-right">  - </td>
+                                    <td class="text-right">  0 </td>
+                                    <td><textarea class="textarea-form-control" type="text" value="">CIRP on going, Resolution plans have been called for. There was an offer from Phoenix Arc to take our debt on assignment in February 2022 for Rs.86.76 crore which is also being pursued. </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side" rowspan="2">6</td>
+                                    <td class="fixed-side">1236</td>
+                                    <td class="fixed-side">Arcil-Viceroy Hotels Limited I Trust</td>
+                                    <td class="fixed-side" rowspan="2">Viceroy Hotels Limited</td>
+                                    <td rowspan="2">Single</td>
+                                    <td rowspan="2">Hospitality</td>
+                                    <td rowspan="2">Hyderabad</td>
+                                    <td rowspan="2" class="text-right">100% Arcil investment</td>
+                                    <td rowspan="2" class="text-right">100%</td>
+                                    <td rowspan="2" class="text-right">NA</td>
+                                    <td rowspan="2" class="text-right">31-Mar-13</td>
+                                    <td rowspan="2" class="text-right">  133 </td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value="  267 ">    </td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value=" 50%">    </td>
+                                    <td rowspan="2" class="text-right">  95  </td>
+                                    <td rowspan="2" class="text-right">  71% </td>
+                                    <td rowspan="2" class="text-right">  85  </td>
+                                    <td rowspan="2" class="text-right">  95  </td>
+                                    <td rowspan="2" class="text-right">  85   </td>
+                                    <td rowspan="2" class="text-right">  -   </td>
+                                    <td rowspan="2" class="text-right"> 200    </td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value="100">    </td>
+                                    <td rowspan="2">valuation as per resolution plan </td>
+                                    <td rowspan="2" class="text-right">March 2019/Sept 2020 </td>
+                                    <td rowspan="2" class="text-right">RP</td>
+                                    <td rowspan="2" class="text-right">NCLT</td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value="RP and Arcil">    </td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value="Yes"></td>
+                                    <td rowspan="2" class="text-right"><input class="form-control" type="text" value="Yes"></td>
+                                    <td rowspan="2" class="text-right">  13 </td>
+                                    <td rowspan="2" class="text-right">13%</td>
+                                    <td rowspan="2" class="text-right">13</td>
+                                    <td rowspan="2" class="text-right">3</td>
+                                    <td rowspan="2" class="text-right">March-23</td>
+                                    <td rowspan="2" class="text-right">  75 </td>
+                                    <td rowspan="2" class="text-right">  75 </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">   10  </td>
+                                    <td rowspan="2" class="text-right">  9  </td>
+                                    <td rowspan="2" class="text-right">  </td>
+                                    <td rowspan="2" class="text-right">   0  </td>
+                                    <td rowspan="2"><textarea class="textarea-form-control" type="text" value="">Application filed for fresh CIRP process which is reserved for orders </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side" >1234</td>
+                                    <td class="fixed-side" style="width:100px">Arcil-Viceroy Hotels Limited II Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side" rowspan="5">7</td>
+                                    <td class="fixed-side">1302</td>
+                                    <td class="fixed-side">Arcil-AST-041-I-Trust</td>
+                                    <td class="fixed-side"  rowspan="5">Malwa Industries Ltd.</td>
+                                    <td rowspan="5">Single</td>
+                                    <td rowspan="5">Textile</td>
+                                    <td rowspan="5">Ludhiana</td>
+                                    <td rowspan="5" class="text-right">~94% Arcil investment</td>
+                                    <td rowspan="5" class="text-right">94%</td>
+                                    <td rowspan="5" class="text-right">NA</td>
+                                    <td rowspan="5" class="text-right">March 2018- March 2019</td>
+                                    <td rowspan="5" class="text-right">  304 </td>
+                                    <td rowspan="5" class="text-right"> <input class="form-control" type="text" value="304"></td>
+                                    <td rowspan="5" class="text-right"> <input class="form-control" type="text" value="100%"></td>
+                                    <td rowspan="5" class="text-right">  102  </td>
+                                    <td rowspan="5" class="text-right">  33%  </td>
+                                    <td rowspan="5" class="text-right">  102   </td>
+                                    <td rowspan="5" class="text-right">   95   </td>
+                                    <td rowspan="5" class="text-right">   95   </td>
+                                    <td rowspan="5" class="text-right">   60   </td>
+                                    <td rowspan="5" class="text-right">   98   </td>
+                                    <td rowspan="5" class="text-right">  <input class="form-control" type="text" value="98">  </td>
+                                    <td rowspan="5"> KCS & GATS  </td>
+                                    <td rowspan="5" class="text-right"> 9-Aug-22  </td>
+                                    <td rowspan="5" class="text-right"> With Borrower  </td>
+                                    <td rowspan="5" class="text-right"> NCLT  </td>
+                                    <td rowspan="5" class="text-right">  <input class="form-control" type="text" value="ARCIL">  </td>
+                                    <td rowspan="5" class="text-right">  <input class="form-control" type="text" value="No">  </td>
+                                    <td rowspan="5" class="text-right">  <input class="form-control" type="text" value="No">  </td>
+                                    <td rowspan="5" class="text-right">   0   </td>
+                                    <td rowspan="5" class="text-right">   0%   </td>
+                                    <td rowspan="5" class="text-right">   0   </td>
+                                    <td rowspan="5" class="text-right"> 1   </td>
+                                    <td rowspan="5" class="text-right"> March-23   </td>
+                                    <td rowspan="5" class="text-right">  60  </td>
+                                    <td rowspan="5" class="text-right">   6   </td>
+                                    <td rowspan="5" class="text-right">   54 </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> </td>
+                                    <td rowspan="5" class="text-right"> 1</td>
+                                    <td rowspan="5" class="text-right"> 0 </td>
+                                    <td rowspan="5" class="text-right"> 0 </td>
+                                    <td rowspan="5" class="text-right"> 0 </td>
+                                    <td rowspan="5" rowspan="2" style="padding: 10px;border: 1px solid #ddd;font-size: 14px;vertical-align: top;text-align: right;"><textarea class="textarea-form-control" type="text" value="">Application filed u/s 7 of IBC; admission awaited. Simultaneously received OTS offer which is being evaluated </textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1297</td>
+                                    <td class="fixed-side">Arcil-AST-051-I-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1295</td>
+                                    <td class="fixed-side">Arcil-AST-034-III-Trust</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1290</td>
+                                    <td class="fixed-side">Arcil-AST-003-V-Trust</td> 
+                                </tr>
+                                <tr>
+                                    <td class="fixed-side">1289</td>
+                                    <td class="fixed-side">Arcil-AST-001-VIII-Trust</td> 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button class="main-btn fill mt-4 ms-auto d-block" id="proceed-btn">Next</button>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            © 2024 Design and developed by Fortune4 Technologies. All rights reserved.
+        </div>
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        // requires jquery library
+        jQuery(document).ready(function() {
+        jQuery(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');   
+        });
+    </script>
+
+</body>
+
+</html>
