@@ -300,102 +300,189 @@
                             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 mb-3">
                             <h4 class="mb-0">Reports</h4>
                         </div>
-                        <div class="mb-4 mt-3 p-4 common-card d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="m-0">Filter</h6>
+                        <div class="mb-4 mt-3 p-4 common-card ">
+							<div class="d-flex justify-content-between align-items-center pb-2 border-bottom">
+								<h5 class="m-0">Filter</h5>
+								<button class="btn btn-primary btn-sm mx-auto mx-md-0" id="btn-reset">Reset</button>
                             </div>
-                            <div>
-                                <div class="d-flex align-items-center justify-content-md-end gap-3 flex-wrap">
-                                    <div>
-                                        <input type="date" class="form-control form-control-sm " id="from-date">
-                                    </div>
-                                    <div>
-                                        <input type="date" class="form-control form-control-sm" id="to-date">
-                                    </div>
-                                    <button class="btn btn-primary btn-sm mx-auto mx-md-0" id="btn-tableView">View
-                                        report</button>
-                                    <button class="btn btn-primary btn-sm mx-auto mx-md-0" id="btn-reset">Reset</button>
-                                </div>
-                            </div>
+							<div class="row mt-4">
+								<div class="col-md-4 mb-3">
+									<label for="" class="form-label text-dark">From</label>
+									<input type="date" class="form-control">
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="" class="form-label">To</label>
+									<input type="date" class="form-control">
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="" class="form-label text-dark">Case Type</label>
+									<select name="" id="" class="form-select">
+										<option value="" selected disabled>Select Case Type</option>
+										<option value="">SME</option>
+										<option value="">Corporate</option>
+										<option value="">Retail</option>
+									</select>
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="" class="form-label text-dark">Group Head Approval</label>
+									<select name="" id="" class="form-select">
+										<option value="" disabled selected>Select Approval Status</option>
+										<option value="">Pending</option>
+										<option value="">Approved</option>
+										<option value="">Rejected</option>
+									</select>
+								</div>
+								<div class="col-md-4 mb-3">
+									<label for="" class="form-label text-dark">PCG Approval</label>
+									<select name="" id="" class="form-select">
+										<option value="" selected disabled>Select Approval status</option>
+										<option value="">Pending</option>
+										<option value="">Approved</option>
+										<option value="">Rejected</option>
+									</select>
+								</div>
+							</div>
+							<button class="btn btn-primary mx-auto d-block mt-3" id="btn-tableView">View
+								report</button>
                         </div>
                         <div class="mb-4 mt-3 p-4 common-card">
-                            <header class="border-bottom mb-4">
-                                <h5>Result</h5>
+                            <header class="border-bottom mb-4 d-flex justify-content-between pb-2 align-items-center">
+                                <h5 class="m-0">Result</h5>
+								<button class="btn btn-primary btn-sm">Export</button>
                             </header>
-                            <div class="table-responsive mt-4">
+                            <div class="table-responsive">
                                 <table class="table common-table">
                                     <thead class="table-light">
                                         <tr>
-                                            <th class="text-nowrap">Sr.No.</th>
-                                            <th class="text-nowrap">Status</th>
-                                            <th class="text-nowrap">DO Name</th>
-                                            <th class="text-nowrap">Group Head Name</th>
-                                            <th class="text-nowrap">PCG Name</th>
-                                            <th class="text-nowrap">File Location</th>
-                                            <th class="text-nowrap align-top">Asset Code</th>
-                                            <th class="text-nowrap align-top">Borrower Name</th>
-                                            <th class="text-nowrap align-top">Required Date</th>
-                                            <th class="text-nowrap align-top">Resubmitted Date</th>
+                                            <th class="text-nowrap align-top">Sr. No.</th>
+                                            <th class="text-nowrap align-top">Asset Code
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap align-top">Borrower Name
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+											<th class="text-nowrap">
+												<span>Case Type</span>
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+											<th class="text-nowrap">
+												<span>GH Approval</span>
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+											<th class="text-nowrap">
+												<span>PCG Approval</span>
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap">DO Name
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap">Group Head Name
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap">PCG Name
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap">File Location
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap align-top">Required Date
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
+                                            <th class="text-nowrap align-top">Resubmitted Date
+												<div class="label-wrapper icon">
+													<input type="text" class="filter-input" name="" placeholder="Search" id="" data-datatype="Text" data-fieldname="TicketNo">
+												</div>
+											</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td class="text-nowrap">Approved</td>
-                                            <td class="text-nowrap">Anubha Puthiyaveettil</td>
-                                            <td class="text-nowrap">Manoj Yadav</td>
-                                            <td class="text-nowrap">Kamal Mishra</td>
-                                            <td class="text-nowrap">E2-04/A/07/17</td>
                                             <td class="text-nowrap">A154</td>
                                             <td class="text-nowrap">A Shanmugham</td>
+                                            <td class="text-nowrap">CME</td>
+                                            <td class="text-nowrap">Approved</td>
+                                            <td class="text-nowrap">Approved</td>
+                                            <td class="text-nowrap">Anubha Puthiyaveettil</td>
+                                            <td class="text-nowrap">Manoj Yadav</td	>
+                                            <td class="text-nowrap">Kamal Mishra</td>
+                                            <td class="text-nowrap">E2-04/A/07/17</td>
                                             <td class="text-nowrap">Nov 10, 2024, 10:15 AM</td>
                                             <td class="text-nowrap">Nov 07, 2024, 10:15 AM</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
+                                            <td class="text-nowrap">B202</td>
+                                            <td class="text-nowrap">M Gupta</td>
+											<td class="text-nowrap">Retail</td>
+                                            <td class="text-nowrap">Approved</td>
                                             <td class="text-nowrap">Pending</td>
                                             <td class="text-nowrap">Rohit Sharma</td>
                                             <td class="text-nowrap">Amit Singh</td>
                                             <td class="text-nowrap">Suresh Bhatia</td>
                                             <td class="text-nowrap">E3-11/B/09/18</td>
-                                            <td class="text-nowrap">B202</td>
-                                            <td class="text-nowrap">M Gupta</td>
                                             <td class="text-nowrap">Nov 11, 2024, 12:00 PM</td>
                                             <td class="text-nowrap">Nov 08, 2024, 09:45 AM</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
+                                            <td class="text-nowrap">C310</td>
+                                            <td class="text-nowrap">L Desai</td>
+											<td class="text-nowrap">CME</td>
                                             <td class="text-nowrap">Rejected</td>
+                                            <td class="text-nowrap">Pending</td>
                                             <td class="text-nowrap">Priya Rajan</td>
                                             <td class="text-nowrap">Neeraj Gupta</td>
                                             <td class="text-nowrap">Rekha Rao</td>
                                             <td class="text-nowrap">C4-15/D/11/20</td>
-                                            <td class="text-nowrap">C310</td>
-                                            <td class="text-nowrap">L Desai</td>
                                             <td class="text-nowrap">Nov 12, 2024, 02:30 PM</td>
                                             <td class="text-nowrap">Nov 09, 2024, 03:00 PM</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
+                                            <td class="text-nowrap">D410</td>
+                                            <td class="text-nowrap">P Singh</td>
+											<td class="text-nowrap">Corporate</td>
                                             <td class="text-nowrap">Approved</td>
+                                            <td class="text-nowrap">Reject</td>
                                             <td class="text-nowrap">Sanjay Kulkarni</td>
                                             <td class="text-nowrap">Anita Mehta</td>
                                             <td class="text-nowrap">Ravi Kumar</td>
                                             <td class="text-nowrap">D5-22/E/10/19</td>
-                                            <td class="text-nowrap">D410</td>
-                                            <td class="text-nowrap">P Singh</td>
                                             <td class="text-nowrap">Nov 13, 2024, 11:00 AM</td>
                                             <td class="text-nowrap">Nov 10, 2024, 01:30 PM</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
+                                            <td class="text-nowrap">E580</td>
+                                            <td class="text-nowrap">V Iyer</td>
+											<td class="text-nowrap">CME</td>
+                                            <td class="text-nowrap">Approved</td>
                                             <td class="text-nowrap">Approved</td>
                                             <td class="text-nowrap">Geeta Nair</td>
                                             <td class="text-nowrap">Rajesh Kapoor</td>
                                             <td class="text-nowrap">Sunil Das</td>
                                             <td class="text-nowrap">F7-33/F/08/21</td>
-                                            <td class="text-nowrap">E580</td>
-                                            <td class="text-nowrap">V Iyer</td>
                                             <td class="text-nowrap">Nov 14, 2024, 09:00 AM</td>
                                             <td class="text-nowrap">Nov 11, 2024, 04:15 PM</td>
                                         </tr>

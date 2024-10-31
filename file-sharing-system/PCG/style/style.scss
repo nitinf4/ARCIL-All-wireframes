@@ -1073,7 +1073,23 @@ body.showModal #exampleModal3 {
 }
 
 // New css
+#search-results {
+	position: absolute;
+	background: white;
+	border: 1px solid #ddd;
+	max-height: 200px;
+	overflow-y: auto;
+	display: none;
+	z-index: 1000;
+}
 
+.search-item {
+	cursor: pointer;
+}
+
+.search-item:hover {
+	background-color: #f8f9fa;
+}
 .globalSearch-file {
 	max-width: 550px;
 	width: 100%;
