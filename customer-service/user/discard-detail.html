@@ -127,7 +127,8 @@
                 <div class="position-sticky d-flex flex-column h-100 pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 activ rounded " aria-current="page" href="./dashboard.html">
+                            <a class="nav-link d-flex align-items-center gap-2 activ rounded " aria-current="page"
+                                href="./dashboard.html">
                                 <svg class="bi">
                                     <use xlink:href="#house-fill"></use>
                                 </svg>
@@ -135,7 +136,7 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded "  href="./mail-list.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded " href="./mail-list.html">
                                 <svg class="bi">
                                     <use xlink:href="#file-earmark"></use>
                                 </svg>
@@ -158,9 +159,10 @@
                                 Open
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded" href="./close-tickets.html">
+                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded"
+                                href="./close-tickets.html">
                                 <svg class="bi">
                                     <use xlink:href="#file-earmark-text"></use>
                                 </svg>
@@ -168,7 +170,8 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded active" href="./discarded-email.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded active text-nowrap"
+                                href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
                                 </svg>
@@ -202,7 +205,7 @@
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 pb-2 mb-3">
                         <h4 id="main-header">Discarded Email</h4>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#undiscard-modal">Undiscard
+                        <button class="btn btn-primary" id="customerDetail-modal-btn">Undiscard
                             Email</button>
                     </div>
                     <div class="mb-5">
@@ -218,10 +221,12 @@
                                 emilydavis@gmail.com</span>
                         </div>
                         <div class="label-wrap mb-1">
-                            <span class="fwt-normal">Received On:</span> <span id="recievedon">May 30, 2024, 3:00 PM</span>
+                            <span class="fwt-normal">Received On:</span> <span id="recievedon">May 30, 2024, 3:00
+                                PM</span>
                         </div>
                         <div class="label-wrap mb-1">
-                            <span class="fwt-normal">Subject:</span> <span id="subject">Complaint Regarding Car Loan Services</span>
+                            <span class="fwt-normal">Subject:</span> <span id="subject">Complaint Regarding Car Loan
+                                Services</span>
                         </div>
                         <div class="label-wrap mb-1">
                             <span class="fwt-normal">Email:</span>
@@ -229,7 +234,10 @@
                                 <span id="email">
                                     <p> Dear Sir/Mam,</p>
 
-                                    <p> I am writing to express my dissatisfaction with the car loan services provided by your institution. Despite timely payments, I've faced recurring issues with billing statements and interest calculations. Urgent resolution is requested.</p>
+                                    <p> I am writing to express my dissatisfaction with the car loan services provided
+                                        by your institution. Despite timely payments, I've faced recurring issues with
+                                        billing statements and interest calculations. Urgent resolution is requested.
+                                    </p>
 
                                     <p>Thanks</p>
                                 </span>
@@ -248,7 +256,7 @@
 
                         </div> -->
                     </div>
-                   
+
                 </div>
                 <span class="footer-copy d-block text-center py-2">© 2024 Design and developed by Fortune4 Technologies.
                     All rights reserved.</span>
@@ -256,36 +264,27 @@
         </div>
     </div>
 
-  <!-- Undiscard modal start  -->
-  <form>
-    <div class="model-wrapper">
-        <div class="modal fade" id="undiscard-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            data-bs-backdrop="static" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-
-                    <div class="modal-body p-4" id="createTicketForm">
-                        <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
-                            aria-label="Close" id="closeCreatePopupBtn">
-                        </button>
-                        <h4 class="mb-3">Undiscard Email</h4>
-                        <div class="label-wrap mb-3">
-                            <label class="form-label">Comment<span class="text-danger">*</span></label>
-                            <textarea name="" id="" class="form-control" rows="5"></textarea>
-                            <div class="invalid-feedback">Please select a category</div>
-                        </div>
-                       
-                        <button class="btn btn-primary ms-auto d-block mt-4" id="create-tktBtn" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal1" data-bs-dismiss="modal" aria-label="Close">
-                            Undiscard</button>
+    <!-- Undiscard modal start  -->
+    <div class="custom-modal" id="undiscard-modal">
+        <div class="custom-modal-dialog custom-modal-dialog-centered">
+            <div class="custom-modal-content">
+                <div class="custom-modal-body p-4">
+                    <button type="button" class="btn-close close-btn ms-auto d-block" id="undiscardClose-btn">
+                    </button>
+                    <h4 class="mb-3">Undiscard Email</h4>
+                    <div class="label-wrap mb-3">
+                        <label class="form-label">Comment<span class="text-danger">*</span></label>
+                        <textarea name="" id="" class="form-control" rows="5"></textarea>
+                        <div class="invalid-feedback">Please select a category</div>
                     </div>
 
+                    <button class="btn btn-primary ms-auto d-block mt-4" id="create-tktBtn">
+                        Undiscard</button>
                 </div>
-            </div>
+            </div>     
         </div>
     </div>
-</form>
-<!-- Undiscard modal End  -->
+    <!-- Undiscard modal End  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -307,6 +306,21 @@
             window.location.href = "mail-list.html";
         });
 
+    </script>
+     <script>
+        $(document).on('click', '#customerDetail-modal-btn', async function (e) {
+            e.preventDefault();
+            document.getElementById('undiscard-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        $(document).on('click', '#undiscardClose-btn', async function () {
+            document.getElementById('undiscard-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        $(document).on('click', '#create-tktBtn', async function () {
+            document.getElementById('undiscard-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
     </script>
 </body>
 

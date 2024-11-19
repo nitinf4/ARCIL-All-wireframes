@@ -178,7 +178,7 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded" href="./discarded-email.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded text-nowrap" href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
                                 </svg>
@@ -380,7 +380,7 @@
                                                 <div class="invalid-feedback">.</div>
                                             </div>
                                             <button class="btn btn-primary ms-auto d-block mt-4"
-                                                id="saveCustomerBtn">Submit</button>
+                                                id="saveCustomerBtn" type="button">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -550,13 +550,13 @@
                                             </div>
 
 
-                                            <button class="btn btn-primary ms-3" id="saveCommentBtn">Submit</button>
+                                            <button class="btn btn-primary ms-3" id="saveCommentBtn" type="button">Submit</button>
                                         </div>
                                     </div>
                                 </form>
 
                                 <ul class="comment-list list-unstyled mt-3 border-top" id="commentByTikId">
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0">File uploaded by <span class="fwt-normal">David
@@ -565,7 +565,7 @@
                                                     class="text-nowrap me-5">May 30, 2024, 5:31 PM</small></span>
                                         </div>
                                     </li>
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0">File uploaded by <span class="fwt-normal">David
@@ -574,7 +574,7 @@
                                                     class="text-nowrap me-5">May 30, 2024, 5:30 PM</small></span>
                                         </div>
                                     </li>
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0">File uploaded by <span class="fwt-normal">David
@@ -583,7 +583,7 @@
                                                     class="text-nowrap me-5">May 30, 2024, 5:27 PM</small></span>
                                         </div>
                                     </li>
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0">File uploaded by <span class="fwt-normal">David
@@ -592,18 +592,17 @@
                                                     class="text-nowrap me-5">May 30, 2024, 5:25 PM</small></span>
                                         </div>
                                     </li>
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0"><span class="fwt-normal">David Martinez</span>
-                                                updated customer details.<a href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal5" data-id="6"> view</a></p><span
+                                                updated customer details.<a href="#" id="customerDetail-modal-btn"> view</a></p><span
                                                 class="d-flex gap-2 align-items-center text-nowrap"><small
                                                     class="text-nowrap me-5">May 30, 2024, 5:20 PM</small></span>
                                         </div>
                                     </li>
 
-                                    <li class="border-bottom">
+                                    <li class="p-0">
                                         <div
                                             class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
                                             <p class="description m-0"><span class="fwt-normal">David Martinez</span>
@@ -614,7 +613,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <hr>
+                            <!-- <hr>
                             <div class="mb-5 mt-4">
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                     <h5>Note</h5>
@@ -636,9 +635,9 @@
                                         id="saveNote">Save</button>
                                 </div>
 
-                                <button class="btn btn-primary mx-auto d-block mt-5" id="closetkt-btn">Close
-                                    Ticket</button>
-                            </div>
+                            </div> -->
+                            <button class="btn btn-primary mx-auto d-block my-5" id="closetkt-btn">Close
+                                Ticket</button>
                         </div>
 
 
@@ -685,37 +684,30 @@
     <!-- File upload modal end -->
 
     <!-- Customer detail modal start -->
-    <form>
-        <div class="model-wrapper">
-            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
-                data-bs-backdrop="static" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <div class="modal-body p-4">
-                            <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
-                                aria-label="Close" id="viewPopUpCloseBtn">
-                            </button>
-                            <h4 class="mb-3" id="ticketDetails">Customer Details</h4>
-                            <div id="customerDetails" class="details-wrapper word-break">
-                                <p class="mb-2"><span class="fw-normal">Customer Name - </span>Robert Lee</p>
-                                <p class="mb-2"><span class="fw-normal">Email - </span>robertlee@gmail.com</p>
-                                <p class="mb-2"><span class="fw-normal">Phone - </span>9898988988</p>
-                                <p class="mb-2"><span class="fw-normal">Account No. - </span>0014244155</p>
-                                <p class="mb-2"><span class="fw-normal">Account - </span></p>
-                                <p class="mb-2"><span class="fw-normal">Mode Of Receipt - </span></p>
-                                <p class="mb-2"><span class="fw-normal">POS - </span></p>
-                                <p class="mb-2"><span class="fw-normal">TOS - </span></p>
-                                <p class="mb-2"><span class="fw-normal">Settlement Date - </span></p>
-                                <p class="mb-2"><span class="fw-normal">Settlement Amount - </span></p>
-                                <p class="mb-2"><span class="fw-normal">Complaint Detail - </span></p>
-                            </div>
-                        </div>
+    <div class="custom-modal" id="customerDetail-modal">
+        <div class="custom-modal-dialog custom-modal-dialog-centered">
+            <div class="custom-modal-content">
+                <div class="custom-modal-body p-4">
+                    <button type="button" class="btn-close custom-close-btn modal-close"
+                        id="customerDetail-closeBtn"></button>
+                    <h4 class="mb-3">Customer Details</h4>
+                    <div id="customerDetails" class="details-wrapper word-break">
+                        <p class="mb-2"><span class="fw-normal">Customer Name - </span>Robert Lee</p>
+                        <p class="mb-2"><span class="fw-normal">Email - </span>robertlee@gmail.com</p>
+                        <p class="mb-2"><span class="fw-normal">Phone - </span>9898988988</p>
+                        <p class="mb-2"><span class="fw-normal">Account No. - </span>0014244155</p>
+                        <p class="mb-2"><span class="fw-normal">Account - </span></p>
+                        <p class="mb-2"><span class="fw-normal">Mode Of Receipt - </span></p>
+                        <p class="mb-2"><span class="fw-normal">POS - </span></p>
+                        <p class="mb-2"><span class="fw-normal">TOS - </span></p>
+                        <p class="mb-2"><span class="fw-normal">Settlement Date - </span></p>
+                        <p class="mb-2"><span class="fw-normal">Settlement Amount - </span></p>
+                        <p class="mb-2"><span class="fw-normal">Complaint Detail - </span></p>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
     <!-- Customer detail modal end -->
 
     <!-- Audio modal start  -->
@@ -978,6 +970,17 @@
             e.preventDefault()
             closeTktMOdal.style.display = "none"
         })
+    </script>
+    <script>
+        $(document).on('click', '#customerDetail-modal-btn', async function (e) {
+            e.preventDefault();
+			document.getElementById('customerDetail-modal').style.display = 'block';
+			document.body.style.overflow = 'hidden';
+		});
+		$(document).on('click', '#customerDetail-closeBtn', async function () {
+			document.getElementById('customerDetail-modal').style.display = 'none';
+			document.body.style.overflow = 'auto';
+		});
     </script>
 </body>
 

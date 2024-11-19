@@ -170,7 +170,7 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded active"
+                            <a class="nav-link d-flex align-items-center gap-2 rounded active text-nowrap"
                                 href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
@@ -207,20 +207,31 @@
                         <h4>Discarded Email (3)</h4>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped notComplaint-table">
                             <thead class="table-light">
                                 <tr>
-
+                                    <th class="align-top">Sr <br> No.</th>
                                     <th>From Email
-
+                                        <div class="label-wrapper icon">
+                                            <input type="text" name="" placeholder="Search" id="" class="filter-input" data-datatype="Text" data-fieldname="BlockedEmailId">
+                                        </div>
                                     </th>
-                                    <th scope="col">Subject</th>
-                                    <th class="align-top text-nowrap">Created On</th>
+                                    <th scope="col">Subject
+                                        <div class="label-wrapper icon">
+                                            <input type="text" name="" placeholder="Search" id="" class="filter-input" data-datatype="Text" data-fieldname="BlockedEmailId">
+                                        </div>
+                                    </th>
+                                    <th class="align-top text-nowrap">Created On
+                                        <div class="label-wrapper icon">
+                                            <input type="date" name="" placeholder="Search" id="" class="filter-input" data-datatype="DateTime" data-fieldname="BlockedOn">
+                                        </div>
+                                    </th>
                                     <th class="align-top text-nowrap text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody id="blockedSendersList">
                                 <tr>
+                                    <td>1</td>
                                     <td class="table-text">robertlee@gmail.com</td>
                                     <td class="line-limit"><span style="font-weight: 500;">Complaint Regarding Car Loan Services</span>
                                         <div>Dear Sir/Mam, I am writing to express my dissatisfaction with the car loan services provided by your institution. Despite timely payments, I've faced recurring issues with billing statements and interest calculations. Urgent resolution is requested.</div>
@@ -230,6 +241,7 @@
                                          >View</a></td>
                                 </tr>
                                 <tr>
+                                    <td>2</td>
                                     <td class="table-text">alexjohnson@gmail.com</td>
                                     <td class="line-limit"><span style="font-weight: 500;">Bike Loan Application Follow-Up</span>
                                         <div>Dear Sir/Mam, I submitted all required documents for my bike loan application last month but haven't received any updates since. Kindly expedite the process or provide an update on its status.</div>
@@ -239,6 +251,7 @@
                                          >View</a></td>
                                 </tr>
                                 <tr>
+                                    <td>3</td>
                                     <td class="table-text">emilydavis@gmail.com</td>
                                     <td class="line-limit"><span style="font-weight: 500;"> Car Loan Late Payment Penalty Dispute</span><div>Dear Sir/Mam, I received a rejection notice for my home loan application without any explanation. Please provide detailed reasons for the rejection and guidance for reapplication.</div>
                                     </td>

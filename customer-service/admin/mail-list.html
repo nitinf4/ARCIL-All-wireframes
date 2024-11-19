@@ -163,7 +163,7 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded" href="./discarded-email.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded text-nowrap" href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
                                 </svg>
@@ -197,12 +197,22 @@
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 pb-2 mb-3">
                         <h4>Emails Pending <span id="emailPendingCount">(10)</span></h4>
+                        <div class="d-flex align-items-center">
+                            <span class="text-nowrap fw-medium">Emails per page</span>
+                            <select class="form-select ms-2" id="pageSize">
+                                <option selected="">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="">
                         <div class="table-responsive">
-                            <table class="table table-striped email-pending">
+                            <table class="table table-striped newMail-table">
                                 <thead class="table-light">
                                     <tr>
+                                        <th scope="col" class="align-top text-nowrap">Sr No.</th>
                                         <th scope="col">From
                                             <div class="label-wrapper icon">
                                                 <input type="text" name="" placeholder="Search" id=""
@@ -227,6 +237,7 @@
                                 </thead>
                                 <tbody id="mailList">
                                     <tr>
+                                        <td>1</td>
                                         <td>robertlee@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Complaint Regarding Car Loan Services</span>
                                             <div> Dear Sir/Mam, I am writing to express my dissatisfaction with the car loan services provided by your institution. Despite timely payments, I've faced recurring issues with billing statements and interest calculations. Urgent resolution is requested</div>
@@ -236,6 +247,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>2</td>
                                         <td>sarahwilson@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Complaint Regarding Bike Loan Application</span>
                                             <div> Hi, I applied for a bike loan two weeks ago and have not received any updates on its status. I request prompt action to process my application or provide clarification on the delay.</div>
@@ -245,6 +257,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>3</td>
                                         <td>janesmith@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Home Loan Discrepancy</span>
                                             <div> Dear Sir/Mam, I recently noticed discrepancies in the interest rate charged on my home loan compared to the agreed terms. Kindly investigate and rectify this issue at the earliest.</div>
@@ -254,6 +267,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>4</td>
                                         <td>davidmartinez@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;"> Credit Card Loan Overcharge</span>
                                             <div>Hi, I received my credit card statement and found several unauthorized charges. Please investigate and refund the overcharged amount immediately.</div>
@@ -263,6 +277,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>5</td>
                                         <td>robertlee@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Car Loan Customer Service Feedback</span>
                                             <div>Hi, I faced unprofessional behavior from your customer service representatives while discussing my car loan. Improve service quality to retain customers like me.</div>
@@ -272,6 +287,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>6</td>
                                         <td>alexjohnson@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Bike Loan Application Follow-Up</span>
                                             <div>Dear Sir/Mam, I submitted all required documents for my bike loan application last month but haven't received any updates since. Kindly expedite the process or provide an update on its status.</div>
@@ -281,6 +297,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>7</td>
                                         <td>emilydavis@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Home Loan Application Rejection</span>
                                             <div> Dear Sir/Mam, I received a rejection notice for my home loan application without any explanation. Please provide detailed reasons for the rejection and guidance for reapplication.</div>
@@ -290,6 +307,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>8</td>
                                         <td>lauragarcia@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Credit Card Loan Billing Error</span>
                                             <div>Hi, My credit card statement includes erroneous charges that I did not authorize. Please rectify this billing error and provide a corrected statement.</div>
@@ -299,6 +317,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>9</td>
                                         <td>robertlee@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Car Loan Interest Rate Inquiry</span>
                                             <div>Hi, I recently noticed a significant increase in the interest rate on my car loan. Kindly explain the reason for this change and provide options for a more favorable rate.</div>
@@ -308,6 +327,7 @@
                                                 class="view-mail">View</a></td>
                                     </tr>
                                     <tr>
+                                        <td>10</td>
                                         <td>robertlee@gmail.com</td>
                                         <td class="line-limit"><span style="font-weight: 500;">Bike Loan Application Status Update Request</span>
                                             <div> Dear Sir/Mam, It has been three weeks since I submitted my bike loan application, and I haven't received any updates. Please provide a status update at your earliest convenience.</div>

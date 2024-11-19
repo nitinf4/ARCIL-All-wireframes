@@ -127,7 +127,8 @@
                 <div class="position-sticky d-flex flex-column h-100 pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 activ rounded " aria-current="page" href="./dashboard.html">
+                            <a class="nav-link d-flex align-items-center gap-2 activ rounded " aria-current="page"
+                                href="./dashboard.html">
                                 <svg class="bi">
                                     <use xlink:href="#house-fill"></use>
                                 </svg>
@@ -135,7 +136,7 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded active"  href="./mail-list.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded active" href="./mail-list.html">
                                 <svg class="bi">
                                     <use xlink:href="#file-earmark"></use>
                                 </svg>
@@ -158,9 +159,10 @@
                                 Open
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded" href="./close-tickets.html">
+                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded"
+                                href="./close-tickets.html">
                                 <svg class="bi">
                                     <use xlink:href="#file-earmark-text"></use>
                                 </svg>
@@ -168,7 +170,8 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded" href="./discarded-email.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded text-nowrap"
+                                href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
                                 </svg>
@@ -202,7 +205,7 @@
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 pb-2 mb-3">
                         <h4 id="main-header">Create Ticket</h4>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Discard
+                        <button class="btn btn-primary" id="discard-modal-btn">Discard
                             Email</button>
                     </div>
                     <div class="mb-5">
@@ -218,10 +221,12 @@
                                 emilydavis@gmail.com</span>
                         </div>
                         <div class="label-wrap mb-1">
-                            <span class="fwt-normal">Received On:</span> <span id="recievedon">May 30, 2024, 3:00 PM</span>
+                            <span class="fwt-normal">Received On:</span> <span id="recievedon">May 30, 2024, 3:00
+                                PM</span>
                         </div>
                         <div class="label-wrap mb-1">
-                            <span class="fwt-normal">Subject:</span> <span id="subject">Complaint Regarding Car Loan Services</span>
+                            <span class="fwt-normal">Subject:</span> <span id="subject">Complaint Regarding Car Loan
+                                Services</span>
                         </div>
                         <div class="label-wrap mb-1">
                             <span class="fwt-normal">Email:</span>
@@ -229,7 +234,10 @@
                                 <span id="email">
                                     <p> Dear Sir/Mam,</p>
 
-                                    <p> I am writing to express my dissatisfaction with the car loan services provided by your institution. Despite timely payments, I've faced recurring issues with billing statements and interest calculations. Urgent resolution is requested.</p>
+                                    <p> I am writing to express my dissatisfaction with the car loan services provided
+                                        by your institution. Despite timely payments, I've faced recurring issues with
+                                        billing statements and interest calculations. Urgent resolution is requested.
+                                    </p>
 
                                     <p>Thanks</p>
                                 </span>
@@ -243,153 +251,266 @@
                         <br>
                         <br>
                         <div class="d-flex align-items-center justify-content-center gap-3">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                                id="createTicketButton">Create Ticket</button>
+                            <button class="btn btn-primary" id="createTicketButton">Create Ticket</button>
 
                         </div>
                     </div>
                     <div class="mb-5 mt-4" id="create-ticket-container">
-                        <hr>
-                        <div class="page-header mb-3">
-                            <h5>Past Emails <span id="pastEmailCount">(3)</span></h5>
+                        <hr class="my-5">
+                        <div class="custom-accordion1 common-card">
+                            <div class="custom-accordion-item active">
+                                <div
+                                    class="d-flex justify-content-between align-items-center accordion-header-custom px-4">
+                                    <h5 class="m-0">Past Emails <span id="pastEmailCount">(3)</span></h5>
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="accordion-content" style="max-height: none; padding: 1.5rem;">
+                                    <div class="d-flex justify-content-end mb-4">
+                                        <div class="d-flex align-items-center ms-auto me-3">
+                                            <span class="text-nowrap fw-medium">Emails per page</span>
+                                            <select class="form-select ms-2" id="pageSizePastMail">
+                                                <option selected="">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex gap-3">
+                                            <select class="form-select form-select-sm" id="ticketNo-drpdwn">
+                                                <option value="" disabled="" selected="">Select Ticket No.</option>
+                                                <option value="">CBL/FY24-25/00002(Closed)</option>
+                                                <option value="">CBL/FY24-25/00005(Closed)</option>
+                                            </select>
+                                            <button class="btn btn-sm btn-primary text-nowrap"
+                                                id="club-button">Club</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped past-mails">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th></th>
+                                                    <th scope="col" class="align-top">Sr No.</th>
+                                                    <th scope="col">From
+
+                                                    </th>
+                                                    <th scope="col">Subject
+
+                                                    </th>
+                                                    <th scope="col" class="text-nowrap">Received On
+
+
+                                                    </th>
+                                                    <th scope="col" class="align-top">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="mailThreads">
+                                                <tr>
+                                                    <td><input class="form-check-input border-secondary" data-id="7723"
+                                                            type="checkbox" value="" id="flexCheckDefault7723"></td>
+                                                    <td>1</td>
+                                                    <td>robertlee@gmail.com</td>
+                                                    <td class="line-limit"><span style="font-weight: 500;">Car Loan
+                                                            Customer Service
+                                                            Feedback</span>
+                                                        <div>Hi, I faced unprofessional behavior from your customer
+                                                            service
+                                                            representatives while discussing my car loan. Improve
+                                                            service quality to
+                                                            retain customers like me.</div>
+                                                    </td>
+                                                    <td>May 22, 2024, 10:16 AM</td>
+                                                    <td><a href="./ticket-detail.html" class="view-mail">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input class="form-check-input border-secondary" data-id="7722"
+                                                            type="checkbox" value="" id="flexCheckDefault7722"></td>
+                                                    <td>2</td>
+                                                    <td>robertlee@gmail.com</td>
+                                                    <td class="line-limit"><span
+                                                            style="font-weight: 500;">#GRO/FY24-25/00007 submitted by
+                                                            GRO</span>
+                                                        <div>Hi, I recently noticed a significant increase in the
+                                                            interest rate on
+                                                            my car loan. Kindly explain the reason for this change and
+                                                            provide
+                                                            options for a more favorable rate.</div>
+                                                    </td>
+                                                    <td>May 12, 2024, 1:38 PM</td>
+                                                    <td><a href="./ticket-detail.html" class="view-mail"
+                                                            data-recordid="7722">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input class="form-check-input border-secondary" data-id="7721"
+                                                            type="checkbox" value="" id="flexCheckDefault7721"></td>
+                                                    <td>3</td>
+                                                    <td>robertlee@gmail.com</td>
+                                                    <td class="line-limit"><span
+                                                            style="font-weight: 500;">#GRO/FY24-25/00007 allocated to
+                                                            you for action</span>
+                                                        <div>Dear Sir/Mam, It has been three weeks since I submitted my
+                                                            bike loan
+                                                            application, and I haven't received any updates. Please
+                                                            provide a status
+                                                            update at your earliest convenience.</div>
+                                                    </td>
+                                                    <td>May 12, 2024, 11:20 AM</td>
+                                                    <td><a href="./ticket-detail.html" class="view-mail"
+                                                            data-recordid="7721">View</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="paginationWrapper d-flex justify-content-center align-items-center gap-2 mt-4 flex-wrap"
+                                        id="paginationContainer"><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="1" disabled="">First</button><button
+                                            class="btn btn-primary btn-sm page-btns" data-page="-9" disabled="">Previous
+                                            10</button><button class="btn btn-primary btn-sm page-btns" data-page="0"
+                                            disabled="">Previous</button>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center m-0">
+                                                <li class="page-item active disabled"><button class="page-link"
+                                                        data-page="1">1</button></li>
+                                            </ul>
+                                        </nav><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="2">Next</button><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="11">Next 10</button><button
+                                            class="btn btn-primary btn-sm page-btns" data-page="560">Last</button><span
+                                            class="page-details-container w-100 text-center">Page 1 of 1</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped email-pending">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th scope="col">From
-
-                                        </th>
-                                        <th scope="col">Subject
-
-                                        </th>
-                                        <th scope="col">Received On
-
-
-                                        </th>
-                                        <th scope="col" class="align-top">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="mailThreads">
-                                    <tr>
-                                        <td>robertlee@gmail.com</td>
-                                        <td class="line-limit"><span style="font-weight: 500;">Car Loan Customer Service Feedback</span>
-                                            <div>Hi, I faced unprofessional behavior from your customer service representatives while discussing my car loan. Improve service quality to retain customers like me.</div>
-                                        </td>
-                                        <td>May 22, 2024, 10:16 AM</td>
-                                        <td><a href="./create-ticket.html" class="view-mail">View</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>robertlee@gmail.com</td>
-                                        <td class="line-limit"><span style="font-weight: 500;">Car Loan Interest Rate Inquiry</span>
-                                            <div>Hi, I recently noticed a significant increase in the interest rate on my car loan. Kindly explain the reason for this change and provide options for a more favorable rate.</div>
-                                        </td>
-                                        <td>May 12, 2024, 1:38 PM</td>
-                                        <td><a href="./create-ticket.html" class="view-mail">View</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>robertlee@gmail.com</td>
-                                        <td class="line-limit"><span style="font-weight: 500;">Bike Loan Application Status Update Request</span>
-                                            <div>Dear Sir/Mam, It has been three weeks since I submitted my bike loan application, and I haven't received any updates. Please provide a status update at your earliest convenience.</div>
-                                        </td>
-                                        <td>May 12, 2024, 11:20 AM</td>
-                                        <td><a href="./create-ticket.html" class="view-mail">View</a></td>
-                                    </tr>
-                                   
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="paginationWrapper d-flex justify-content-center align-items-center gap-2 mt-4 mb-5" id="paginationContainer">
-                            <button class="btn btn-primary btn-sm page-btns">First</button>
-                            <button class="btn btn-primary btn-sm page-btns">Previous</button>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center m-0">
-                                    <li class="page-item active disabled">
-                                        <button class="page-link">1</button>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <button class="btn btn-primary btn-sm page-btns">Next</button>
-                            <button class="btn btn-primary btn-sm page-btns">Last</button>
-                            <span class="page-details-container">Page 1 of 1</span>
-                        </div>
-
                     </div>
+                    <div class="mb-5" id="ticket-history-container">
+                        <hr class="my-5">
+                        <div class="custom-accordion1 common-card">
+                            <div class="custom-accordion-item active">
+                                <div
+                                    class="d-flex justify-content-between align-items-center accordion-header-custom px-4">
+                                    <h5 class="m-0">Ticket History <span id="pastEmailCount">(3)</span></h5>
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="accordion-content" style="max-height: none; padding: 1.5rem;">
+                                    <div class="d-flex justify-content-end mb-4">
+                                        <div class="d-flex align-items-center ms-auto me-3">
+                                            <span class="text-nowrap fw-medium">Emails per page</span>
+                                            <select class="form-select ms-2" id="pageSizePastMail">
+                                                <option selected="">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex gap-3">
+                                            <select class="form-select form-select-sm" id="ticketNo-drpdwn">
+                                                <option value="" disabled="" selected="">Select Ticket No.</option>
+                                                <option value="">CBL/FY24-25/00002(Closed)</option>
+                                                <option value="">CBL/FY24-25/00005(Closed)</option>
+                                            </select>
+                                            <button class="btn btn-sm btn-primary text-nowrap"
+                                                id="club-button">Club</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped ticketHistory-table">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th scope="col" class="align-top">Sr<br>No.</th>
+                                                    <th class="text-nowrap">Ticket No.</th>
+                                                    <th>Email</th>
+                                                    <th>Subject</th>
+                                                    <th class="text-nowrap">Created On</th>
+                                                    <th class="align-top text-nowrap">Current Status
+                                                        <div class="label-wrapper newdrop-list">
+                                                            <div class="formGroup">
+                                                                <select class="form-select filter-input dropdown-field w-100">
+                                                                    <option value="">Select Status</option>
+                                                                    <option value="2">status 1</option>
+                                                                    <option value="2">status 2</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tickethistory">
+                                                <tr class="reject">
+                                                    <td>1</td>
+                                                    <td class="table-text"><a href="./ticket-detail.html">TKT 015</a>
+                                                    </td>
+                                                    <td class="table-text">robertlee@gmail.com</td>
+                                                    <td class="table-text line-limit">
+                                                        <span style="font-weight: 500;">Home Loan Processing Time
+                                                            Feedback</span>
+                                                        <div>Hi, The processing time for my home loan application has
+                                                            been
+                                                            excessively long, causing inconvenience. Please streamline
+                                                            the process
+                                                            to enhance customer satisfaction.</div>
+                                                    </td>
+                                                    <td class="table-text text-nowrap">May 5, 2024, 4:21 PM</td>
+                                                    <td class="table-text">Closed</td>
+                                                </tr>
+                                                <tr class="reject">
+                                                    <td>2</td>
+                                                    <td class="table-text"><a href="./ticket-detail.html">TKT 024</a>
+                                                    </td>
+                                                    <td class="table-text">robertlee@gmail.com</td>
+                                                    <td class="table-text line-limit">
+                                                        <span style="font-weight: 500;">Credit Card Loan Dispute
+                                                            Resolution</span>
+                                                        <div>Dear Sir/Mam, I disputed a charge on my credit card
+                                                            statement two weeks
+                                                            ago, but the issue remains unresolved. Please expedite the
+                                                            resolution
+                                                            process and update me on the status.</div>
+                                                    </td>
+                                                    <td class="table-text text-nowrap">May 3, 2024, 2:20 PM</td>
+                                                    <td class="table-text">Closed</td>
+                                                </tr>
+                                                <tr class="reject">
+                                                    <td>3</td>
+                                                    <td class="table-text"><a href="./ticket-detail.html">TKT 032</a>
+                                                    </td>
+                                                    <td class="table-text">robertlee@gmail.com</td>
+                                                    <td class="table-text line-limit">
+                                                        <span style="font-weight: 500;">Car Loan Late Payment Penalty
+                                                            Dispute</span>
+                                                        <div>Hi, I was charged a late payment penalty on my car loan
+                                                            despite making
+                                                            the payment on time. Please investigate and refund the
+                                                            penalty amount
+                                                            promptly.</div>
+                                                    </td>
+                                                    <td class="table-text text-nowrap">May 1, 2024, 3:45 PM</td>
+                                                    <td class="table-text">Pending</td>
+                                                </tr>
 
-                    <div class="mb-5 mt-4" id="ticket-history-container">
-                        <hr>
-                        <div class="page-header mb-3">
-                            <h5>Ticket History <span id="ticketHistoryCount">(3)</span></h5>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th class="text-nowrap">Ticket No.
+                                            </tbody>
+                                        </table>
+                                    </div>
 
-                                        </th>
-                                        <th>Email
-
-                                        </th>
-                                        <th>Subject
-
-                                        </th>
-                                        <th class="text-nowrap">Created On
-
-                                        </th>
-                                        <th class="align-top text-nowrap">Current Status
-
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tickethistory">
-                                    <tr class="reject">
-                                        <td class="table-text"><a href="./ticket-detail.html">TKT 015</a></td>
-                                        <td class="table-text">robertlee@gmail.com</td>
-                                        <td class="table-text line-limit">
-                                            <span style="font-weight: 500;">Home Loan Processing Time Feedback</span>
-                                            <div>Hi, The processing time for my home loan application has been excessively long, causing inconvenience. Please streamline the process to enhance customer satisfaction.</div>
-                                        </td>
-                                        <td class="table-text text-nowrap">May 5, 2024, 4:21 PM</td>
-                                        <td class="table-text">Closed</td>
-                                    </tr>
-                                    <tr class="reject">
-                                        <td class="table-text"><a href="./ticket-detail.html">TKT 024</a></td>
-                                        <td class="table-text">robertlee@gmail.com</td>
-                                        <td class="table-text line-limit">
-                                            <span style="font-weight: 500;">Credit Card Loan Dispute Resolution</span>
-                                            <div>Dear Sir/Mam, I disputed a charge on my credit card statement two weeks ago, but the issue remains unresolved. Please expedite the resolution process and update me on the status.</div>
-                                        </td>
-                                        <td class="table-text text-nowrap">May 3, 2024, 2:20 PM</td>
-                                        <td class="table-text">Closed</td>
-                                    </tr>
-                                    <tr class="reject">
-                                        <td class="table-text"><a href="./ticket-detail.html">TKT 032</a></td>
-                                        <td class="table-text">robertlee@gmail.com</td>
-                                        <td class="table-text line-limit">
-                                            <span style="font-weight: 500;">Car Loan Late Payment Penalty Dispute</span>
-                                            <div>Hi, I was charged a late payment penalty on my car loan despite making the payment on time. Please investigate and refund the penalty amount promptly.</div>
-                                        </td>
-                                        <td class="table-text text-nowrap">May 1, 2024, 3:45 PM</td>
-                                        <td class="table-text">Pending</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="paginationWrapper d-flex justify-content-center align-items-center gap-2 mt-4 mb-5" id="paginationContainer">
-                            <button class="btn btn-primary btn-sm page-btns">First</button>
-                            <button class="btn btn-primary btn-sm page-btns">Previous</button>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center m-0">
-                                    <li class="page-item active disabled">
-                                        <button class="page-link">1</button>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <button class="btn btn-primary btn-sm page-btns">Next</button>
-                            <button class="btn btn-primary btn-sm page-btns">Last</button>
-                            <span class="page-details-container">Page 1 of 1</span>
+                                    <div class="paginationWrapper d-flex justify-content-center align-items-center gap-2 mt-4 flex-wrap"
+                                        id="paginationContainer"><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="1" disabled="">First</button><button
+                                            class="btn btn-primary btn-sm page-btns" data-page="-9" disabled="">Previous
+                                            10</button><button class="btn btn-primary btn-sm page-btns" data-page="0"
+                                            disabled="">Previous</button>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center m-0">
+                                                <li class="page-item active disabled"><button class="page-link"
+                                                        data-page="1">1</button></li>
+                                            </ul>
+                                        </nav><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="2">Next</button><button class="btn btn-primary btn-sm page-btns"
+                                            data-page="11">Next 10</button><button
+                                            class="btn btn-primary btn-sm page-btns" data-page="560">Last</button><span
+                                            class="page-details-container w-100 text-center">Page 1 of 1</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -400,99 +521,77 @@
     </div>
 
     <!-- create ticket modal start  -->
-    <form>
-        <div class="model-wrapper">
-            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                data-bs-backdrop="static" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
 
-                        <div class="modal-body p-4" id="createTicketForm">
-                            <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
-                                aria-label="Close" id="closeCreatePopupBtn">
-                            </button>
-                            <h4 class="mb-3">Create ticket</h4>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Category<span class="text-danger">*</span></label>
-                                <select class="form-select" aria-label="Default select example" id="create-ticket"
-                                    required="required">
-                                    <option value="" selected disabled>Select Category</option>
-                                    <option value="">Category 1</option>
-                                    <option value="">Category 2</option>
-                                    <option value="">Category 3</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a category</div>
-                            </div>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Sub Category<span class="text-danger">*</span></label>
-                                <select class="form-select" aria-label="Default select example" id="categoryDropdown"
-                                    required="required">
-                                    <option selected disabled>Select Sub Category</option>
-                                    <option>Sub Category 1</option>
-                                    <option>Sub Category 2</option>
-                                    <option>Sub Category 3</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a Sub Category</div>
-                            </div>
-                            <!-- <div class="label-wrap mb-3">
-                                <label class="form-label">Assign IO<span class="text-danger">*</span></label>
-                                <select class="form-select" aria-label="Default select example" id="subCategoryDropdown"
-                                    required="required">
-                                    <option selected disabled>Select IO</option>
-                                    <option>Olivia Bennett</option>
-                                    <option>Ethan Carter</option>
-                                    <option>Sophia Rivera</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a IO</div>
-                            </div> -->
-                            
-                            <button class="btn btn-primary ms-auto d-block mt-4" id="create-tkt" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1" data-bs-dismiss="modal" aria-label="Close">
-                                Create</button>
-                        </div>
-
+    <div class="custom-modal" id="createTkt-modal">
+        <div class="custom-modal-dialog custom-modal-dialog-centered">
+            <div class="custom-modal-content">
+                <div class="d-flex justify-content-between p-4 pb-3 border-bottom">
+                    <h4 class="fs-5 m-0" id="exampleModalLabel">
+                        Create ticket
+                    </h4>
+                    <button type="button" class="btn-close custom-close-btn" id="createTkt-closeBtn"></button>
+                </div>
+                <div class="custom-modal-body p-4">
+                    <div class="label-wrap mb-3">
+                        <label class="form-label">Category<span class="text-danger">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="create-ticket"
+                            required="required">
+                            <option value="" selected disabled>Select Category</option>
+                            <option value="">Category 1</option>
+                            <option value="">Category 2</option>
+                            <option value="">Category 3</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a category</div>
                     </div>
+                    <div class="label-wrap mb-3">
+                        <label class="form-label">Sub Category<span class="text-danger">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="categoryDropdown"
+                            required="required">
+                            <option selected disabled>Select Sub Category</option>
+                            <option>Sub Category 1</option>
+                            <option>Sub Category 2</option>
+                            <option>Sub Category 3</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a Sub Category</div>
+                    </div>
+                    <button class="btn btn-primary ms-auto d-block mt-4" id="create-tkt" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1" data-bs-dismiss="modal" aria-label="Close">
+                        Create</button>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
     <!-- create ticket modal end  -->
 
     <!-- discard modal start  -->
-    <form>
-        <div class="model-wrapper">
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                data-bs-backdrop="static" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <div class="modal-body p-4" id="createTicketForm">
-                            <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
-                                aria-label="Close" id="closeCreatePopupBtn">
-                            </button>
-                            <h4 class="mb-3">Discard Email</h4>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Select Reason<span class="text-danger">*</span></label>
-                                <select class="form-select" aria-label="Default select example" id="create-ticket"
-                                    required="required">
-                                    <option value="" selected disabled>Select Reason</option>
-                                    <option value="">Duplicate Email</option>
-                                    <option value="">Incomplete Information</option>
-                                    <option value="">Not An Issue</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a category</div>
-                            </div>
-
-                            <button class="btn btn-primary ms-auto d-block mt-4" id="discard-btn" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal2" data-bs-dismiss="modal" aria-label="Close">
-                                Submit</button>
-                        </div>
-
+    <div class="custom-modal" id="discard-modal">
+        <div class="custom-modal-dialog custom-modal-dialog-centered">
+            <div class="custom-modal-content">
+                <div class="d-flex justify-content-between p-4 pb-3 border-bottom">
+                    <h4 class="fs-5 m-0" id="exampleModalLabel">
+                        Discard Email
+                    </h4>
+                    <button type="button" class="btn-close custom-close-btn" id="discardModal-closeBtn"></button>
+                </div>
+                <div class="custom-modal-body p-4">
+                    <div class="label-wrap mb-3">
+                        <label class="form-label">Select Reason<span class="text-danger">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="create-ticket"
+                            required="required">
+                            <option value="" selected disabled>Select Reason</option>
+                            <option value="">Duplicate Email</option>
+                            <option value="">Incomplete Information</option>
+                            <option value="">Not An Issue</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a category</div>
                     </div>
+                    <button class="btn btn-primary ms-auto d-block mt-4" id="discard-btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2" data-bs-dismiss="modal" aria-label="Close">
+                        Submit</button>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
     <!-- discard ticket modal end  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -515,6 +614,43 @@
             window.location.href = "mail-list.html";
         });
 
+    </script>
+    <script>
+        $(document).on('click', '#discard-modal-btn', async function () {
+            document.getElementById('discard-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        $(document).on('click', '#discardModal-closeBtn', async function () {
+            document.getElementById('discard-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        $(document).on('click', '#createTicketButton', async function () {
+            document.getElementById('createTkt-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        $(document).on('click', '#createTkt-closeBtn', async function () {
+            document.getElementById('createTkt-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.custom-accordion1 .accordion-header-custom').each(function () {
+                $(this).click(function () {
+                    var parentItem = $(this).parent();
+                    var content = parentItem.find('.accordion-content');
+                    var isActive = parentItem.hasClass('active');
+                    if (isActive) {
+                        parentItem.removeClass('active');
+                        content.css('max-height', '0').css('padding', '0 1.5rem 0 1.5rem');
+                    } else {
+                        parentItem.addClass('active');
+                        content.css('max-height', 'none').css('padding', '1.5rem');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

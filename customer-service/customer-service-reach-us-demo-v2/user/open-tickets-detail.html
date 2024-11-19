@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ticket Detail</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./style/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="calendar3" viewBox="0 0 16 16">
+            <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+            <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </symbol>
+        <symbol id="door-closed" viewBox="0 0 16 16">
+            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+        </symbol>
+        <symbol id="file-earmark" viewBox="0 0 16 16">
+            <path
+                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+        </symbol>
+        <symbol id="file-earmark-text" viewBox="0 0 16 16">
+            <path
+                d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+            <path
+                d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+        </symbol>
+        <symbol id="gear-wide-connected" viewBox="0 0 16 16">
+            <path
+                d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
+        </symbol>
+        <symbol id="graph-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z" />
+        </symbol>
+        <symbol id="house-fill" viewBox="0 0 16 16">
+            <path
+                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
+            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+        </symbol>
+        <symbol id="list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </symbol>
+        <symbol id="people" viewBox="0 0 16 16">
+            <path
+                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+        </symbol>
+        <symbol id="plus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+        </symbol>
+        <symbol id="puzzle" viewBox="0 0 16 16">
+            <path
+                d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .039-.063v-.009a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003a.214.214 0 0 0-.039-.064.859.859 0 0 0-.27-.193C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.039.063v.003l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855zM4.605 3a.5.5 0 0 0-.498.55l.001.007.29 3.4A.5.5 0 0 1 3.9 7.5h-.782c-.696 0-1.182-.497-1.469-.872a.459.459 0 0 0-.118-.115.112.112 0 0 0-.025-.012L1.5 6.5h-.003a.213.213 0 0 0-.064.039.86.86 0 0 0-.193.27C1.1 7.09 1 7.51 1 8c0 .491.1.912.24 1.19.07.14.14.225.194.271a.213.213 0 0 0 .063.039H1.5l.006-.001a.112.112 0 0 0 .025-.012.459.459 0 0 0 .118-.115c.287-.375.773-.872 1.469-.872H3.9a.5.5 0 0 1 .498.542l-.29 3.408a.5.5 0 0 0 .497.55h1.878c-.048-.166-.195-.352-.463-.557-.274-.21-.52-.528-.52-.943 0-.568.447-.947.862-1.154C6.807 10.123 7.387 10 8 10s1.193.123 1.638.346c.415.207.862.586.862 1.154 0 .415-.246.733-.52.943-.268.205-.415.39-.463.557h1.878a.5.5 0 0 0 .498-.55l-.001-.007-.29-3.4A.5.5 0 0 1 12.1 8.5h.782c.696 0 1.182.497 1.469.872.05.065.091.099.118.115.013.008.021.01.025.012a.02.02 0 0 0 .006.001h.003a.214.214 0 0 0 .064-.039.86.86 0 0 0 .193-.27c.14-.28.24-.7.24-1.191 0-.492-.1-.912-.24-1.19a.86.86 0 0 0-.194-.271.215.215 0 0 0-.063-.039H14.5l-.006.001a.113.113 0 0 0-.025.012.459.459 0 0 0-.118.115c-.287.375-.773.872-1.469.872H12.1a.5.5 0 0 1-.498-.543l.29-3.407a.5.5 0 0 0-.497-.55H9.517c.048.166.195.352.463.557.274.21.52.528.52.943 0 .568-.447.947-.862 1.154C9.193 5.877 8.613 6 8 6s-1.193-.123-1.638-.346C5.947 5.447 5.5 5.068 5.5 4.5c0-.415.246-.733.52-.943.268-.205.415-.39.463-.557H4.605z" />
+        </symbol>
+        <symbol id="search" viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </symbol>
+        <symbol id="discarded" viewBox="0 0 16 16">
+            <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+            <path
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+        </symbol>
+        <symbol id="incidents" viewBox="0 0 16 16">
+            <path
+                d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z" />
+            <path
+                d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+        </symbol>
+        <symbol id="changereq" viewBox="0 0 16 16">
+            <path
+                d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.5.5 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244z" />
+        </symbol>
+        <symbol id="contact-us" viewBox="0 0 16 16">
+            <path
+                d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+            <path
+                d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+        </symbol>
+        <symbol id="reach-us" viewBox="0 0 16 16">
+            <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+        </symbol>
+        <symbol id="email" viewBox="0 0 16 16">
+            <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+        </symbol>
+        <symbol id="attachment-icon" viewBox="0 0 16 16">
+            <path fill="#fff"
+                d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z" />
+        </symbol>
+    </svg>
+    <!-- header start  -->
+    <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 bg-white" data-bs-theme="dark">
+        <span class="navbar-brand col-md-3 col-lg-2 me-0 px-3 shadow-none" href="#">
+            <a href="#" class="logo"></a>
+        </span>
+        <ul class="navbar-nav flex-row d-md-none px-4">
+            <li class="nav-item text-nowrap">
+                <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" id="navBarBtn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </li>
+        </ul>
+        <div class="gap-3 me-3 userdetail" style="font-weight: 500; color: #333;">
+            <span class="loggedin-user">Hi, David Martinez</span>
+            <a href="./login.html" class="d-flex gap-1" id="logout-user" style="font-weight: 500; color: #333;">
+                <svg class="bi" style="margin-top:1px">
+                    <use xlink:href="#door-closed"></use>
+                </svg>
+                <span>Sign Out</span>
+            </a>
+        </div>
+    </header>
+    <!-- header end  -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-top-0">
+                <div class="position-sticky d-flex flex-column h-100 pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item w-100">
+                            <a class="nav-link d-flex align-items-center gap-2 activ rounded" aria-current="page"
+                                href="./dashboard.html">
+                                <svg class="bi">
+                                    <use xlink:href="#house-fill"></use>
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item for-gro-md w-100" style="">
+                            <!-- <a class="nav-link d-flex align-items-center gap-2 rounded" href="./mail-list.html">
+                                <svg class="bi">
+                                    <use xlink:href="#file-earmark"></use>
+                                </svg>
+                                New Mail
+                            </a> -->
+                            <div class="accordion accordion-flush sidebar-accordion" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button py-2 px-3 gap-2" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="true" aria-controls="flush-collapseOne">
+                                            <svg class="bi">
+                                                <use xlink:href="#file-earmark"></use>
+                                            </svg>
+                                            Queries
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body p-0 ms-3">
+                                            <ul class="p-0">
+                                                <li>
+                                                    <a href="./mail-list.html" class="nav-link d-flex gap-2">
+                                                        <svg class="bi">
+                                                            <use xlink:href="#email"></use>
+                                                        </svg>
+                                                        Via Email
+                                                    </a>
+                                                </li>
+                                                <li class="text-nowrap">
+                                                    <a href="./reach-us-mail-list.html" class="nav-link d-flex gap-2">
+                                                        <svg class="bi">
+                                                            <use xlink:href="#reach-us"></use>
+                                                        </svg>
+                                                        Via Reach Us
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded active" href="tickit-list.html">
+                                <svg class="bi">
+                                    <use xlink:href="#cart"></use>
+                                </svg>
+                                Tickets
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded" href="./open-tickets.html">
+                                <svg class="bi">
+                                    <use xlink:href="#file-earmark-text"></use>
+                                </svg>
+                                Open
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded"
+                                href="./close-tickets.html">
+                                <svg class="bi">
+                                    <use xlink:href="#file-earmark-text"></use>
+                                </svg>
+                                Closed
+                            </a>
+                        </li>
+                        <li class="nav-item for-gro-md" style="">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded text-nowrap"
+                                href="./discarded-email.html">
+                                <svg class="bi">
+                                    <use xlink:href="#people"></use>
+                                </svg>
+                                Discarded Email
+                            </a>
+                        </li>
+                        <li class="nav-item for-gro-md" style="">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded" href="./contact-us.html">
+                                <svg class="bi">
+                                    <use xlink:href="#contact-us"></use>
+                                </svg>
+                                Reach Us
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-4 userinfo mt-auto userdetail">
+                        <li class="nav-item">
+                            <span class="loggedin-user">Hi, Sagar Malde</span>
+                            <a href="#" id="logout-user" style="font-weight: 500; color: #333;">
+                                <svg class="bi">
+                                    <use xlink:href="#door-closed"></use>
+                                </svg>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="mainContent-wrap col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="ticket-details-wrapper">
+
+                    <div class="info-wrapper">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <div class="mt-4 pb-2 mb-3">
+                                <h4 id="TicketId">Ticket ID: TKT-001</h4>
+                            </div>
+                            <div class="d-flex align-items-center flex-wrap mb-3 mb-md-0 gap-3"
+                                id="change-status-section" style="display: none !important">
+                                <div class="d-flex align-items-center gap-3 ms-auto me-0">
+                                    <label for="category">Change Status</label>
+                                    <div class="formGroup">
+                                        <select class="form-select form-select-sm" id="change-status-drp">
+                                            <option value="" disabled="">Select Status</option>
+                                            <option value="2">Assigned</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-sm ms-auto" id="update-status" disabled="">Update
+                                    Status</button>
+                            </div>
+                        </div>
+                        <div class="card-wrapper">
+                            <div class="row mb-5 gy-3">
+                                <div class="col-md-6">
+                                    <div class="p-4 border rounded h-100">
+                                        <input type="hidden" id="tikId" value="1">
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">From:</span> <span
+                                                id="mailFrom">robertlee@gmail.com</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Received On:</span> <span
+                                                id="recievedon">May 30, 2024, 3:00 PM</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Status:</span> <span id="ticketStatus">In
+                                                Progress</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Source:</span> <span
+                                                id="mailsource">Email</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">TAT:</span> <span id="mailsource">3</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Linked Ticket:</span> <span
+                                                id="ticketNo">TKT-001</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Category:</span> <span
+                                                id="category">Category 1</span>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="fwt-normal d-block">Sub Category:</span> <span
+                                                id="subcategory">Sub Category 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" id="customerDetailForm">
+                                    <form class="needs-validation" novalidate="" id="customer-validation" action="">
+                                        <div class="p-4 border rounded h-100">
+                                            <input id="ticketid" type="hidden" value="1">
+                                            <input id="customerid" type="hidden" value="7">
+                                            <div class="label-wrap mb-2">
+                                                <label for="customername"
+                                                    class="form-label fw-normal d-block mb-1">Customer Name</label>
+                                                <input id="customername" class="form-control" type="text"
+                                                    value="Robert Lee" pattern="[A-Za-z\s.'\u2019]*" title="">
+                                                <div class="invalid-feedback">Please provide valid Name.</div>
+                                            </div>
+                                            <div class="label-wrap mb-2">
+                                                <label for="name"
+                                                    class="form-label fw-normal d-block mb-1">Email</label>
+                                                <input id="customeremail" class="form-control" type="email"
+                                                    value="robertlee@gmail.com"
+                                                    pattern="^[a-zA-Z]{2,}[^@]+@[^@]+\.[a-zA-Z]{2,6}$" title="">
+                                                <div class="invalid-feedback">Please provide valid Email Id.</div>
+                                            </div>
+                                            <div class="label-wrap mb-2">
+                                                <label for="customerphone"
+                                                    class="form-label fw-normal d-block mb-1">Phone</label>
+                                                <input id="customerphone" class="form-control" type="tel"
+                                                    value="9898988988" pattern="[6-9]\d{9}" maxlength="10" title="">
+                                                <div class="invalid-feedback">Please provide a valid Phone Number.</div>
+                                            </div>
+                                            <div class="label-wrap mb-2">
+                                                <label for="name" class="form-label fw-normal d-block mb-1">Account
+                                                    No.</label>
+                                                <input id="customeracc" class="form-control" type="text"
+                                                    value="0014244155" pattern="\d*" title="">
+                                                <div class="invalid-feedback">Please provide valid Customer Account No.
+                                                </div>
+                                            </div>
+
+                                            <div class="label-wrap mb-2">
+                                                <label class="form-label fw-normal">Account</label>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="accountDropdown">
+                                                    <option value="" disabled="">Select Account</option>
+                                                    <option value="1">SME</option>
+                                                    <option value="2">Corporate</option>
+                                                    <option value="3" selected>Retail</option>
+                                                </select>
+                                            </div>
+                                            <div class="label-wrap mb-2">
+                                                <label class="form-label fw-normal">Mode Of Receipt</label>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="ModeOfReceiptDropdown">
+                                                    <option value="" disabled="" selected="">Select Mode Of Receipt
+                                                    </option>
+                                                    <option value="1">Email to Complaint email id</option>
+                                                    <option value="2">Email to CS Group</option>
+                                                    <option value="3">Email to Branch</option>
+                                                </select>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="label-wrap mb-2">
+                                                        <label for="name"
+                                                            class="form-label fw-normal d-block mb-1">POS</label>
+                                                        <input id="customeracc" class="form-control" type="text"
+                                                            value="" pattern="\d*" title="">
+                                                        <div class="invalid-feedback">Please provide POS.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="label-wrap mb-2">
+                                                        <label for="name"
+                                                            class="form-label fw-normal d-block mb-1">TOS</label>
+                                                        <input id="customeracc" class="form-control" type="text"
+                                                            value="" pattern="\d*" title="">
+                                                        <div class="invalid-feedback">Please provide TOS.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="label-wrap mb-2">
+                                                        <label for="name" class="form-label fw-normal d-block mb-1">Settlement
+                                                            Date <span class="text-danger">*</span></label>
+                                                        <input id="customeracc" class="form-control" type="date" value=""
+                                                            pattern="\d*" title="">
+                                                        <div class="invalid-feedback">Please provide Settlement Date.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="label-wrap mb-2">
+                                                        <label for="name" class="form-label fw-normal d-block mb-1">Settlement
+                                                            Amount <span class="text-danger">*</span></label>
+                                                        <input id="customeracc" class="form-control" type="text" value=""
+                                                            pattern="\d*" title="">
+                                                        <div class="invalid-feedback">Please provide Settlement Amount.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="label-wrap mb-2">
+                                                <label for="name" class="form-label fw-normal d-block mb-1">Complaint
+                                                    Detail</label>
+                                                <textarea class="form-control" rows="3"
+                                                    id="complaint-detail"></textarea>
+                                                <div class="invalid-feedback">.</div>
+                                            </div>
+                                            <button class="btn btn-primary ms-auto d-block mt-4"
+                                                id="saveCustomerBtn">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class=" mb-5 mt-4">
+                                <h5 class="issue-title mb-3">Email Description</h5>
+                                <div class="mb-2">
+                                    <span class="fwt-normal">From:</span> <span id="mailId">robertlee@gmail.com</span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="fw-normal">CC:</span> <span id="ccEmails">alexjohnson@gmail.com;
+                                        emilydavis@gmail.com</span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="fw-normal">Received On:</span> <span id="receiveddate">May 30, 2024,
+                                        3:00 PM</span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="fwt-normal">Subject:</span> <span id="subject">Complaint Regarding Car
+                                        Loan Services</span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="fwt-normal">Email:</span>
+                                    <div class="text-container overflow-auto" id="mail">
+                                        <p> Dear Sir/Mam,</p>
+
+                                        <p> I am writing to express my dissatisfaction with the car loan services
+                                            provided by your institution. Despite timely payments, I've faced recurring
+                                            issues with billing statements and interest calculations. Urgent resolution
+                                            is requested.</p>
+
+                                        <p>Thanks</p>
+                                    </div>
+                                </div>
+                                <div class="mb-2 mt-4 d-flex gap-3">
+                                    <span class="fwt-normal">Attachments:</span>
+                                    <span id="attachments" class="d-flex flex-column gap-1">No attachment found.</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-5 mt-4" id="assigned-to-section" style="display: none;">
+                                <h5 class="mb-3">Assigned</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="label-wrap mb-2">
+                                            <label for="name" class="form-label fw-medium d-block mb-1">Reporter</label>
+                                            <label for="name" class="form-label fw-normal d-block mb-1"
+                                                id="reporter-labl">Deven Gandre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="label-wrap mb-2">
+                                            <label for="name" class="form-label fw-medium d-block mb-1">Current
+                                                Lead</label>
+                                            <label for="name" class="form-label fw-normal d-block mb-1"
+                                                id="current-lead-labl">GRO Complaints</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="name" class="form-label fw-medium d-block mb-1">IO</label>
+                                        <label for="name" class="form-label fw-normal d-block mb-1"
+                                            id="current-io-labl">Raj Maru</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="mb-5 mt-4">
+                                <h5 class="mb-3">Attachments <span id="attachmentCount">(4)</span></h5>
+
+
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>File</th>
+                                                <th class="text-nowrap">Uploaded by</th>
+                                                <th class="text-nowrap">Uploaded Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="fileList">
+                                            <tr>
+                                                <th class="trash-icon cursor-pointer"><img src="./images/trash-box.svg"
+                                                        alt="Delete"></th>
+                                                <td class="fw-normal">Samplefile4</td>
+                                                <td><a href="" target="_blank">Samplefile4.png</a></td>
+                                                <td>David Martinez</td>
+                                                <td>May 30, 2024, 5:31 PM</td>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="trash-icon cursor-pointer"><img src="./images/trash-box.svg"
+                                                        alt="Delete"></th>
+                                                <td class="fw-normal">Samplefile3</td>
+                                                <td><a href="" target="_blank">Samplefile3.png</a></td>
+                                                <td>David Martinez</td>
+                                                <td>May 30, 2024, 5:30 PM</td>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="trash-icon cursor-pointer"><img src="./images/trash-box.svg"
+                                                        alt="Delete"></th>
+                                                <td class="fw-normal">Samplefile2</td>
+                                                <td><a href="" target="_blank">Samplefile2.png</a></td>
+                                                <td>David Martinez</td>
+                                                <td>May 30, 2024, 5:27 PM</td>
+
+                                            </tr>
+                                            <tr>
+                                                <th class="trash-icon cursor-pointer"><img src="./images/trash-box.svg"
+                                                        alt="Delete"></th>
+                                                <td class="fw-normal">Samplefile1</td>
+                                                <td><a href="" target="_blank">Samplefile1.png</a></td>
+                                                <td>David Martinez</td>
+                                                <td>May 30, 2024, 5:25 PM</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="mb-5 mt-4 ticket-history-sec">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5>Comments</h5>
+                                    <button class="btn btn-primary" id="browseFileBtn">Upload Document</button>
+                                </div>
+                                <form class="needs-validation" novalidate="" id="comment-validation">
+                                    <div class="comment-box">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend name-wrapper">
+                                                <span class="input-group-text justify-content-center"
+                                                    id="basic-addon1">S</span>
+                                            </div>
+                                            <textarea class="form-control textEditor" rows="6"
+                                                placeholder="Add a comment....." id="commentText" required=""
+                                                style="display: none;"></textarea>
+
+                                            <div class="invalid-feedback">Comment cannot be empty.</div>
+                                        </div>
+                                        <div id="commentError" class="text-danger"></div>
+                                        <div class="d-flex align-items-center my-4">
+                                            <div class="ms-5 cursor-pointer" id="attachment-list">
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary position-relative rounded-circle me-3">
+                                                    <svg class="bi">
+                                                        <use xlink:href="#attachment-icon"></use>
+                                                    </svg>
+                                                    <span
+                                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                                                    <span></span>
+                                                </button>
+                                                <span>Attachment</span>
+                                            </div>
+
+                                            <div class="form-check ms-auto">
+                                                <input class="form-check-input border-secondary" type="checkbox"
+                                                    value="" id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Send copy to customer
+                                                </label>
+                                            </div>
+
+
+                                            <button class="btn btn-primary ms-3" id="saveCommentBtn">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <ul class="comment-list list-unstyled mt-3 border-top" id="commentByTikId">
+                                    <li class="p-0">
+                                        <div class="accordion accordion-flush" id="accordionFlushExample1">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="flush-headingOne1">
+                                                    <button class="accordion-button collapsed ps-0 ps-0" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1"
+                                                        aria-expanded="false" aria-controls="flush-collapseOne1">
+                                                        <p class="description m-0"><span class="fwt-normal">Robert
+                                                                Lee</span> <span class="small-txt"></span> replied</p>
+                                                        <small class="text-nowrap ms-auto me-4">May 31, 2024, 2:30
+                                                            PM</small>
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseOne1" class="accordion-collapse collapse show"
+                                                    aria-labelledby="flush-headingOne1"
+                                                    data-bs-parent="#accordionFlushExample1">
+                                                    <div class="accordion-body p-0">
+                                                        <div class="email-wrapper p-3 bg-light ps-5">
+                                                            <p>Hi,</p>
+                                                            <p> hope this message finds you well. We are following up
+                                                                regarding your
+                                                                recent concerns with our car loan services, specifically
+                                                                the billing
+                                                                statements and interest calculations.</p>
+                                                            <p>We have completed the review and audit as mentioned in
+                                                                our previous
+                                                                communication.</p>
+                                                            <p>Thanks</p>
+                                                            <img class="border" src="./images/sample1.jpg"
+                                                                height="200px" alt="">
+                                                            <img class="border" src="./images/sample1.jpg"
+                                                                height="200px" alt="">
+                                                            <div class="d-flex my-4 pt-3">
+                                                                <span class="fwt-normal">Attachments: </span>
+                                                                <ul class="ps-3">
+                                                                    <li><a href="#">Sample1.pdf</a></li>
+                                                                    <li><a href="#">Sample2.jpg</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="accordion accordion-flush" id="accordionFlushExample2">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="flush-headingOne2">
+                                                    <button class="accordion-button collapsed ps-0 ps-0" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne3"
+                                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                                        <p class="description m-0"><span class="fwt-normal">David
+                                                                Martinez</span> <span class="small-txt"></span> replied
+                                                        </p>
+                                                        <small class="text-nowrap ms-auto me-4">May 31, 2024, 10:15
+                                                            AM</small>
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseOne3" class="accordion-collapse collapse"
+                                                    aria-labelledby="flush-headingOne2"
+                                                    data-bs-parent="#accordionFlushExample2">
+                                                    <div class="accordion-body p-0">
+                                                        <div class="email-wrapper p-3  bg-light ps-5">
+                                                            <p>Hi,</p>
+                                                            <p>Thank you for reaching out and bringing your concerns to
+                                                                our attention.
+                                                                We apologize for any inconvenience you have experienced
+                                                                with our car
+                                                                loan services, especially regarding billing statements
+                                                                and interest
+                                                                calculations.</p>
+                                                            <p>We take such matters very seriously and are committed to
+                                                                resolving them
+                                                                promptly.</p>
+                                                            <p>Thanks</p>
+                                                            <div class="d-flex">
+                                                                <span class="fwt-normal">Attachments: </span>
+                                                                <ul class="ps-3">
+                                                                    <li><a href="#">Sample1.png</a></li>
+                                                                    <li><a href="#">Sample2.jpg</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0">File uploaded by <span class="fwt-normal">David
+                                                    Martinez</span> - <a target="_blank" href="#">Samplefile4.png</a>
+                                            </p><span class="d-flex gap-2 align-items-center m-0 text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:31 PM</small></span>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0">File uploaded by <span class="fwt-normal">David
+                                                    Martinez</span> - <a target="_blank" href="#">Samplefile3.png</a>
+                                            </p><span class="d-flex gap-2 align-items-center m-0 text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:30 PM</small></span>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0">File uploaded by <span class="fwt-normal">David
+                                                    Martinez</span> - <a target="_blank" href="#">Samplefile2.png</a>
+                                            </p><span class="d-flex gap-2 align-items-center m-0 text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:27 PM</small></span>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0">File uploaded by <span class="fwt-normal">David
+                                                    Martinez</span> - <a target="_blank" href="#">Samplefile1.png</a>
+                                            </p><span class="d-flex gap-2 align-items-center m-0 text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:25 PM</small></span>
+                                        </div>
+                                    </li>
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0"><span class="fwt-normal">David Martinez</span>
+                                                updated customer details.<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal5" data-id="6"> view</a></p><span class="d-flex gap-2 align-items-center text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:20 PM</small></span>
+                                        </div>
+                                    </li>
+
+                                    <li class="p-0">
+                                        <div class="d-flex gap-2 justify-content-between align-items-start gap-5 p-3 ps-0">
+                                            <p class="description m-0"><span class="fwt-normal">David Martinez</span>
+                                                <span class="small-txt"></span> created a ticket
+                                            </p><span class="d-flex gap-2 align-items-center  text-nowrap"><small class="text-nowrap me-5">May 30, 2024, 5:15 PM</small></span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <!-- <hr>
+                            <div class="mb-5 mt-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5>Note</h5>
+                                    <input type="hidden" id="noteId" value="3">
+                                </div>
+                                <div class="Notes-Box ticket-history-sec">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend name-wrapper">
+                                            <span class="input-group-text justify-content-center"
+                                                id="basic-addon2">S</span>
+                                        </div>
+                                        <textarea class="form-control textEditor" rows="6"
+                                            placeholder="Write your note here....." id="personalNote"></textarea>
+
+
+                                    </div>
+                                    <button class="btn btn-primary d-block ms-auto mt-3 px-3 "
+                                        id="saveNote">Save</button>
+                                </div>
+
+                                <button class="btn btn-primary mx-auto d-block mt-5" id="closetkt-btn">Close
+                                    Ticket</button>
+                            </div> -->
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <span class="footer-copy d-block text-center py-2">© 2024 Design and developed by Fortune4 Technologies.
+                    All rights reserved.</span>
+            </main>
+        </div>
+    </div>
+    </div>
+    <!-- attachment-modal start -->
+    <form class="needs-validation" novalidate id="file-validation">
+        <div class="custom-modal" id="exampleModal9">
+            <div class="custom-modal-dialog custom-modal-dialog-centered">
+                <div class="custom-modal-content">
+                    <div class="custom-modal-body p-4">
+                        <button type="button" class="btn-close custom-close-btn modal-close" aria-label="Close"
+                            id="closeUploadPopupBtn"></button>
+                        <h4 class="mb-3">Upload Attachment</h4>
+                        <div class="label-wrap mb-3">
+                            <label class="form-label">Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fileName" required="required" maxlength="50" />
+                            <div class="invalid-feedback">Please provide file name.</div>
+                            <div class="invalid-feedback" id="duplicateError"></div>
+                        </div>
+                        <div class="label-wrap mb-3">
+                            <label class="form-label">Attachment<span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" id="upload-file" required="required" />
+                            <div class="invalid-feedback">Please select file.</div>
+                            <div class="invalid-feedback" id="fileError"></div>
+                        </div>
+                        <button class="btn btn-primary ms-auto d-block mt-4 modal-close" type="submit"
+                            id="uploadFile-button">
+                            Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- attachment-modal end -->
+
+    <!-- attachment list modal start  -->
+    <form class="needs-validation" novalidate id="file-validation">
+        <div class="custom-modal" id="attachmentList-modal">
+            <div class="custom-modal-dialog custom-modal-dialog-centered">
+                <div class="custom-modal-content">
+                    <div class="custom-modal-body p-4">
+                        <button type="button" class="btn-close custom-close-btn modal-close" aria-label="Close"
+                            id="attachCloseBtn"></button>
+                        <h4 class="mb-4">Attachment List</h4>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="attach1" checked>
+                                    <label class="form-check-label" for="attach1">
+                                        Samplefile1.png (100kb)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="attach2" checked>
+                                    <label class="form-check-label" for="attach2">
+                                        Samplefile2.png (300kb)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="attach3" checked>
+                                    <label class="form-check-label" for="attach3">
+                                        Samplefile3.png (50kb)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="attach4">
+                                    <label class="form-check-label" for="attach4">
+                                        Samplefile4.png (30kb)
+                                    </label>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <button class="btn btn-primary ms-auto d-block mt-4 modal-close" type="submit"
+                            id="attachFile-button">
+                            Attach
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- attachment list modal end  -->
+
+    <!-- Customer detail modal start -->
+    <form>
+        <div class="model-wrapper">
+            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                data-bs-backdrop="static" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <div class="modal-body p-4">
+                            <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
+                                aria-label="Close" id="viewPopUpCloseBtn">
+                            </button>
+                            <h4 class="mb-3" id="ticketDetails">Customer Details</h4>
+                            <div id="customerDetails" class="details-wrapper word-break">
+                            <p class="mb-2"><span class="fw-normal">Customer Name - </span>Robert Lee</p>
+                            <p class="mb-2"><span class="fw-normal">Email - </span>robertlee@gmail.com</p>
+                            <p class="mb-2"><span class="fw-normal">Phone - </span>9898988988</p>
+                            <p class="mb-2"><span class="fw-normal">Account No. - </span>0014244155</p>
+                            <p class="mb-2"><span class="fw-normal">Account - </span></p>
+                            <p class="mb-2"><span class="fw-normal">Mode Of Receipt - </span></p>
+                            <p class="mb-2"><span class="fw-normal">POS - </span></p>
+                            <p class="mb-2"><span class="fw-normal">TOS - </span></p>
+                            <p class="mb-2"><span class="fw-normal">Settlement Date - </span></p>
+                            <p class="mb-2"><span class="fw-normal">Settlement Amount - </span></p>
+                            <p class="mb-2"><span class="fw-normal">Complaint Detail - </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Customer detail modal end -->
+
+
+    <!-- close modal start  -->
+    <form class="needs-validation" novalidate id="file-validation">
+        <div class="custom-modal" id="closetkt-modal">
+            <div class="custom-modal-dialog custom-modal-dialog-centered">
+                <div class="custom-modal-content">
+                    <div class="custom-modal-body p-4">
+                        <button type="button" class="btn-close custom-close-btn modal-close" id="closeBtnTkt"></button>
+                        <h4 class="mb-3" id="ticketDetails">Close Ticket</h4>
+                        <div class="label-wrap mb-3">
+                            <label for="" class="form-label">Comment</label>
+                            <textarea name="" id="" class="form-control" rows="7"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary d-block ms-auto close-btn"
+                            id="submitTktBtn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- clode modal end  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+    integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.textEditor').forEach(function (textarea) {
+                ClassicEditor
+                    .create(textarea, {
+                        removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle', 'ImageToolbar', 'ImageUpload', 'MediaEmbed', 'BlockQuote']
+                    })
+                    .then(editor => {
+                        // Store the editor instance in the element's data attribute
+                        textarea.dataset.ckeditorInstance = editor;
+
+                        // Example of handling editor change event
+                        editor.model.document.on('change', () => {
+                            console.log('Editor content has changed!');
+                            // Additional logic can be placed here
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+        });
+    </script>
+    <script>
+        let browseFileBtn = document.getElementById("browseFileBtn")
+        let exampleModal9 = document.getElementById("exampleModal9")
+        let closeUploadPopupBtn = document.getElementById("closeUploadPopupBtn")
+        let uploadFileButton = document.getElementById("uploadFile-button")
+        browseFileBtn.addEventListener("click", () => {
+            exampleModal9.style.display = "block"
+        })
+        closeUploadPopupBtn.addEventListener("click", () => {
+            exampleModal9.style.display = "none"
+        })
+        uploadFileButton.addEventListener("click", (e) => {
+            e.preventDefault()
+            exampleModal9.style.display = "none"
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            let rowCount = 4;
+
+            function updateRowCount() {
+                $("#attachmentCount").text(`(${rowCount})`);
+            }
+
+            $("#uploadFile-button").click(function () {
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const monthNames = [
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                const month = monthNames[currentDate.getMonth()];
+                const date = currentDate.getDate();
+
+                let hours = currentDate.getHours();
+                const minutes = currentDate.getMinutes();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+
+                const formattedTime = `${hours}:${formattedMinutes} ${ampm}`;
+                let fileValue = $("#upload-file").val().split('\\').pop();
+                console.log(fileValue);
+
+                // Remove the "No records" row if it exists
+                $("#no-records").remove();
+
+                $("#fileList").append(`<tr>
+                    <th class="trash-icon cursor-pointer"><img src="./images/trash-box.svg" alt="Delete"></th>
+                    <td class="fw-normal">${$("#fileName").val()}</td>
+                    <td><a href="" target="_blank">${fileValue}</a></td>
+                    <td>David Martinez</td>
+                    <td>${month} ${date}, ${year}, ${formattedTime}</td>
+                </tr>`);
+
+                // Increment row count and update display
+                rowCount++;
+                updateRowCount();
+
+                // Clear input fields
+                $("#upload-file").val('');
+                $("#fileName").val('');
+                console.log(rowCount);
+            });
+
+            // Attach event listener for dynamically added elements
+            $(document).on('click', '.trash-icon', function () {
+                $(this).closest('tr').remove();
+
+                // Decrement row count and update display
+                rowCount--;
+                updateRowCount();
+
+                // Check if tbody is empty
+                if ($("#fileList tr").length === 0) {
+                    $("#fileList").append(`<tr id="no-records">
+                        <td colspan="5" class="text-center">No records</td>
+                        </tr>`);
+                }
+            });
+            // console.log($("#fileList tr").length);
+            if ($("#fileList tr").length === 0) {
+                $("#fileList").append(`<tr id="no-records">
+                        <td colspan="5" class="text-center">No records</td>
+                        </tr>`);
+            }
+        });
+    </script>
+    <script>
+        let attachBtn = document.getElementById("attachment-list")
+        let attachModal = document.getElementById("attachmentList-modal")
+        let closeAttachModal = document.getElementById("attachCloseBtn")
+        let attachFileButton = document.getElementById("attachFile-button")
+        attachBtn.addEventListener("click", () => {
+            attachModal.style.display = "block"
+        })
+        closeAttachModal.addEventListener("click", () => {
+            attachModal.style.display = "none"
+        })
+        attachFileButton.addEventListener("click", (e) => {
+            e.preventDefault()
+            attachModal.style.display = "none"
+        })
+    </script>
+    <script>
+        let closeTktBtn = document.getElementById("closetkt-btn")
+        let closeTktMOdal = document.getElementById("closetkt-modal")
+        let closeTktModal = document.getElementById("closeBtnTkt")
+        let submitTktBtn = document.getElementById("submitTktBtn")
+        closeTktBtn.addEventListener("click", () => {
+            closeTktMOdal.style.display = "block"
+        })
+        closeTktModal.addEventListener("click", () => {
+            closeTktMOdal.style.display = "none"
+        })
+        submitTktBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            closeTktMOdal.style.display = "none"
+        })
+    </script>
+
+</body>
+
+</html>

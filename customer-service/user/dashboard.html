@@ -127,7 +127,8 @@
                 <div class="position-sticky d-flex flex-column h-100 pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 activ rounded active" aria-current="page" href="./dashboard.html">
+                            <a class="nav-link d-flex align-items-center gap-2 activ rounded active" aria-current="page"
+                                href="./dashboard.html">
                                 <svg class="bi">
                                     <use xlink:href="#house-fill"></use>
                                 </svg>
@@ -158,9 +159,10 @@
                                 Open
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded" href="./close-tickets.html">
+                            <a class="nav-link d-flex align-items-center gap-2 ms-3 rounded"
+                                href="./close-tickets.html">
                                 <svg class="bi">
                                     <use xlink:href="#file-earmark-text"></use>
                                 </svg>
@@ -168,7 +170,8 @@
                             </a>
                         </li>
                         <li class="nav-item for-gro-md" style="">
-                            <a class="nav-link d-flex align-items-center gap-2 rounded" href="./discarded-email.html">
+                            <a class="nav-link d-flex align-items-center gap-2 rounded text-nowrap"
+                                href="./discarded-email.html">
                                 <svg class="bi">
                                     <use xlink:href="#people"></use>
                                 </svg>
@@ -200,70 +203,86 @@
             <main class="mainContent-wrap col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="mb-4">
                     <div
-                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 pb-2 mb-3">
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4">
                         <h4>Dashboard</h4>
                     </div>
                     <div class="container p-0 p-md-3 mb-4 mb-md-0">
                         <div class="row gy-4 dashboard-tiles" style="">
                             <div class="col-6 col-md-4 for-gro-md ps-md-0">
-                                <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="totalTicketsCard">
-                                  <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <p class="text-center h3" id="totaltickets">17</p>
-                                    <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Total Ticket Created</h1>
-                                  </div>
+                                <div class="card h-100 rounded-3 shadow-sm cursor-pointer border-0"
+                                    id="totalTicketsCard">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Total Ticket
+                                            <br>
+                                            Created
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">17</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4 for-gro-md">
                                 <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="totalSpamCard">
-                                  <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <p class="text-center h3" id="totalspams">3</p>
-                                    <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Total Discarded Email</h1>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Total Discarded
+                                            <br>
+                                            Email
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">3</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-4 for-gro-md">
                                 <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="pendingMailCard">
-                                  <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                    <p class="text-center h3" id="pendingmails">10</p>
-                                    <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Total Mail Pending</h1>
-                                  </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Total Mail 
+                                            <br>
+                                            Pending
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">10</p>
+                                    </div>
                                 </div>
                             </div>
-                
-                                <div class="col-6 col-md-4 ps-md-0">
-                                    <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="closedTicketsCard">
-                                      <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <p class="text-center h3" id="resolvedtickets">5</p>
-                                        
-                                         <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Total Closed Ticket</h1>
-                                        
-                                      </div>
+                            <div class="col-6 col-md-4 ps-md-0">
+                                <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="closedTicketsCard">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Total Closed 
+                                            <br>
+                                            Ticket
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">5</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="tatExceededCard">
-                                      <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <p class="text-center h3" id="tatexceeded">11</p>
-                                        <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Total TAT Exceeded</h1>
-                                      </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="tatExceededCard">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Total TAT 
+                                            <br>
+                                            Exceeded
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">11</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4">
-                                    <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="openTicketsCard">
-                                      <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                                        <p class="text-center h3" id="ticketinprogress">12</p>
-                                        <h1 class="card-title pricing-card-title text-center d-flex align-items-center h6 text-body-secondary mb-2 gap-2 flex-column flex-md-row">Ticket in Progress</h1>
-                                      </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="card h-100 rounded-3 shadow-sm cursor-pointer" id="openTicketsCard">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Ticket in 
+                                            <br>
+                                            Progress
+                                        </h4>
+                                        <p class="card-count" id="pendingmails">12</p>
                                     </div>
                                 </div>
-                                
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <span class="footer-copy d-block text-center py-2">© 2024 Design and developed by Fortune4 Technologies.
                     All rights reserved.</span>
-                </main>
+            </main>
         </div>
     </div>
     </div>
@@ -375,27 +394,27 @@
 
     </script>
     <script>
-        $(document).ready(function(){
-            $("#totalTicketsCard").click(function(){
-                window.location.href="tickit-list.html"
+        $(document).ready(function () {
+            $("#totalTicketsCard").click(function () {
+                window.location.href = "tickit-list.html"
             })
-            $("#totalSpamCard").click(function(){
-                window.location.href="discarded-email.html"
+            $("#totalSpamCard").click(function () {
+                window.location.href = "discarded-email.html"
             })
-            $("#totalSpamCard").click(function(){
-                window.location.href="discarded-email.html"
+            $("#totalSpamCard").click(function () {
+                window.location.href = "discarded-email.html"
             })
-            $("#closedTicketsCard").click(function(){
-                window.location.href="close-tickets.html"
+            $("#closedTicketsCard").click(function () {
+                window.location.href = "close-tickets.html"
             })
-            $("#openTicketsCard").click(function(){
-                window.location.href="open-tickets.html"
+            $("#openTicketsCard").click(function () {
+                window.location.href = "open-tickets.html"
             })
-            $("#pendingMailCard").click(function(){
-                window.location.href="mail-list.html"
+            $("#pendingMailCard").click(function () {
+                window.location.href = "mail-list.html"
             })
-            $("#tatExceededCard").click(function(){
-                window.location.href="tickit-list.html"
+            $("#tatExceededCard").click(function () {
+                window.location.href = "tickit-list.html"
             })
         })
     </script>
