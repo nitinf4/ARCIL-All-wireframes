@@ -983,4 +983,8 @@ body.showModal #exampleModal3 {
 }
 .disable-textbox ol li {
   margin-bottom: 7px;
+}
+
+.w-100-ckeditor .ck-editor__editable {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
