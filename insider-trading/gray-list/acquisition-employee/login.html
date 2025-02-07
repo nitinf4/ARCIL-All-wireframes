@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .wrapper .main-container .login-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 864px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .wrapper .main-container .login-modal .left-col {
+            width: 50%;
+            background-color: #5836D7;
+            padding: 50px 20px;
+        }
+
+        .wrapper .main-container .login-modal .right-col {
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        .wrapper .main-container .login-modal .left-col img {
+            height: 100%;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .wrapper .main-container .login-modal .right-col .logo-img {
+            height: auto;
+            width: 100px;
+        }
+
+        .wrapper .main-container .login-modal .right-col .divider {
+            display: block;
+            width: 100px;
+            height: 2px;
+            background-color: #29166F;
+            margin: 10px auto 0 auto;
+        }
+
+        .wrapper .main-container .login-modal .right-col .modal-title {
+            font-size: 27px;
+            margin: 10px 0 30px 0;
+            color: #29166F;
+            line-height: 1.2;
+        }
+    </style>
+
+<body>
+    <div class="wrapper">
+
+
+        <div class="main-container accountMainWrapper">
+
+            <div class="bgcircle-wrapper">
+                <span class="circle topRight"></span>
+                <span class="circle bottomRight"></span>
+                <span class="circle bottomLeft"></span>
+                <!-- <span class="circle topLeft"></span>  -->
+            </div>
+            <div class="login-modal">
+                <div class="left-col">
+                    <img src="./images/loginImage.png" alt="">
+                </div>
+                <div class="right-col">
+                    <img class="logo-img" src="./images/logo.svg" alt="">
+                    <span class="divider"></span>
+                    <h2 class="modal-title">Insider <br>Trading System</h2>
+                    <a href="./terms-conditions.html" class="btn-primary p-2 rounded px-3">Login with ARCIL Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

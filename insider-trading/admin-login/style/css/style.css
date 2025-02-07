@@ -350,4 +350,28 @@ textarea {
   display: block;
 }
 
+.action {
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.action li {
+  margin-right: 12px;
+}
+.action li:last-child {
+  margin-right: 0px;
+}
+
+.btn-wrap .custom-close-btn {
+  margin-left: inherit !important;
+}
+.btn-wrap .custom-close-btn:first-child {
+  margin-right: 15px;
+}
+
+.comment-list li:nth-last-child(1) {
+  border-bottom: none !important;
+}
+
 /*# sourceMappingURL=style.css.map */

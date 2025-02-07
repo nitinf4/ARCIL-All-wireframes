@@ -392,3 +392,32 @@ textarea {
         }
     }
 }
+
+.action{
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    li{
+        margin-right: 12px;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+}
+
+.btn-wrap{
+    .custom-close-btn{
+        margin-left: inherit!important;
+        &:first-child{
+            margin-right: 15px;
+        }
+    }
+}
+.comment-list{
+    li{
+        &:nth-last-child(1){
+            border-bottom: none !important;
+        }
+    }
+}

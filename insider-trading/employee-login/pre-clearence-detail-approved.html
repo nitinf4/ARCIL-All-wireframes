@@ -88,7 +88,7 @@
     </svg>
     <!-- header start  -->
     <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 bg-white" data-bs-theme="dark">
-        <span class="navbar-brand col-md-3 col-lg-2 me-0 px-3 shadow-none" href="#">
+        <span class="navbar-brand col-md-3 col-lg-2 me-0 px-3 shadow-none">
             <a href="#" class="logo"></a>
         </span>
         <ul class="navbar-nav flex-row d-md-none px-4">
@@ -175,7 +175,7 @@
             <main class="mainContent-wrap col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="mb-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-4 pb-2 mb-4">
-                        <h4>Title demo</h4>
+                        <h4>Pre-clearance Detail</h4>
                     </div>
                     <div class="d-flex flex-wrap mb-5" style="row-gap: 15px;">
                         <div class="col-6 col-md-3 p-0">
@@ -191,6 +191,9 @@
                             <span class="fwt-normal d-block">Quantity:</span> <span>1500</span>
                         </div>
                         <div class="col-6 col-md-3 p-0">
+                            <span class="fwt-normal d-block">Purchaser:</span> <span>Self</span>
+                        </div>
+                        <div class="col-6 col-md-3 p-0">
                             <span class="fwt-normal d-block">Requested Date:</span> <span>21-Feb-2024</span>
                         </div>
                         <div class="col-6 col-md-3 p-0">
@@ -202,7 +205,7 @@
                     </div>
                     <hr />
                     <div class="mb-5 mt-4">
-                        <h5 class="mb-3">Details</h5>
+                        <h5 class="mb-3">Additional Info</h5>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta obcaecati aspernatur
                             cupiditate voluptatum doloribus illo expedita ad ut repudiandae aliquid hic, error magnam rerum
                             quo, deserunt dolorem voluptatem sed sit eligendi et totam. Id facilis, illo libero corporis
@@ -219,6 +222,51 @@
                             autem accusamus officiis voluptas dolores aliquid voluptate debitis? Corrupti facere iusto
                             culpa? Ipsa nostrum, iusto eaque consequuntur deserunt odio sapiente numquam officiis eveniet
                             quo amet</span>
+                    </div>
+                    <hr />
+                    <div class="mb-5 mt-4">
+                        <h5 class="mb-3">Attachments (3)</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th></th>
+                                        <th class="text-nowrap">Sr No.</th>
+                                        <th class="text-nowrap">Name</th>
+                                        <th>File</th>
+                                        <th class="text-nowrap">Uploaded by</th>
+                                        <th class="text-nowrap">Uploaded Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="fileList">
+                                    <tr>
+                                        <th class="trash-icon" data-recordid="137"><img src="./images/trash-box.svg"></th>
+                                        <td>1</td>
+                                        <td class="fw-normal">File 1</td>
+                                        <td><a href="#" target="_blank">Sample-Document.pdf</a></td>
+                                        <td style="word-break:break-word;">John Doe</td>
+                                        <td class="text-nowrap">Feb 28, 2024, 3:20 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="trash-icon" data-recordid="137"><img src="./images/trash-box.svg"></th>
+                                        <td>2</td>
+                                        <td class="fw-normal">File 2</td>
+                                        <td><a href="#" target="_blank">Sample-Document.pdf</a></td>
+                                        <td style="word-break:break-word;">John Doe</td>
+                                        <td class="text-nowrap">Feb 28, 2024, 3:19 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="trash-icon" data-recordid="137"><img src="./images/trash-box.svg"></th>
+                                        <td>3</td>
+                                        <td class="fw-normal">File 3</td>
+                                        <td><a href="#" target="_blank">Sample-Document.pdf</a></td>
+                                        <td style="word-break:break-word;">John Doe</td>
+                                        <td class="text-nowrap">Feb 28, 2024, 3:17 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-primary d-block ms-auto mt-3" id="upload-document" data-bs-toggle="modal" data-bs-target="#uploadDocument-modal">Upload Document</button>
                     </div>
                     <hr />
                     <div class="mb-5 mt-4">
@@ -240,9 +288,7 @@
 
                         <ul class="comment-list list-unstyled mt-3" id="commentByTikId">
                             <li class="mt-3 border-bottom">
-                                <div class="d-flex gap-2"><span
-                                        class="bg-light border rounded fwt-normal d-flex align-items-center justify-content-center"
-                                        style="height:35px; width:35px">D</span>
+                                <div class="d-flex gap-2">
                                     <div class="w-100"><span class="d-flex gap-2 align-items-center mt-1 mb-2">
                                             <h6 class="m-0">John Doe</h6> <small>Feb 22, 2024, 10:25 AM</small>
                                         </span>
@@ -251,9 +297,7 @@
                                 </div>
                             </li>
                             <li class="mt-3 border-bottom">
-                                <div class="d-flex gap-2"><span
-                                        class="bg-light border rounded fwt-normal d-flex align-items-center justify-content-center"
-                                        style="height:35px; width:35px">D</span>
+                                <div class="d-flex gap-2">
                                     <div class="w-100"><span class="d-flex gap-2 align-items-center mt-1 mb-2">
                                             <h6 class="m-0">John Doe</h6> <small>Feb 22, 2024, 10:00 AM</small>
                                         </span>
@@ -302,80 +346,57 @@
         </div>
     </div>
 
-    <!-- Raise Request modal end  -->
-    <form class="needs-validation">
-        <div class="model-wrapper">
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                data-bs-backdrop="static" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <div class="modal-body p-4" id="createTicketForm">
-                            <button type="button" class="btn-close close-btn ms-auto d-block" data-bs-dismiss="modal"
-                                aria-label="Close" id="closeCreatePopupBtn">
-                            </button>
-                            <h4 class="mb-3">Raise Request</h4>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Security<span class="text-danger">*</span></label>
-                                <select class="form-select">
-                                    <option value="" selected="">Select Security</option>
-                                    <option value="1">Select Security</option>
-                                    <option value="2">Infosys</option>
-                                    <option value="3">Adani ports and spec</option>
-                                    <option value="4">Ambuja Cements Ltd.</option>
-                                    <option value="5">Asian Paints Ltd</option>
-
-                                </select>
-                                <div class="invalid-feedback">Please select a security</div>
-                            </div>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Quantity<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control">
-                                <div class="invalid-feedback">Please enter Quantity</div>
-                            </div>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Purchaser<span class="text-danger">*</span></label>
-                                <select class="form-select" required="required">
-                                    <option value="" selected="">Select Purchaser</option>
-                                    <option value="1">Self</option>
-                                    <option value="2">Father</option>
-                                    <option value="3">Mother</option>
-                                    <option value="4">Daughter</option>
-                                    <option value="5">Son</option>
-                                    <option value="5">Others</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a Purchaser</div>
-                            </div>
-                            <div class="label-wrap mb-3">
-                                <label class="form-label">Additional Info</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <button class="btn btn-primary ms-auto d-block mt-4" id="createButton" type="submit"
-                                data-bs-dismiss="modal" aria-label="Close">Submit Request</button>
+        <!-- success modal start  -->
+    
+        <form class="needs-validation">
+            <div class="custom-modal" id="success-modal">
+                <div class="custom-modal-dialog custom-modal-dialog-centered">
+                    <div class="custom-modal-content">
+                        <div class="custom-modal-body p-4">
+                            <button
+                                type="button"
+                                class="btn-close custom-close-btn"
+                                id="close-btn"
+                            ></button>
+                            <h4 class="text-center">Declaration Submitted</h4>
+                            <p class="mt-2 text-center">Your declaration has been submitted successfully.</p>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-
-    <!-- success modal start  -->
-    <form class="needs-validation">
-        <div class="custom-modal" id="success-modal">
-            <div class="custom-modal-dialog custom-modal-dialog-centered">
-                <div class="custom-modal-content">
-                    <div class="custom-modal-body p-4">
-                        <button type="button" class="btn-close custom-close-btn">
-                        </button>
-                        <h4 class="text-center">Declaration Submitted</h4>
-                        <p class="mt-2 text-center">Your declaration has been submitted successfully.</p>
+        </form>
+        <!-- success modal end  -->
+    
+         <!--Attachment modal  -->
+         <form class="needs-validation">
+            <div class="custom-modal" id="attachment-modal">
+                <div class="custom-modal-dialog custom-modal-dialog-centered">
+                    <div class="custom-modal-content">
+                        <div class="custom-modal-body p-4">
+                            <button
+                                type="button"
+                                class="btn-close custom-close-btn"
+                                id="close-btn"
+                            ></button>
+                            <h4 class="mb-3">Upload Attachments</h4>
+                            <div class="label-wrap mb-3">
+                                <label class="form-label">Name<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fileName"  maxlength="50">
+                            </div>
+                            <div class="label-wrap mb-3">
+                                <label class="form-label">Attachment<span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" id="upload-file">
+                            </div>
+                            <button class="btn btn-primary ms-auto d-block mt-4 modal-close" type="submit" id="upload-button">
+                                Upload
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-    <!-- success modal end  -->
+        </form>
+        <!--Attachment modal  -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -400,6 +421,26 @@
                 document.querySelector("body").style.overflow = "auto";
             });
         });
+    </script>
+     <script>
+        $(document).ready(function(){
+            $("#upload-document").click(function(){
+                $("#attachment-modal").show()
+            })
+            $("upload-button").click(function(){
+                $("#attachment-modal").hide()
+            })
+            $("#submit-preClearance").click(function(){
+                $("#success-modal").show()
+            })
+            $(".custom-close-btn").each(function() {
+                $(this).click(function() {
+                    $("#attachment-modal").hide()
+                    $("#success-modal").hide()
+                    
+                });
+            });
+        })
     </script>
 </body>
 
