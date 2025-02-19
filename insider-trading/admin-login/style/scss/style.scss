@@ -421,3 +421,34 @@ textarea {
         }
     }
 }
+
+.custom-modal.large .custom-modal-dialog{
+    width: 1000px;
+}
+.custom-modal.previewtable .custom-modal-body{
+    height: 500px;
+    overflow-y: scroll;
+}
+.custom-table{
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    .tr {
+        display: table-row;
+        border: 1px solid #ddd;
+        &:first-child {
+            font-weight: 500;
+            white-space: nowrap;
+        }
+    }
+    .td {
+        display: table-cell;
+        padding: 8px;
+        border-left: 1px solid #ddd;
+        &:first-child {
+            border-left: 0;
+        }
+        .inp-container{margin-bottom: 9px;
+            min-height: 30px;}
+    }
+}

@@ -374,4 +374,39 @@ textarea {
   border-bottom: none !important;
 }
 
+.custom-modal.large .custom-modal-dialog {
+  width: 1000px;
+}
+
+.custom-modal.previewtable .custom-modal-body {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.custom-table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+.custom-table .tr {
+  display: table-row;
+  border: 1px solid #ddd;
+}
+.custom-table .tr:first-child {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.custom-table .td {
+  display: table-cell;
+  padding: 8px;
+  border-left: 1px solid #ddd;
+}
+.custom-table .td:first-child {
+  border-left: 0;
+}
+.custom-table .td .inp-container {
+  margin-bottom: 9px;
+  min-height: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */
