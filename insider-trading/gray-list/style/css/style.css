@@ -388,6 +388,9 @@ textarea {
   border-collapse: collapse;
   width: 100%;
 }
+.custom-table .thead, .custom-table .tbody {
+  display: table-header-group;
+}
 .custom-table .tr {
   display: table-row;
   border: 1px solid #ddd;

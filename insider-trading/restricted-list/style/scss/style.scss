@@ -433,6 +433,7 @@ textarea {
     display: table;
     border-collapse: collapse;
     width: 100%;
+    .thead, .tbody{display: table-header-group;}
     .tr {
         display: table-row;
         border: 1px solid #ddd;
